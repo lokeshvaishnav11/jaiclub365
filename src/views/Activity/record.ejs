@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html translate="no" data-dpr="1" style="font-size: 48.24px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex,nofollow">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <title>Goa Games Club</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        /* Style for making the page mobile responsive and table super attractive */
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #9195a3;
+            padding: 0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            background-color: black;
+            margin: auto;
+        }
+        .mian {
+            background-color: #fbfcfd;
+            padding: 10px;
+        }
+        .navbar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+            z-index: 1000;
+            padding:5px 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            background: #099bf8;
+            color: white;
+        }
+        .navbar-left {
+            cursor: pointer;
+            font-size: 27px;
+            font-weight: bold;
+        }
+        .table-container {
+            margin-top: 80px; /* Adds space so the table won't overlap with the header */
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .no-data {
+            text-align: center;
+            margin-top: 100px;
+            color: #666;
+        }
+        @media only screen and (max-width: 600px) {
+            th, td {
+                padding: 10px;
+                font-size: 14px;
+            }
+            .navbar {
+                font-size: 16px;
+            }
+
+            @media (max-width:500px) {
+                body{
+                 width: 100%;
+                 max-width: unset;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div style="background-color: white;min-height: 100vh;">
+
+    <div class="navbar">
+        <div class="navbar-left" onclick="window.history.back()">
+            <
+        </div>
+        Records
+    </div>
+
+    <div class="mian">
+        <div id="table-container" class="table-container">
+            <!-- Table will be appended here by JavaScript -->
+        </div>
+        <div class="no-data" id="no-data">
+            <img src="https://img.yzcdn.cn/vant/empty-image-default.png" alt="No Data" width="100">
+            <p>No Data</p>
+        </div>
+    </div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function convertToDate(timestamp) {
+    const date = new Date(timestamp);
+    // Format the date as "YYYY-MM-DD"
+    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    const formattedDate = date.toLocaleDateString('en-CA', options); // 'en-CA' gives YYYY-MM-DD format
+    return formattedDate;
+}
+        // Sample API call
+        $.ajax({
+            url: '/activity/records',
+            method: 'GET',
+            success: function(response) {
+                const data = response.data;
+
+                if (data.length === 0) {
+                    $('#no-data').show();
+                    $('#table-container').hide();
+                } else {
+                    $('#no-data').hide();
+                    const table = `<table>
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Deposit Amount</th>
+                                            <th>Reward</th>
+                                            <th>Time</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        ${data.map((item, index) => `
+                                            <tr>
+                                                <td>${index + 1}</td>
+                                                <td>${item.amount}</td>
+                                                <td>${item.bonus}</td>
+                                                <td>${convertToDate(item.time)}</td>
+                                            </tr>
+                                        `).join('')}
+                                    </tbody>
+                                  </table>`;
+                    $('#table-container').html(table);
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Error fetching data:', error);
+                $('#no-data').html(`<p style="color: red;">Error fetching data</p>`);
+            }
+        });
+    </script>
+   
+</body>
+
+</html>

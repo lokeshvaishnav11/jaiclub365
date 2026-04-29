@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Update Predictions</title>
+    <link rel="stylesheet" href="/styles.css"> <!-- Optional: Add some styles -->
+</head>
+<body>
+    <h1>Admin - Update Predictions</h1>
+
+    <!-- Form to Update Predictions -->
+    <form action="/admin/update-prediction" method="POST">
+        <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Time Slot</th>
+                    <th>Current Crash Value</th>
+                    <th>Update Crash Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% slots.forEach(slot => { %>
+                    <tr>
+                        <td><%= slot.time_slot %></td>
+                        <td><%= slot.crash_value %></td>
+                        <td>
+                            <!-- Sending each slot and its crash value as an object in an array -->
+                            <input type="hidden" name="slots[<%= slot.time_slot %>][time_slot]" value="<%= slot.time_slot %>">
+                            <input type="number" name="slots[<%= slot.time_slot %>][crash_value]" step="0.01" value="<%= slot.crash_value %>" required>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <button type="submit">Update Predictions</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Tiger Game</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <div class="container">
+        <div id="confetti-container" class="confetti-container"></div>
+        <div class="game-card">
+            <div class="header">
+                <div class="coins-display">
+                    💰 <span id="coins">1000</span>
+                </div>
+
+                <div id="result" class="result-text"></div>
+
+                <div class="timer-container">
+                    <svg class="timer-svg">
+                        <defs>
+                            <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#34d399" />
+                                <stop offset="100%" stop-color="#10b981" />
+                            </linearGradient>
+                            <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#f87171" />
+                                <stop offset="100%" stop-color="#ef4444" />
+                            </linearGradient>
+                        </defs>
+
+                        <circle cx="50%" cy="50%" r="15" stroke="#1f2937" stroke-width="2" fill="transparent" />
+                        <circle
+                            cx="50%"
+                            cy="50%"
+                            r="15"
+                            stroke="url(#greenGradient)"
+                            stroke-width="2"
+                            fill="transparent"
+                            stroke-dasharray="94.24777960769379"
+                            stroke-dashoffset="0"
+                            style="transition: stroke-dashoffset 1s linear"
+                            id="countdown-circle"
+                        />
+                    </svg>
+                    <div id="countdown" class="countdown-text">30</div>
+                </div>
+            </div>
+
+            <div id="not-enough-coins" class="not-enough-coins hidden">
+                ❗ Not enough coins to place a bet. Earn more to play.
+            </div>
+
+            <div class="card-area">
+                <div class="card-group">
+                    <img src="../img/Dragon.png" alt="Dragon" class="animal-icon" />
+                    <div class="card-container">
+                        <div id="dragon-card-container" class="card-inner">
+                            <img id="dragon-card-front" src="../img/cards/patti_back.png" alt="Dragon" class="card-front" />
+                            <img src="../img/cards/patti_back.png" alt="Back" class="card-back" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vs-container">
+                    <img src="../img/vs.png" alt="VS" class="vs-icon" />
+                </div>
+
+                <div class="card-group">
+                    <img src="../img/tiger.png" alt="Tiger" class="animal-icon" />
+                    <div class="card-container">
+                        <div id="tiger-card-container" class="card-inner">
+                            <img id="tiger-card-front" src="../img/cards/patti_back.png" alt="Tiger" class="card-front" />
+                            <img src="../img/cards/patti_back.png" alt="Back" class="card-back" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bet-buttons-container" id="bet-buttons-container">
+                <div class="bet-button dragon-bet" data-bet="Dragon">
+                    <div id="dragon-bet-amount" class="bet-amount">0</div>
+                    <div class="animal-placeholder">
+                        <img src="../img/dragon.png" alt="Dragon" class="animal-image-placeholder" />
+                    </div>
+                    <button class="bet-button-overlay"></button>
+                    <div id="dragon-lock" class="lock-overlay hidden">
+                        <span class="lock-icon">🔒</span>
+                    </div>
+                </div>
+                <div class="bet-button tie-bet" data-bet="Tie">
+                    <div id="tie-bet-amount" class="bet-amount">0</div>
+                    <div class="tie-placeholder">Tie</div>
+                    <button class="bet-button-overlay"></button>
+                    <div id="tie-lock" class="lock-overlay hidden">
+                        <span class="lock-icon">🔒</span>
+                    </div>
+                </div>
+                <div class="bet-button tiger-bet" data-bet="Tiger">
+                    <div id="tiger-bet-amount" class="bet-amount">0</div>
+                    <div class="animal-placeholder">
+                        <img src="../img/tiger.png" alt="Tiger" class="animal-image-placeholder" />
+                    </div>
+                    <button class="bet-button-overlay"></button>
+                    <div id="tiger-lock" class="lock-overlay hidden">
+                        <span class="lock-icon">🔒</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="coin-buttons-container" id="coin-buttons-container">
+                <div class="coin-button-wrapper">
+                    <button class="coin-button" data-amount="10">
+                        <img src="../img/coins/10.png" alt="10 Coin" class="coin-image" />
+                        <span class="lock-overlay hidden">🔒</span>
+                    </button>
+                </div>
+                <div class="coin-button-wrapper">
+                    <button class="coin-button" data-amount="20">
+                        <img src="../img/coins/20.png" alt="20 Coin" class="coin-image" />
+                        <span class="lock-overlay hidden">🔒</span>
+                    </button>
+                </div>
+                <div class="coin-button-wrapper">
+                    <button class="coin-button" data-amount="50">
+                        <img src="../img/coins/50.png" alt="50 Coin" class="coin-image" />
+                        <span class="lock-overlay hidden">🔒</span>
+                    </button>
+                </div>
+                <div class="coin-button-wrapper">
+                    <button class="coin-button" data-amount="100">
+                        <img src="../img/coins/100.png" alt="100 Coin" class="coin-image" />
+                        <span class="lock-overlay hidden">🔒</span>
+                    </button>
+                </div>
+                <div class="coin-button-wrapper">
+                    <button class="coin-button" data-amount="200">
+                        <img src="../img/coins/200.png" alt="200 Coin" class="coin-image" />
+                        <span class="lock-overlay hidden">🔒</span>
+                    </button>
+                </div>
+                <div class="coin-button-wrapper">
+                    <button class="coin-button" data-amount="500">
+                        <img src="../img/coins/500.png" alt="500 Coin" class="coin-image" />
+                        <span class="lock-overlay hidden">🔒</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Tiger Game</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Add some basic styling for the new elements -->
+    <style>
+        .final-bet-area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px; /* Add some space above */
+            gap: 20px; /* Space between total and button */
+            padding: 10px;
+        }
+
+        #total-pending-bet {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #e2e8f0; /* Light text color */
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        #place-final-bet-button {
+            padding: 10px 20px;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(to right, #34d399, #10b981); /* Green gradient */
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease, opacity 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #place-final-bet-button:hover:not(:disabled) {
+            background: linear-gradient(to right, #10b981, #059669); /* Darker green */
+        }
+
+        #place-final-bet-button:disabled {
+            background: #6b7280; /* Grey when disabled */
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        /* Ensure coin lock overlays are positioned correctly if needed */
+        .coin-button-wrapper {
+           position: relative; /* Needed for absolute positioning of lock inside */
+        }
+        .lock-overlay { /* Updated lock styling */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(40, 40, 40, 0.7); /* Semi-transparent dark */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fde047; /* Yellow lock */
+            font-size: 1.5em; /* Adjust size as needed */
+            z-index: 10; /* Ensure it's above the coin image */
+            border-radius: 50%; /* Make it round like the coin */
+            pointer-events: none; /* Clicks should pass through */
+            backdrop-filter: blur(2px); /* Optional blur effect */
+        }
+         .lock-overlay::after {
+             content: '🔒';
+         }
+        .hidden {
+           display: none !important;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="confetti-container" class="confetti-container"></div>
+        <div class="game-card">
+            <div class="header">
+                <div class="coins-display">
+                    💰 <span id="coins">1000</span>
+                </div>
+
+                <div id="result" class="result-text">Place Your Bet!</div> <!-- Initial Text -->
+
+                <div class="timer-container">
+                     <svg class="timer-svg" viewbox="0 0 36 36"> <!-- Adjusted viewbox slightly -->
+                        <defs>
+                            <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#34d399" />
+                                <stop offset="100%" stop-color="#10b981" />
+                            </linearGradient>
+                            <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#f87171" />
+                                <stop offset="100%" stop-color="#ef4444" />
+                            </linearGradient>
+                            <linearGradient id="greyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#6b7280" /> <!-- Grey gradient start -->
+                                <stop offset="100%" stop-color="#4b5563" /> <!-- Grey gradient end -->
+                            </linearGradient>
+                        </defs>
+                        <!-- Background circle -->
+                        <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                              fill="none"
+                              stroke="#374151"
+                              stroke-width="2"/>
+                        <!-- Progress circle -->
+                        <path id="countdown-circle"
+                              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                              fill="none"
+                              stroke="url(#greenGradient)"
+                              stroke-width="2.5" <!-- Slightly thicker progress -->
+                              stroke-linecap="round"
+                              stroke-dasharray="100, 100" <!-- Circumference is ~100 -->
+                              stroke-dashoffset="100" <!-- Start empty -->
+                              style="transition: stroke-dashoffset 1s linear;"/>
+                    </svg>
+                    <div id="countdown" class="countdown-text">30</div>
+                </div>
+            </div>
+
+            <div id="not-enough-coins" class="not-enough-coins hidden">
+                ❗ Not enough coins!
+            </div>
+
+            <div class="card-area">
+                <div class="card-group">
+                    <img src="../img/Dragon.png" alt="Dragon" class="animal-icon" />
+                    <div class="card-container">
+                        <div id="dragon-card-container" class="card-inner">
+                            <img id="dragon-card-front" src="../img/cards/patti_back.png" alt="Dragon" class="card-front" />
+                            <img src="../img/cards/patti_back.png" alt="Back" class="card-back" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vs-container">
+                    <img src="../img/vs.png" alt="VS" class="vs-icon" />
+                </div>
+
+                <div class="card-group">
+                    <img src="../img/tiger.png" alt="Tiger" class="animal-icon" />
+                    <div class="card-container">
+                        <div id="tiger-card-container" class="card-inner">
+                            <img id="tiger-card-front" src="../img/cards/patti_back.png" alt="Tiger" class="card-front" />
+                            <img src="../img/cards/patti_back.png" alt="Back" class="card-back" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bet-buttons-container" id="bet-buttons-container">
+                <!-- Existing Bet Buttons for Dragon, Tie, Tiger -->
+                <button class="bet-button dragon-bet" data-bet="Dragon">
+                    <div id="dragon-bet-amount" class="bet-amount">0</div>
+                    <div class="animal-placeholder">
+                        <img src="../img/dragon.png" alt="Dragon" class="animal-image-placeholder" />
+                    </div>
+                    <!-- Removed overlay button -->
+                    <div id="dragon-lock" class="lock-overlay hidden"></div>
+                </button>
+                <button class="bet-button tie-bet" data-bet="Tie">
+                    <div id="tie-bet-amount" class="bet-amount">0</div>
+                    <div class="tie-placeholder">Tie</div>
+                    <!-- Removed overlay button -->
+                    <div id="tie-lock" class="lock-overlay hidden"></div>
+                </button>
+                <button class="bet-button tiger-bet" data-bet="Tiger">
+                    <div id="tiger-bet-amount" class="bet-amount">0</div>
+                    <div class="animal-placeholder">
+                        <img src="../img/tiger.png" alt="Tiger" class="animal-image-placeholder" />
+                    </div>
+                    <!-- Removed overlay button -->
+                    <div id="tiger-lock" class="lock-overlay hidden"></div>
+                </button>
+            </div>
+
+            <div class="coin-buttons-container" id="coin-buttons-container">
+                 <!-- Existing Coin Buttons -->
+                <div class="coin-button-wrapper">
+                    <button class="coin-button" data-amount="10">
+                        <img src="../img/coins/10.png" alt="10 Coin" class="coin-image" />
+                    </button>
+                     <span class="lock-overlay hidden"></span> <!-- Lock overlay as sibling -->
+                </div>
+                 <div class="coin-button-wrapper">
+                    <button class="coin-button" data-amount="20">
+                        <img src="../img/coins/20.png" alt="20 Coin" class="coin-image" />
+                    </button>
+                     <span class="lock-overlay hidden"></span>
+                </div>
+                <div class="coin-button-wrapper">
+                    <button class="coin-button" data-amount="50">
+                        <img src="../img/coins/50.png" alt="50 Coin" class="coin-image" />
+                    </button>
+                     <span class="lock-overlay hidden"></span>
+                </div>
+                 <div class="coin-button-wrapper">
+                    <button class="coin-button" data-amount="100">
+                        <img src="../img/coins/100.png" alt="100 Coin" class="coin-image" />
+                    </button>
+                     <span class="lock-overlay hidden"></span>
+                </div>
+                 <div class="coin-button-wrapper">
+                    <button class="coin-button" data-amount="200">
+                        <img src="../img/coins/200.png" alt="200 Coin" class="coin-image" />
+                    </button>
+                     <span class="lock-overlay hidden"></span>
+                </div>
+                 <div class="coin-button-wrapper">
+                    <button class="coin-button" data-amount="500">
+                        <img src="../img/coins/500.png" alt="500 Coin" class="coin-image" />
+                    </button>
+                     <span class="lock-overlay hidden"></span>
+                </div>
+            </div>
+
+            <!-- ****** ADDED SECTION for Final Bet Button and Total ****** -->
+            <div class="final-bet-area">
+                <span id="total-pending-bet">Total Bet: 0</span> <!-- Optional display -->
+                <button id="place-final-bet-button" disabled>Place Bets</button>
+            </div>
+            <!-- ****** END ADDED SECTION ****** -->
+
+        </div> <!-- End game-card -->
+    </div> <!-- End container -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
+    <script type="module" src="../js/script.js"></script> <!-- Ensure this path is correct -->
+
+
+
+    <script>
+        const apiUrl = 'http://localhost:3000/api/webapi/GetUserInfo';
+      
+        async function fetchUserInfo() {
+          try {
+            const response = await fetch(apiUrl, {
+              method: 'GET',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            });
+      
+            if (response.ok) {
+              const result = await response.json();
+              console.log('API Response:', result);
+      
+              // Check if result contains win_wallet and update the DOM
+              if (result && result.data && result.data.win_wallet !== undefined) {
+                document.getElementById('coins').textContent = result.data.win_wallet;
+              } else {
+                console.warn('win_wallet not found in response');
+              }
+            } else {
+              console.error('API Error:', response.status);
+            }
+          } catch (error) {
+            console.error('Fetch Error:', error);
+          }
+        }
+      
+        // Call the function on page load
+        window.onload = fetchUserInfo;
+      </script>
+      
+</body>
+</html>

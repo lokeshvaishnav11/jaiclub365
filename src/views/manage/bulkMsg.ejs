@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" data-change="1">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bulk SMS | Management page</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="/css/pages__parity.css">
+    <link rel="stylesheet" href="/css/vantjs.css">
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"
+        integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/admin.css">
+
+    <style>
+        .box-xs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 18px !important;
+            height: 18px;
+            border: 1px solid #bbb;
+            border-radius: 18px;
+            margin-right: 4px;
+            color: #bbb;
+            background-color: #fff;
+        }
+
+        .active {
+            background-color: #007bff !important;
+        }
+
+        /* Chrome, Safari, Edge, Opera */
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        #list-orders .item {
+            padding: 5px 0;
+            text-align: center;
+        }
+
+        .box .li[data-v-a9660e98] {
+            display: block;
+            height: 13px;
+            width: 13px;
+            border-radius: 50%;
+            margin: 0 0.13333rem;
+        }
+
+        .block-click {
+            pointer-events: none;
+        }
+
+        .van-col .goItem .c-tc .green {
+            background-color: #5cba47;
+        }
+
+        .van-col .goItem .c-tc .red {
+            background-color: #fb4e4e;
+        }
+
+        .van-col .goItem .c-tc .violet {
+            background-color: #eb43dd;
+        }
+
+        .van-col .c-tc .green {
+            color: #5cba47;
+        }
+
+        .van-col .c-tc .red {
+            color: #fb4e4e;
+        }
+
+        .van-col .c-tc .violet {
+            color: #eb43dd;
+        }
+
+        .goItem .c-row-center {
+            display: flex;
+            justify-content: center;
+        }
+
+        .game {
+            background-color: #e67e22 !important;
+            cursor: pointer;
+        }
+
+        .cursor-pointer {
+            cursor: pointer;
+        }
+
+        .active-game {
+            color: rgb(230, 126, 34);
+            font-weight: 600;
+        }
+
+        .result_box {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+
+        #result_next {
+            min-width: 120px;
+            color: black;
+            border-radius: 7px;
+            max-width: 30vw;
+        }
+
+        #phone {
+            background-color: #5cba47;
+            padding: 4px 8px;
+            color: white;
+            border-radius: 4px;
+            border: none;
+        }
+
+        #fly_now {
+            background-color: blueviolet;
+            color: white;
+            padding: 6px 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .table {
+            width: 100%;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+    <div class="wrapper">
+        <%- include('nav') %>
+            <div class="content-wrapper">
+                <div class="content-header">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1 class="m-0">Dashboard V5</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section class="content">
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="info-box mb-3">
+                                    <span class="info-box-icon bg-danger elevation-1">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </span>
+
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Recharge Less Than</span>
+                                        <input type="number" totalMoney="0" class="info-box-number" id="b"
+                                            placeholder="Enter Amount"
+                                            style="color: black;border-radius: 5px; border: 1px solid green;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix hidden-md-up"></div>
+
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="info-box mb-3">
+                                    <span class="info-box-icon elevation-1" style="background-color: #8e44ad;"><i
+                                            class="fas fa-shopping-cart"></i></span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Date From</span>
+                                        <input type="date" totalMoney="0" class="info-box-number" id="s"
+                                            placeholder="Enter Start Date"
+                                            style="color: black;border-radius: 5px; border: 1px solid green;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="info-box mb-3">
+                                    <span class="info-box-icon bg-success elevation-1">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </span>
+
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Date To</span>
+                                        <input type="date" totalMoney="0" class="info-box-number" id="l"
+                                            placeholder="Enter End Date"
+                                            style="color: black;border-radius: 5px; border: 1px solid green;">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="result_box">
+                            <div>
+                                <label for="phone">Phone: </label>
+                                <input type="text" placeholder="enter crash value" id="result_next">
+                                <button id="phone">Submit</button>
+                            </div>
+                            <div>
+                                <button id="fly_now">FLY NOW</button>
+                            </div>
+                        </div>
+
+                        <!-- Main row -->
+                        <div class="row">
+                            <!-- Left col -->
+                            <div class="col-md-12">
+                                <!-- MAP & BOX PANE -->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card direct-chat direct-chat-warning">
+                                            <div class="card-header">
+                                                <h3 class="card-title">Statistics</h3>
+
+                                                <div class="card-tools">
+                                                    <button type="button" class="btn btn-tool"
+                                                        data-card-widget="collapse">
+                                                        <i class="fas fa-minus"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-tool"
+                                                        data-card-widget="remove">
+                                                        <i class="fas fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="direct-chat-messages" style="min-height: 520px;">
+                                                    <div class="direct-chat-msg">
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>UserName</th>
+                                                                    <th>Phone</th>
+                                                                    <th>Wallet</th>
+                                                                    <th>WinWallet</th>
+                                                                    <th>Checkbox</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="tableBody">
+
+                                                            </tbody>
+                                                        </table>
+                                                        <!---->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <style>
+                            .bt-st-row {
+                                border-top: 1px solid #f4f4f4;
+                            }
+
+                            .list-orders .item {
+                                padding: 5px 0;
+                                text-align: center;
+                            }
+
+                            .goItem.dim {
+                                color: #848484;
+                            }
+
+                            .row-break {
+                                border-top: 1px solid #f4f4f4;
+                            }
+                        </style>
+
+                        <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+                        <script src="/plugins/jquery/jquery.min.js"></script>
+                        <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+                        <script src="/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+                        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+                        <script src="/dist/js/adminlte.js"></script>
+                        <script src="/plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+                        <script src="/plugins/raphael/raphael.min.js"></script>
+                        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+                        <!-- <script src="/5d/admin/main.js"></script> -->
+
+                        <script>
+                            $(document).ready(function () {
+                                $(window).on('load', function () {
+                                    setTimeout(() => {
+                                        $('#preloader').fadeOut(0);
+                                    }, 100);
+                                })
+                            })
+
+                            function handleResult() {
+                                const recharge = $('#b').val();
+                                const start = $('#s').val();
+                                const end = $('#l').val();
+
+
+                                $.ajax({
+                                    url: '/admin/filterData',
+                                    type: 'POST',
+                                    data: { recharge, start, end },
+                                    success: (response) => {
+                                        if (response.status) {
+                                            renderUsers(response.data)
+                                            console.log(response);
+                                            Swal.fire(
+                                                'Good job!',
+                                                'You clicked the button!',
+                                                'success'
+                                            );
+                                        }
+                                        else {
+                                            Swal.fire({
+                                                icon: 'error',
+                                                title: response.message,
+                                            });
+                                        }
+                                    },
+                                    error: (error) => {
+                                        console.error('Error:', error);
+                                    }
+
+                                });
+
+                            }
+
+                            $('#b, #s, #l').keydown(function (event) {
+
+                                if (event.keyCode === 13 || event.which === 13) {
+                                    handleResult();
+                                }
+                            });
+
+                            let selectedPhones = [];
+
+                            function renderUsers(data) {
+                                let tbody = $('.tableBody');
+                                tbody.empty();
+
+                                data.forEach((val, index) => {
+                                    let row = `
+                                    <tr>
+                                        <td>${val.name_user}</td>
+                                        <td>${val.phone}</td>
+                                        <td>${val.money}</td>
+                                        <td>${val.win_wallet}</td>
+                                        <td>
+                                            <input type="checkbox" id="smscheckbox${index}" name="smscheckbox${index}" value="${val.phone}">
+                                        </td>
+                                    </tr>
+                                `;
+                                    tbody.append(row);
+                                    const checkbox = document.getElementById('smscheckbox' + index);
+                                    checkbox.addEventListener('change', function () {
+                                        if (this.checked) {
+                                            selectedPhones.push(val.phone);
+                                        } else {
+                                            selectedPhones = selectedPhones.filter(phone => phone !== val.phone);
+                                        }
+
+                                        console.log(selectedPhones);
+                                    });
+                                });
+                            
+                            }
+
+
+                        </script>
+</body>
+
+</html>

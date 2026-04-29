@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            width: 100vw;
+            overflow-x: hidden;
+            background-color: #F7F8FF;
+            max-width: 400px;
+            margin: auto;
+            background-color: black;
+        }
+        @media (max-width:500px) {
+            body{
+                max-width: unset;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div style="background-color: white;min-height: 100vh;">
+  <div style="height: 8vh; width: 100%;display: flex;flex-direction: row;justify-content: space-evenly;align-items: center;background: white;box-shadow: 5px 10px 8px 0px rgb(0 0 0 / 8%);">
+      <i class="fa-solid fa-angle-left" onclick="window.history.back()"></i>
+      <div style="height: 8vh;width: 80%;display: flex;justify-content: center;">
+            <p style="margin-bottom: 0%;font-size: 18px;margin-top: 5%;">Partner rewards</p>
+      </div>
+  </div>
+  <div style="background-image: url(/images/inviteFriends.png);height: 17vh;width: 100%;background-repeat: no-repeat;background-size: cover;">
+      <div style="position: relative;width: 37%;top: 15%;left: 61%;font-size: 14px;font-weight: bold;">
+         Invite friends to get max rewards
+      </div>
+      <div style="position: relative;width: 30%;top: 25%;left: 61%;background-color: #FEAA57;border-radius: 25px;color: white;padding: 3px 0px;display: flex;justify-content: center;font-size: 17px;font-weight: bold;">
+        ₹1,888.00
+      </div>
+  </div>
+  <div class="mt-3" style="height: 30vh;display: flex;flex-direction: column;justify-content: space-around;align-items: center;">
+      <div style="height: 140px;width: 93%;border-radius: 8px;background: white;display: flex;justify-content: space-between;align-items: center;">
+           <div style="height: 4vh;width: 38%;display: flex;justify-content: center;align-items: center;color: #768096;">
+                Invitation count
+           </div>
+           <div style="height: 4vh;width: 10%;color: #1E2637;">
+            <%= totalCount %>
+           </div>
+      </div>
+      <div style="height: 140px;width: 93%;border-radius: 8px;background: white;display: flex;justify-content: space-between;align-items: center;">
+          <div style="height: 4vh;width: 56%;display: flex;justify-content: center;align-items: center;color: #768096;">
+             Effective Invitation count
+          </div>
+          <div style="height: 4vh;width: 10%;color: #18B660;">
+            <%= active %>
+          </div>
+      </div>
+      <div style="height: 140px;width: 93%;border-radius: 8px;background: white;display: flex;justify-content: space-between;align-items: center;">
+          <div style="height: 4vh;width: 49%;display: flex;justify-content: center;align-items: center;  color: #768096;">
+             Invitation total bonus 
+          </div>
+          <div style="height: 4vh;width: 19%;color: #FB5B5B;">
+             ₹<%= totalAmount %>.00
+          </div>
+      </div>
+      <div style="height: 8vh;width: 93%;color: #1E2637;font-size: 15px;display: flex;justify-content: center;align-items: center; cursor: pointer;" onclick="window.location.href= '/promotion/partnerRecord'">
+          Invitation record <i class="fa-solid fa-angles-right" style="font-size: 10px;color: #1E2637;"></i>
+      </div> 
+  </div>
+  <div style="height: 140vh;display: flex;justify-content: center;">
+      <div style="background: white;width: 93%;height: 138vh;border-radius: 8px;display: flex;flex-direction: column;align-items: center;">
+          <div style="height: 140px;font-weight: bold;width: 95%;display: flex;align-items: center;">
+            <i class="fa-solid fa-book" style="color: #4781ff;font-size: 17px;"></i> Invitation rules
+          </div>
+          <div style="height: 5vh;font-size: 15px;width: 95%;">
+            If you invites player A, with in <span style="color: #FB5B5B;">10</span> Day
+          </div>
+          <div style="height: 96vh;width: 95%;border: 1px solid #F6F6F6;border-radius: 8px;">
+              <div style="height: 5vh;background-color: #4781ff; border-top-left-radius: 8px;
+                 border-top-right-radius: 8px;display: flex;flex-direction: row;justify-content: space-between;align-items: center;">
+                  <div style="height: 4vh;width: 65%;color: white;display: flex;justify-content: center;align-items: center;font-size: 15px;">
+                       When PLayer A
+                  </div>
+                  <div style="border-left: 1px solid rgb(255 255 255 / 59%);height: 3vh;width: 35%;   color: white;font-size: 15px;display: flex;justify-content: center;align-items:    center;">
+                        You get bonus
+                   </div>
+              </div>
+              <!-- //firstdeposit -->
+              <div style="height: 30vh;width: 100%;border-bottom: 1px solid #F6F6F6;display: flex;flex-direction: row;justify-content: space-between;align-items: center;">
+                  <div style="height: 30vh;width: 15%;border-right: 1px solid #F6F6F6;color: #1E2637;font-size: 11px;font-weight: bold;display: flex;justify-content: center;align-items: center;">
+                    1st deposit
+                  </div>
+                  <div style="height: 30vh;width: 50%;border-right: 1px solid #F6F6F6;display: flex;flex-direction: column;justify-content: space-between;">
+                         <div style="height: 140px;width: 100%;color: #768096;font-size: 12px;display: flex;flex-direction: column;justify-content: center;align-items: center;line-height: 11px;">
+                             <div>₹100≤Amount&lt;₹300 </div> 
+                             <div>and Turnover≥₹300</div>
+                         </div>
+                         <div style="height: 140px;width: 100%;background-color: #F6F6F6;color: #768096;font-size: 12px;display: flex;flex-direction: column;justify-content: center;align-items: center;line-height: 11px;">
+                             <div>₹300≤Amount&lt;₹1,000 </div> 
+                             <div>and Turnover≥₹1,500</div>
+                         </div>
+                         <div style="height: 140px;width: 100%;color: #768096;font-size: 12px;display: flex;flex-direction: column;justify-content: center;align-items: center;line-height: 11px;">
+                             <div>₹1,000≤Amount&lt;₹2,000 </div> 
+                             <div>and Turnover≥₹5,000</div>
+                         </div>
+                         <div style="height: 140px;width: 100%;background-color: #F6F6F6;color: #768096;font-size: 12px;display: flex;flex-direction: column;justify-content: center;align-items: center;line-height: 11px;">
+                             <div>₹2,000≤Amount&lt;₹5,000 </div> 
+                             <div>and Turnover≥₹10,000</div>
+                         </div>
+                         <div style="height: 140px;width: 100%;color: #768096;font-size: 12px;display: flex;flex-direction: column;justify-content: center;align-items: center;line-height: 11px;">
+                              <div>Amount≥₹5,000 </div> 
+                              <div>and Turnover≥₹25,000</div>
+                         </div>
+                  </div>
+                  <div style="height: 30vh;width: 35%;display: flex;flex-direction: column;justify-content: space-between;">
+                     <div style="height: 140px;width: 100%;color: #FB5B5B;display: flex;justify-content: center;align-items: center;font-size: 12px;font-weight: bold;">
+                         ₹20
+                     </div>
+                     <div style="height: 140px;width: 100%;background-color: #F6F6F6;color: #FB5B5B;display: flex;justify-content: center;align-items: center;font-size: 12px;font-weight: bold;">
+                         ₹58
+                     </div>
+                     <div style="height: 140px;width: 100%;color: #FB5B5B;display: flex;justify-content: center;align-items: center;font-size: 12px;font-weight: bold;">
+                         ₹88
+                     </div>
+                     <div style="height: 140px;width: 100%;background-color: #F6F6F6;color: #FB5B5B;display: flex;justify-content: center;align-items: center;font-size: 12px;font-weight: bold;">
+                          ₹128
+                     </div>
+                     <div style="height: 140px;width: 100%;color: #FB5B5B;display: flex;justify-content: center;align-items: center;font-size: 12px;font-weight: bold;">
+                         ₹218
+                     </div>
+                   </div>
+              </div>
+                <!-- //seconddeposit -->
+              <div style="height: 30vh;width: 100%;border-bottom: 1px solid #F6F6F6;display: flex;flex-direction: row;justify-content: space-between;align-items: center;">
+                <div style="height: 30vh;width: 15%;border-right: 1px solid #F6F6F6;color: #1E2637;font-size: 11px;font-weight: bold;display: flex;justify-content: center;align-items: center;">
+                  2nd deposit
+                </div>
+                <div style="height: 30vh;width: 50%;border-right: 1px solid #F6F6F6;display: flex;flex-direction: column;justify-content: space-between;">
+                       <div style="height: 140px;width: 100%;color: #768096;font-size: 12px;display: flex;flex-direction: column;justify-content: center;align-items: center;line-height: 11px;">
+                           <div>₹300≤Amount&lt;₹1,000 </div> 
+                           <div>and Turnover≥₹3,000</div>
+                       </div>
+                       <div style="height: 140px;width: 100%;background-color: #F6F6F6;color: #768096;font-size: 12px;display: flex;flex-direction: column;justify-content: center;align-items: center;line-height: 11px;">
+                           <div>₹1,000≤Amount&lt;₹2,000 </div> 
+                           <div>and Turnover≥₹10,000</div>
+                       </div>
+                       <div style="height: 140px;width: 100%;color: #768096;font-size: 12px;display: flex;flex-direction: column;justify-content: center;align-items: center;line-height: 11px;">
+                           <div>₹2,000≤Amount&lt;₹5,000 </div> 
+                           <div>and Turnover≥₹20,000</div>
+                       </div>
+                       <div style="height: 140px;width: 100%;background-color: #F6F6F6;color: #768096;font-size: 12px;display: flex;flex-direction: column;justify-content: center;align-items: center;line-height: 11px;">
+                           <div>₹5,000 ≤Amount&lt;₹10,000 </div> 
+                           <div>and Turnover≥₹50,000</div>
+                       </div>
+                       <div style="height: 140px;width: 100%;color: #768096;font-size: 12px;display: flex;flex-direction: column;justify-content: center;align-items: center;line-height: 11px;">
+                            <div>Amount≥₹10,000 </div> 
+                            <div>and Turnover≥₹80,000</div>
+                       </div>
+                </div>
+                <div style="height: 30vh;width: 35%;display: flex;flex-direction: column;justify-content: space-between;">
+                   <div style="height: 140px;width: 100%;color: #FB5B5B;display: flex;justify-content: center;align-items: center;font-size: 12px;font-weight: bold;">
+                       ₹20
+                   </div>
+                   <div style="height: 140px;width: 100%;background-color: #F6F6F6;color: #FB5B5B;display: flex;justify-content: center;align-items: center;font-size: 12px;font-weight: bold;">
+                       ₹58
+                   </div>
+                   <div style="height: 140px;width: 100%;color: #FB5B5B;display: flex;justify-content: center;align-items: center;font-size: 12px;font-weight: bold;">
+                       ₹88
+                   </div>
+                   <div style="height: 140px;width: 100%;background-color: #F6F6F6;color: #FB5B5B;display: flex;justify-content: center;align-items: center;font-size: 12px;font-weight: bold;">
+                        ₹128
+                   </div>
+                   <div style="height: 140px;width: 100%;color: #FB5B5B;display: flex;justify-content: center;align-items: center;font-size: 12px;font-weight: bold;">
+                       ₹218
+                   </div>
+                 </div>
+            </div>
+               <!-- //thirddeposit -->
+               <div style="height: 30vh;width: 100%;display: flex;flex-direction: row;justify-content: space-between;align-items: center;">
+                <div style="height: 30vh;width: 15%;border-right: 1px solid #F6F6F6;color: #1E2637;font-size: 11px;font-weight: bold;display: flex;justify-content: center;align-items: center;">
+                  3rd deposit
+                </div>
+                <div style="height: 30vh;width: 50%;border-right: 1px solid #F6F6F6;display: flex;flex-direction: column;justify-content: space-between;">
+                       <div style="height: 140px;width: 100%;color: #768096;font-size: 12px;display: flex;flex-direction: column;justify-content: center;align-items: center;line-height: 11px;">
+                           <div>₹1,000≤Amount&lt;₹5,000 </div> 
+                           <div>and Turnover≥₹15,000</div>
+                       </div>
+                       <div style="height: 140px;width: 100%;background-color: #F6F6F6;color: #768096;font-size: 12px;display: flex;flex-direction: column;justify-content: center;align-items: center;line-height: 11px;">
+                           <div>₹5,000≤Amount&lt;₹10,000 </div> 
+                           <div>and Turnover≥₹75,000</div>
+                       </div>
+                       <div style="height: 140px;width: 100%;color: #768096;font-size: 12px;display: flex;flex-direction: column;justify-content: center;align-items: center;line-height: 11px;">
+                           <div>₹10,000≤Amount&lt;₹20,000 </div> 
+                           <div>and Turnover≥₹1,00,000</div>
+                       </div>
+                       <div style="height: 140px;width: 100%;background-color: #F6F6F6;color: #768096;font-size: 12px;display: flex;flex-direction: column;justify-content: center;align-items: center;line-height: 11px;">
+                           <div>₹20,000≤Amount&lt;₹50,000 </div> 
+                           <div>and Turnover≥₹1,50,000</div>
+                       </div>
+                       <div style="height: 140px;width: 100%;color: #768096;font-size: 12px;display: flex;flex-direction: column;justify-content: center;align-items: center;line-height: 11px;">
+                            <div>Amount≥₹50,000 </div> 
+                            <div>and Turnover≥₹2,00,000</div>
+                       </div>
+                </div>
+                <div style="height: 30vh;width: 35%;display: flex;flex-direction: column;justify-content: space-between;">
+                   <div style="height: 140px;width: 100%;color: #FB5B5B;display: flex;justify-content: center;align-items: center;font-size: 12px;font-weight: bold;">
+                       ₹20
+                   </div>
+                   <div style="height: 140px;width: 100%;background-color: #F6F6F6;color: #FB5B5B;display: flex;justify-content: center;align-items: center;font-size: 12px;font-weight: bold;">
+                       ₹58
+                   </div>
+                   <div style="height: 140px;width: 100%;color: #FB5B5B;display: flex;justify-content: center;align-items: center;font-size: 12px;font-weight: bold;">
+                       ₹88
+                   </div>
+                   <div style="height: 140px;width: 100%;background-color: #F6F6F6;color: #FB5B5B;display: flex;justify-content: center;align-items: center;font-size: 12px;font-weight: bold;">
+                        ₹128
+                   </div>
+                   <div style="height: 140px;width: 100%;color: #FB5B5B;display: flex;justify-content: center;align-items: center;font-size: 12px;font-weight: bold;">
+                       ₹218
+                   </div>
+                 </div>
+            </div>
+          </div>
+          <div style="height: 4vh;width: 93%;font-size: 12px;font-weight: bold;color: #FB5B5B;">
+              *Each deposit can only get one bonus.
+          </div>
+          <div style="height: 8vh;width: 93%;color: #768096;font-size: 14px;line-height: 17px;">
+            <i class="fa-solid fa-gem" style="color: #4781ff;font-size: 11px;"></i> eg: 
+               Player A 1st deposit <span style="color: #FB5B5B;">₹99.00</span>  and turnover </br> <span style="color: #FB5B5B;">₹300.00</span>, you can't get bonus
+          </div>
+          <div style="height: 8vh;width: 93%;color: #768096;font-size: 14px;line-height: 17px;">
+            <i class="fa-solid fa-gem" style="color: #4781ff;font-size: 11px;"></i> the reward has no limitation, the more you invited the more rewards you will get it
+          </div>
+          <div style="height: 8vh;width: 93%;color: #768096;font-size: 14px;line-height: 17px;">
+            <i class="fa-solid fa-gem" style="color: #4781ff;font-size: 11px;"></i> If the conditions are met the rewards will be automatically credited to player's balance
+          </div>
+      </div>
+  </div>
+</div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
