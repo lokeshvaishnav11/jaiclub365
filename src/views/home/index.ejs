@@ -60,6 +60,15 @@
     <script crossorigin
       src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 
+    <!-- Swiper CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <!--====== Material Design Icons CSS ======-->
     <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Oswald:wght@200;300;400&display=swap" rel="stylesheet"> -->
 
@@ -931,6 +940,8 @@
       font-size: 14px;
       letter-spacing: 1px;
     }
+
+   
   </style>
 
     <!-- ========== EMBEDDED CSS END ========== -->
@@ -945,6 +956,8 @@
 
   gtag('config', 'G-99RTD5DZML');
 </script>
+
+
 
   <body>
     <!-- =============================== -->
@@ -981,196 +994,32 @@
           />
         </div>
         <div data-v-6666ec94="" class="purple-home__nav-auth">
-          <button data-v-6666ec94="" class="purple-home__nav-auth__login" id="openLoginPopupBtn" data-v-6666ec94>
+          <button data-v-6666ec94="" class="purple-home__nav-auth__login" onclick="window.location.href='/login'" data-v-6666ec94>
             Login</button
-          ><button data-v-6666ec94="" class="purple-home__nav-auth__register" id="openRegisterPopupBtn"  data-v-6666ec94>
+          ><button data-v-6666ec94="" class="purple-home__nav-auth__register" onclick="window.location.href='/register'"  data-v-6666ec94>
             Register
           </button>
         </div>
       </div>
          <% } %>
       <!-- 头部轮播图 -->
-      <div data-v-3ad7aed7="" data-v-6666ec94="" class="swiper_box">
-        <div
-          data-v-3ad7aed7=""
-          class="swiper swiper-initialized swiper-horizontal swiper-pointer-events my-swipe"
-        >
-          <div
-            class="swiper-wrapper"
-            style="
-              transform: translate3d(-776px, 0px, 0px);
-              transition-duration: 0ms;
-            "
-          >
-            <div
-              class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate"
-              data-swiper-slide-index="9"
-              style="width: 368px; margin-right: 20px"
-            >
-              <img
-                data-v-3ad7aed7=""
-                class="ar-lazyload"
-                data-origin="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260329222202iyvc.jpg"
-              />
-            </div>
-            <div
-              data-v-3ad7aed7=""
-              class="swiper-slide swiper-slide-prev"
-              data-swiper-slide-index="0"
-              style="width: 368px; margin-right: 20px"
-            >
-              <img
-                data-v-3ad7aed7=""
-                class=""
-                data-origin="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260328165751seps.jpg"
-                src="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260328165751seps.jpg"
-              />
-            </div>
-            <div
-              data-v-3ad7aed7=""
-              class="swiper-slide swiper-slide-active"
-              data-swiper-slide-index="1"
-              style="width: 368px; margin-right: 20px"
-            >
-              <img
-                data-v-3ad7aed7=""
-                class=""
-                data-origin="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260328165613cgpq.jpg"
-                src="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260328165613cgpq.jpg"
-              />
-            </div>
-            <div
-              data-v-3ad7aed7=""
-              class="swiper-slide swiper-slide-next"
-              data-swiper-slide-index="2"
-              style="width: 368px; margin-right: 20px"
-            >
-              <img
-                data-v-3ad7aed7=""
-                class=""
-                data-origin="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260329220526avv6.jpg"
-                src="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260329220526avv6.jpg"
-              />
-            </div>
-            <div
-              data-v-3ad7aed7=""
-              class="swiper-slide"
-              data-swiper-slide-index="3"
-              style="width: 368px; margin-right: 20px"
-            >
-              <img
-                data-v-3ad7aed7=""
-                class=""
-                data-origin="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260328165737pj8m.jpg"
-                src="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260328165737pj8m.jpg"
-              />
-            </div>
-            <div
-              data-v-3ad7aed7=""
-              class="swiper-slide"
-              data-swiper-slide-index="4"
-              style="width: 368px; margin-right: 20px"
-            >
-              <img
-                data-v-3ad7aed7=""
-                class=""
-                data-origin="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_2026032922084392lt.jpg"
-                src="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_2026032922084392lt.jpg"
-              />
-            </div>
-            <div
-              data-v-3ad7aed7=""
-              class="swiper-slide"
-              data-swiper-slide-index="5"
-              style="width: 368px; margin-right: 20px"
-            >
-              <img
-                data-v-3ad7aed7=""
-                class=""
-                data-origin="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_202604232203507sx7.jpg"
-                src="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_202604232203507sx7.jpg"
-              />
-            </div>
-            <div
-              data-v-3ad7aed7=""
-              class="swiper-slide"
-              data-swiper-slide-index="6"
-              style="width: 368px; margin-right: 20px"
-            >
-              <img
-                data-v-3ad7aed7=""
-                class=""
-                data-origin="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_202603292214229onc.jpg"
-                src="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_202603292214229onc.jpg"
-              />
-            </div>
-            <div
-              data-v-3ad7aed7=""
-              class="swiper-slide"
-              data-swiper-slide-index="7"
-              style="width: 368px; margin-right: 20px"
-            >
-              <img
-                data-v-3ad7aed7=""
-                class=""
-                data-origin="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260329220946t17w.jpg"
-                src="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260329220946t17w.jpg"
-              />
-            </div>
-            <div
-              data-v-3ad7aed7=""
-              class="swiper-slide"
-              data-swiper-slide-index="8"
-              style="width: 368px; margin-right: 20px"
-            >
-              <img
-                data-v-3ad7aed7=""
-                class=""
-                data-origin="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_2026032922212632fe.jpg"
-                src="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_2026032922212632fe.jpg"
-              />
-            </div>
-            <div
-              data-v-3ad7aed7=""
-              class="swiper-slide"
-              data-swiper-slide-index="9"
-              style="width: 368px; margin-right: 20px"
-            >
-              <img
-                data-v-3ad7aed7=""
-                class=""
-                data-origin="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260329222202iyvc.jpg"
-                src="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260329222202iyvc.jpg"
-              />
-            </div>
-            <div
-              class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev swiper-slide-duplicate"
-              data-swiper-slide-index="0"
-              style="width: 368px; margin-right: 20px"
-            >
-              <img
-                data-v-3ad7aed7=""
-                class=""
-                data-origin="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260328165751seps.jpg"
-                src="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260328165751seps.jpg"
-              />
-            </div>
-          </div>
-          <!----><!----><!---->
-        </div>
-        <div data-v-3ad7aed7="" class="swiper-button">
-          <span data-v-3ad7aed7="" class=""></span
-          ><span data-v-3ad7aed7="" class=""></span
-          ><span data-v-3ad7aed7="" class="active"></span
-          ><span data-v-3ad7aed7="" class=""></span
-          ><span data-v-3ad7aed7="" class=""></span
-          ><span data-v-3ad7aed7="" class=""></span
-          ><span data-v-3ad7aed7="" class=""></span
-          ><span data-v-3ad7aed7="" class=""></span
-          ><span data-v-3ad7aed7="" class=""></span
-          ><span data-v-3ad7aed7="" class=""></span>
-        </div>
-      </div>
+
+    <%- include("bestswiper", {
+  images: [
+    "https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260328165751seps.jpg",
+    "https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260328165613cgpq.jpg",
+    "https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260329220526avv6.jpg",
+    "https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260328165737pj8m.jpg",
+    "https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_2026032922084392lt.jpg",
+    "https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_202604232203507sx7.jpg",
+    "https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_202603292214229onc.jpg",
+    "https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260329220946t17w.jpg",
+    "https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_2026032922212632fe.jpg",
+    "https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260329222202iyvc.jpg"
+  ]
+}) %>
+     
+      
       <!-- 滚动通知栏 -->
       <div data-v-6666ec94="" class="noticeBar__container">
         <img

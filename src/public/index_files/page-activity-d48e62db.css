@@ -945,11 +945,11 @@
     color: #666;
     text-align: center;
     line-height: 1.17333rem;
-    border: .01333rem solid #fff;
-    background: #fff;
+    /* border: .01333rem solid #fff; */
+    background: #22224B;
     outline: none;
     border-radius: .26667rem;
-    box-shadow: 0 .05333rem .21333rem #d0d0ed5c
+    /* box-shadow: 0 .05333rem .21333rem #d0d0ed5c */
 }
 
 .dropdown__value[data-v-6f85c91a] {

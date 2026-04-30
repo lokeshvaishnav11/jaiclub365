@@ -63,7 +63,9 @@
     padding: .36rem .34667rem;
     font-size: .37333rem;
     border: none;
-    border-radius: .26667rem
+    border-radius: .26667rem;
+    color: #fff;
+    background: #22224B;
 }
 
 .register__container-remember[data-v-23d378a6] {
@@ -113,15 +115,15 @@
 .register__container-button button[data-v-23d378a6] {
      width: 7.73333rem;
     height: 1.06667rem;
-    color: #fff;
+    color: #000000;
     font-size: .48rem;
     font-weight: 700;
     letter-spacing: .05333rem;
     text-shadow: 0 .05333rem .02667rem #ffba00;
     border-radius: 1.06667rem;
     border: none;
-    background: -webkit-linear-gradient(177.63deg,#ffba00  1.68%,#f49015 95.19%);
-    background: linear-gradient(272.37deg,#ffba00 1.68%,#f49015 95.19%);
+    background: -webkit-linear-gradient(90deg, #FB8466 0%, #BD5BD4 33%, #7473FA 66%, #53B2FA 100%);
+    background: linear-gradient(90deg, #FB8466 0%, #BD5BD4 33%, #7473FA 66%, #53B2FA 100%);
     box-shadow: 0 .05333rem #ffba00;
     display: -webkit-box;
     display: -webkit-flex;

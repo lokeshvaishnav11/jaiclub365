@@ -522,7 +522,7 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
 html,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
     padding: 0;
     margin: 0;
-    color: #292929;
+    color: #ffffff;
     font: inherit;
     font-size: 100%;
     vertical-align: baseline;
@@ -1384,7 +1384,7 @@ textarea {
 .navbar__content[data-v-58c5e826] {
  background: linear-gradient(to right, #4781ff, #59adff);
     position: relative;
-    background: #ffba00;
+    background: #22224B;
     display: -webkit-box;
     display: -webkit-flex;
     display: flex;

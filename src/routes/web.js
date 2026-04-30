@@ -90,8 +90,8 @@ router.post('/admin/manager/settings/increaseWallet',adminController.middlewareA
 
    // page account
    router.get("/keFuMenu", accountController.keFuMenu)
-  //  router.get("/login", accountController.loginPage)
-  //  router.get("/register", accountController.registerPage)
+   router.get("/login", accountController.loginPage)
+   router.get("/register", accountController.registerPage)
   //  router.get("/forgot", accountController.forgotPage)
    router.post("/api/sent/otp/verify", accountController.verifyCode)
    router.post("/api/sent/otp/verify/reset", accountController.verifyCodePass)

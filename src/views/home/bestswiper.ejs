@@ -1,0 +1,70 @@
+<!-- Swiper CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<style>
+  .mySwiper {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+  }
+
+  .mySwiper .swiper-slide img {
+    width: 100%;
+    /* height: 200px; */
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .swiper-pagination-bullet {
+    background: #ccc;
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #007aff;
+  }
+</style>
+
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    
+    <% (images || []).forEach((img)=> { %>
+      <div class="swiper-slide">
+        <img src="<%= img %>" />
+      </div>
+    <% }) %>
+
+  </div>
+
+  <div class="swiper-pagination"></div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (!window.mySwiperInstance) {
+      window.mySwiperInstance = new Swiper(".mySwiper", {
+        loop: true,
+
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+
+        slidesPerView: 1,
+        spaceBetween: 20,
+        speed: 800,
+      });
+    }
+  });
+</script>

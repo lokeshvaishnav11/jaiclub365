@@ -565,7 +565,9 @@
     padding: .36rem .34667rem;
     font-size: .37333rem;
     border: none;
-    border-radius: .26667rem
+    border-radius: .26667rem;
+    background: #22224B;
+    color: #ffffff;
 }
 
 .passwordInput__container-input img[data-v-57d49070] {
@@ -797,11 +799,13 @@
     height: 1.17333rem;
     margin-left: 2.66667rem;
     padding: .36rem .34667rem;
-    color: #888;
+    color: #ffffff;
     font-size: .37333rem;
     border: none;
     border-radius: .26667rem;
-    box-shadow: 0 .05333rem .21333rem #d0d0ed5c
+    box-shadow: 0 .05333rem .21333rem #d0d0ed5c;
+    background: #22224B;
+
 }
 
 .phoneInput__container-tips[data-v-93f53084] {
@@ -905,10 +909,10 @@
 }
 
 .signIn__container-button .active[data-v-0ce8d964] {
-    box-shadow: 0 .05333rem .02667rem #ffba00;
-    background: -webkit-linear-gradient(top,#ffba00 0%,#f49015 100%);
-    background: linear-gradient(180deg,#ffba00 0%,#f49015 100%);
-    box-shadow: 0 .05333rem #ffba00
+    /* box-shadow: 0 .05333rem .02667rem #ffba00; */
+    background: -webkit-linear-gradient(#93939D);
+    background: linear-gradient(#93939D);
+    /* box-shadow: 0 .05333rem #ffba00 */
   
 }
 
@@ -1780,8 +1784,8 @@
 }
 
 .login__container .login_container-tab .active[data-v-8752c961] {
-    border-bottom: .05333rem solid #4781ff
-  background: #f7f8ff;
+    border-bottom: .05333rem solid #4781ff;
+  /* background: #f7f8ff; */
 }
 
 .login__container .login_container-tab .active .font30[data-v-8752c961] {
