@@ -1,0 +1,2479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aviator Game</title>
+  <!-- Or your Home page title -->
+  <link rel="shortcut icon" href="/images/banners/logo.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" type="image/png" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+
+
+  <!--====== Material Design Icons CSS ======-->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Oswald:wght@200;300;400&display=swap" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <!--====== mCustomScrollbar CSS ======-->
+  <link rel="stylesheet" href="/Aviator/css/jquery.mCustomScrollbar.min.css" />
+
+  <!--====== Pretty Checkbox CSS ======-->
+  <link rel="stylesheet" href="Aviator/css/pretty-checkbox.min.css" />
+  <!--====== Cuntry Selection CSS ======-->
+  <link rel="stylesheet" href="Aviator/css/niceCountryInput.css" />
+  <link rel="stylesheet" type="text/css" href="Aviator/css/jquery.ccpicker.css">
+
+  <!--====== Bootstrap CSS ======-->
+  <link rel="stylesheet" href="/Aviator/css/bootstrap.css" />
+
+  <!--====== Owl Carousel CSS ======-->
+  <link rel="stylesheet" href="Aviator/css/owl.carousel.min.css" />
+
+  <!--====== Style CSS ======-->
+  <link rel="stylesheet" href="/Aviator/css/style.css" />
+
+  <!-- ====== Toastr CSS ====== -->
+  <link rel="stylesheet" href="/Aviator/css/toastr.min.css" />
+
+  <!-- ====== Datatable CSS ====== -->
+  <link rel="stylesheet" href="/Aviator/css/dataTables.bootstrap5.min.css" />
+  <link rel="stylesheet" href="/Aviator/css/responsive.dataTables.min.css" />
+  <link rel="stylesheet" href="/Aviator/css/newhome.css" />
+
+
+
+
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+
+  <!--====== Material Design Icons CSS ======-->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Oswald:wght@200;300;400&display=swap" rel="stylesheet"> -->
+
+  <!-- ========== EMBEDDED CSS FOR POPUP AND CORE STYLES ========== -->
+  <style>
+    /* --- Your Existing home.ejs styles --- */
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif;
+      background-color: #0b1a2e;
+      color: #e2e8f0;
+      line-height: 1.5;
+      overflow-x: hidden;
+      /* Prevent horizontal scroll */
+    }
+
+    /* Additional fixes to prevent horizontal scrolling */
+    html {
+      overflow-x: hidden;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .container,
+    .container-fluid {
+      max-width: 100% !important;
+      overflow-x: hidden;
+    }
+
+    .row {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 15px;
+      background-color: #1D4268;
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .header img {
+      height: 28px;
+    }
+
+    .header-buttons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .deposit-btn,
+    .header-auth-btn {
+      background-color: #ddb40c;
+      padding: 10px 14px;
+      border-radius: 29px;
+      color: #1a202c;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      font-size: 10px;
+      line-height: 1.4;
+      white-space: nowrap;
+      transition: background-color 0.2s ease;
+    }
+
+    .deposit-btn:hover,
+    .header-auth-btn:hover {
+      background-color: #c9a30a;
+    }
+
+    .menu-icon {
+      font-size: 24px;
+      cursor: pointer;
+      margin-left: 15px;
+      color: #cbd5e0;
+    }
+
+    .support-btn {
+      background: linear-gradient(90deg, #3e3505, #574333);
+      color: white;
+      padding: 10px;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .promo-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .play-now-btn {
+      display: block;
+      width: fit-content;
+      margin: 25px auto;
+      background-color: #ea580c;
+      color: white;
+      padding: 10px 30px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 15px;
+      text-transform: uppercase;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.2s ease;
+    }
+
+    .play-now-btn:hover {
+      background-color: #c2410c;
+    }
+
+    .withdrawal-box {
+      background-color: rgba(45, 55, 72, 0.8);
+      border: 1px solid #4a5568;
+      color: #e2e8f0;
+      margin: 0 15px;
+      padding: 12px 15px;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: bold;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(3px);
+    }
+
+    .withdrawal-box div:first-child {
+      font-size: 13px;
+      margin-bottom: 4px;
+      color: #a0aec0;
+    }
+
+    .withdrawal-box div:nth-child(2) {
+      font-size: 11px;
+      color: #718096;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .withdrawal-box span {
+      color: #68d391;
+      font-size: 16px;
+      display: block;
+      font-weight: 600;
+    }
+
+    .footer {
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    .footer img {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 200px;
+      height: 100%;
+      background-color: #1f2937;
+      color: white;
+      transition: right 0.3s ease-in-out;
+      padding: 20px;
+      z-index: 1001;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.4);
+      overflow-y: auto;
+    }
+
+    .sidebar.open {
+      right: 0;
+    }
+
+    .sidebar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #4a5568;
+    }
+
+    .sidebar-header img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .sidebar-header .close-btn {
+      font-size: 28px;
+      color: #a0aec0;
+      cursor: pointer;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 10px;
+      margin-bottom: 5px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      color: #cbd5e0;
+      font-size: 14px;
+      transition: background-color 0.2s ease;
+    }
+
+    .menu-item:hover {
+      background-color: #2d3748;
+      color: #ffffff;
+    }
+
+    /* --- Popup Overlay and Content Box CSS --- */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(17, 24, 39, 0.8);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+
+    .popup-content {
+      /* background-color: #011142; */
+      color: #ffffff;
+      padding: 20px 25px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      position: relative;
+      width: 100%;
+      max-width: 370px;
+      max-height: 95vh;
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
+
+    .popup-close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #e5e7eb;
+      border: none;
+      font-size: 18px;
+      font-weight: bold;
+      color: #4b5563;
+      cursor: pointer;
+      padding: 0;
+      width: 26px;
+      height: 26px;
+      line-height: 26px;
+      text-align: center;
+      border-radius: 50%;
+    }
+
+    .popup-close-btn:hover {
+      background: #d1d5db;
+      color: #1f2937;
+    }
+
+    /* --- Styles scoped to ONLY apply INSIDE the popup --- */
+    #loginPopupOverlay .popup-content .form-view {
+      display: none;
+    }
+
+    #loginPopupOverlay .popup-content .form-view.active {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #loginPopupOverlay .popup-content .login__container-form,
+    #loginPopupOverlay .popup-content .resgister__C-form,
+    #loginPopupOverlay .popup-content .forgot-box .mian-from {
+      padding-top: 0;
+    }
+
+    /* Apply to all form containers */
+    #loginPopupOverlay .popup-content .login_container-tab {
+      margin-bottom: 25px;
+      padding-bottom: 10px;
+      text-align: center;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    #loginPopupOverlay .popup-content .login_container-tab .tab.active {
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    #loginPopupOverlay .popup-content .font30 {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    /* Popup Title */
+
+    /* Input Containers */
+    #loginPopupOverlay .popup-content .phoneInput__container,
+    #loginPopupOverlay .popup-content .Name__container,
+    #loginPopupOverlay .popup-content .Email__container,
+    #loginPopupOverlay .popup-content .passwordInput__container,
+    #loginPopupOverlay .popup-content .register__container-invitation,
+    #loginPopupOverlay .popup-content .forgot-box .item {
+      margin-bottom: 16px;
+    }
+
+    #loginPopupOverlay .popup-content .forgot-box .item.first {
+      margin-bottom: 16px;
+    }
+
+    /* Labels */
+
+    #loginPopupOverlay .popup-content .phoneInput__container-label,
+    #loginPopupOverlay .popup-content .input-label,
+    #loginPopupOverlay .popup-content .Name__container-label,
+    #loginPopupOverlay .popup-content .Email__container-label,
+    #loginPopupOverlay .popup-content .passwordInput__container-label,
+    #loginPopupOverlay .popup-content .register__container-invitation__label,
+    #loginPopupOverlay .popup-content .forgot-box .lab {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+      font-size: 12px;
+      color: #fdfefe;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    #loginPopupOverlay .popup-content .forgot-box .lab {
+      text-transform: none;
+      letter-spacing: normal;
+    }
+
+    #loginPopupOverlay .popup-content .phoneInput__container-label img,
+    #loginPopupOverlay .popup-content .passwordInput__container-label img,
+    #loginPopupOverlay .popup-content .register__container-invitation__label img,
+    #loginPopupOverlay .popup-content .forgot-box .item img {
+      width: 14px;
+      height: 14px;
+      margin-right: 6px;
+      opacity: 0.6;
+      vertical-align: middle;
+    }
+
+    #loginPopupOverlay .popup-content .forgot-box .item .img,
+    #loginPopupOverlay .popup-content .forgot-box .item .number {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      padding-right: 8px;
+    }
+
+    #loginPopupOverlay .popup-content .forgot-box .item .number {
+      background-color: #e5e7eb;
+      padding: 10px;
+      border-right: 1px solid #d1d5db;
+      border-radius: 6px 0 0 6px;
+      margin-right: -1px;
+      font-size: 14px;
+      color: #374151;
+    }
+
+    /* Input Wrappers */
+    #loginPopupOverlay .popup-content .phoneInput__container-input,
+    #loginPopupOverlay .popup-content .input__container-input,
+    #loginPopupOverlay .popup-content .Name__container-input,
+    #loginPopupOverlay .popup-content .Email__container-input,
+    #loginPopupOverlay .popup-content .passwordInput__container-input,
+    #loginPopupOverlay .popup-content .register__container-invitation__input,
+    #loginPopupOverlay .popup-content .forgot-box .item {
+      position: relative;
+      display: flex;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      overflow: hidden;
+      background-color: #f9fafb;
+      align-items: center;
+    }
+
+    #loginPopupOverlay .popup-content .forgot-box .item input {
+      border: none !important;
+      background-color: transparent;
+    }
+
+    #loginPopupOverlay .popup-content .phoneInput__container-input:focus-within,
+    #loginPopupOverlay .popup-content .Name__container-input:focus-within,
+    #loginPopupOverlay .popup-content .Email__container-input:focus-within,
+    #loginPopupOverlay .popup-content .passwordInput__container-input:focus-within,
+    #loginPopupOverlay .popup-content .register__container-invitation__input:focus-within,
+    #loginPopupOverlay .popup-content .forgot-box .item:focus-within {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+    }
+
+    #loginPopupOverlay .popup-content .register__container-invitation__input input,
+    #loginPopupOverlay .popup-content .forgot-box .item input {
+      flex-grow: 1;
+    }
+
+    #loginPopupOverlay .popup-content .dropdown {
+      padding: 10px;
+      background-color: #e5e7eb;
+      border-right: 1px solid #d1d5db;
+      flex-shrink: 0;
+    }
+
+    #loginPopupOverlay .popup-content .dropdown__value {
+      cursor: default;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      color: #374151;
+    }
+
+    #loginPopupOverlay .popup-content .dropdown__value span {
+      margin-right: 5px;
+    }
+
+    #loginPopupOverlay .popup-content .dropdown__value i {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    /* Inputs */
+    #loginPopupOverlay .popup-content input[type="text"],
+    #loginPopupOverlay .popup-content input[type="password"],
+    #loginPopupOverlay .popup-content input[type="number"] {
+      flex-grow: 1;
+      padding: 10px 12px;
+      border: none;
+      font-size: 14px;
+      box-sizing: border-box;
+      outline: none;
+      width: 100%;
+      color: #050606;
+      background-color: transparent;
+    }
+
+    #loginPopupOverlay .popup-content input::placeholder {
+      color: #9ca3af;
+    }
+
+    #loginPopupOverlay .popup-content .eye {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      height: 100%;
+      padding: 0 12px;
+      display: flex;
+      align-items: center;
+      background-color: transparent;
+    }
+
+    #loginPopupOverlay .popup-content .eye img {
+      width: 18px;
+      height: auto;
+      opacity: 0.4;
+    }
+
+    /* Forgot OTP Button */
+    #loginPopupOverlay .popup-content .forgot-box .item button.otp {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 0 12px;
+      height: 38px;
+      line-height: 38px;
+      flex-shrink: 0;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 500;
+      white-space: nowrap;
+      border-radius: 0 5px 5px 0;
+      margin-left: auto;
+      transition: background-color 0.2s;
+    }
+
+    #loginPopupOverlay .popup-content .forgot-box .item button.otp:hover {
+      background: #2563eb;
+    }
+
+    #loginPopupOverlay .popup-content .forgot-box .item button.otp.block-click {
+      background: #9ca3af;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+
+    /* Checkbox Styling */
+    #loginPopupOverlay .popup-content .signIn__container-remember,
+    #loginPopupOverlay .popup-content .register__container-remember {
+      margin-bottom: 18px;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    #loginPopupOverlay .popup-content .van-checkbox {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    #loginPopupOverlay .popup-content .van-checkbox__icon {
+      width: 16px;
+      height: 16px;
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      margin-right: 8px;
+      position: relative;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      transition: background-color 0.2s, border-color 0.2s;
+    }
+
+    #loginPopupOverlay .popup-content .van-checkbox__icon--checked {
+      background-color: #3b82f6;
+      border-color: #3b82f6;
+    }
+
+    #loginPopupOverlay .popup-content .van-checkbox__icon i {
+      color: white;
+      font-size: 11px;
+      line-height: 1;
+      display: none;
+      font-weight: bold;
+    }
+
+    #loginPopupOverlay .popup-content .van-checkbox__icon--checked i {
+      display: inline-block !important;
+    }
+
+    #loginPopupOverlay .popup-content .van-checkbox__label {
+      font-size: 13px;
+      color: #ffffff;
+      line-height: 1.3;
+    }
+
+    #loginPopupOverlay .popup-content .van-checkbox__label span {
+      color: #3b82f6;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    #loginPopupOverlay .popup-content .van-checkbox__label span:hover {
+      text-decoration: underline;
+    }
+
+    /* Button styling */
+    #loginPopupOverlay .popup-content .signIn__container-button,
+    #loginPopupOverlay .popup-content .register__container-button,
+    #loginPopupOverlay .popup-content .forgot-box .mian-btn {
+      margin-top: 20px;
+    }
+
+    #loginPopupOverlay .popup-content .signIn__container-button button,
+    #loginPopupOverlay .popup-content .register__container-button button,
+    #loginPopupOverlay .popup-content .register__container-button .mian-btn button,
+    #loginPopupOverlay .popup-content .forgot-box .mian-btn button {
+      width: 100%;
+      padding: 11px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    #loginPopupOverlay .popup-content .signIn__container-button button:active,
+    #loginPopupOverlay .popup-content .register__container-button button:active,
+    #loginPopupOverlay .popup-content .register__container-button .mian-btn button:active,
+    #loginPopupOverlay .popup-content .forgot-box .mian-btn button:active {
+      transform: scale(0.98);
+    }
+
+    /* Submit Buttons */
+    #loginPopupOverlay .popup-content button#popupLoginSubmitBtn,
+    #loginPopupOverlay .popup-content button#popupRegisterSubmitBtn,
+    #loginPopupOverlay .popup-content button#popupForgotSubmitBtn {
+      background-color: #0dbd18 !important;
+      box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
+    }
+
+    #loginPopupOverlay .popup-content button#popupLoginSubmitBtn:hover,
+    #loginPopupOverlay .popup-content button#popupRegisterSubmitBtn:hover,
+    #loginPopupOverlay .popup-content button#popupForgotSubmitBtn:hover {
+      background-color: #059669 !important;
+    }
+
+    /* Switch/Action Buttons */
+    #loginPopupOverlay .popup-content button.switchToRegister {
+      background-color: #fb4a04;
+      color: #fbfcfe;
+      box-shadow: 0 2px 4px rgba(245, 158, 11, 0.2);
+    }
+
+    #loginPopupOverlay .popup-content button.switchToRegister:hover {
+      background-color: #d97706;
+    }
+
+    #loginPopupOverlay .popup-content button.switchToLogin {
+      background-color: #fb4a04;
+      color: white;
+      border: none;
+      box-shadow: 0 2px 4px rgba(100, 116, 139, 0.2);
+    }
+
+    #loginPopupOverlay .popup-content button.switchToLogin:hover {
+      background-color: #d97706;
+    }
+
+    #loginPopupOverlay .popup-content button.switchToLogin .account,
+    #loginPopupOverlay .popup-content button.switchToLogin .loginin {
+      display: inline;
+      color: inherit;
+    }
+
+    #loginPopupOverlay .popup-content button.switchToLogin .loginin {
+      font-weight: bold;
+      margin-left: 5px;
+    }
+
+    /* Forgot Password Links */
+    #loginPopupOverlay .popup-content .forgetcon {
+      text-align: center;
+      margin-top: 8px;
+      margin-bottom: 15px;
+    }
+
+    #loginPopupOverlay .popup-content .forgetcon a.switchToForgot {
+      color: #f6f6f6;
+      text-decoration: none;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    /* Target link by class */
+    #loginPopupOverlay .popup-content .forgetcon a.switchToForgot:hover {
+      text-decoration: underline;
+    }
+
+    #loginPopupOverlay .popup-content .forgot-box .tip {
+      font-size: 11px;
+      color: #6b7280;
+      text-align: center;
+      margin-top: -5px;
+      margin-bottom: 15px;
+    }
+
+    #loginPopupOverlay .popup-content .forgot-box .backToLoginLink {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      /* More space */
+      font-size: 13px;
+      color: #3b82f6;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    #loginPopupOverlay .popup-content .forgot-box .backToLoginLink:hover {
+      text-decoration: underline;
+    }
+
+    /* Alert Toast */
+    #loginPopupOverlay .popup-content .alert-toast {
+      min-height: 20px;
+      margin: 15px 0 10px 0;
+      font-size: 13px;
+      color: #dc2626;
+      text-align: center;
+      font-weight: 500;
+      display: none;
+    }
+
+    #loginPopupOverlay .popup-content .alert-toast .msg {
+      padding: 8px 12px;
+      background-color: #fee2e2;
+      border: 1px solid #fecaca;
+      border-radius: 6px;
+      display: inline-block;
+      color: #b91c1c;
+    }
+
+    #loginPopupOverlay .popup-content .msg-content {
+      animation: zoom-in 0.4s ease reverse;
+    }
+
+    @keyframes zoom-in {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(0.8);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes van-rotate {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Loading Overlay Styling */
+    .van-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(17, 24, 39, 0.6);
+      backdrop-filter: blur(2px);
+      z-index: 1010;
+      display: none;
+    }
+
+    .Loading.c-row-middle-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+    }
+
+    .van-loading--circular {}
+
+    .van-loading__spinner--circular {
+      width: 36px;
+      height: 36px;
+      animation: van-rotate 0.8s linear infinite;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 400px) {
+      /* Keep existing */
+    }
+
+    .aviator-marquee {
+      width: 100%;
+      overflow: hidden;
+      background: linear-gradient(90deg, #1D4268, #316928);
+      padding: 12px 0;
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: scrollText 12s linear infinite;
+    }
+
+    .marquee-track span {
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff;
+      margin: 0 50px;
+      white-space: nowrap;
+      letter-spacing: 2px;
+    }
+
+    @keyframes scrollText {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .gaming-footer {
+      /* background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); */
+      color: #fff;
+    }
+
+    .section-title {
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .partner-card {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 30px;
+      text-align: center;
+      border-radius: 15px;
+      font-weight: bold;
+      font-size: 20px;
+      transition: 0.3s;
+      backdrop-filter: blur(10px);
+    }
+
+    .partner-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .btn-gradient {
+      background: linear-gradient(45deg, #00c6ff, #1D4268);
+      color: #fff;
+      border: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn-gradient:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 114, 255, 0.4);
+    }
+
+    .social-circle {
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 20px;
+      transition: 0.3s;
+    }
+
+    .social-circle:hover {
+      background: #00c6ff;
+      transform: scale(1.1);
+    }
+
+    .support-box {
+      background: linear-gradient(90deg, #00c6ff, #1D4268);
+      border-radius: 20px;
+    }
+
+
+
+
+
+    .aviator-card {
+      position: relative;
+      width: 220px;
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      background: #000;
+      transition: 0.4s ease;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+    }
+
+    /* Glow Border Animation */
+    .aviator-card::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: 22px;
+      background: linear-gradient(45deg, #ff0000, #ff7300, #ff0000);
+      z-index: -1;
+      animation: glowRotate 3s linear infinite;
+    }
+
+    @keyframes glowRotate {
+      0% {
+        filter: hue-rotate(0deg);
+      }
+
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+
+    .aviator-card img {
+      width: 100%;
+      display: block;
+      transition: 0.4s;
+    }
+
+    /* Zoom Effect */
+    .aviator-card:hover img {
+      transform: scale(1.08);
+    }
+
+    /* Overlay */
+    .play-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      transition: 0.4s;
+    }
+
+    .aviator-card:hover .play-overlay {
+      opacity: 1;
+    }
+
+    /* Animated Play Button */
+    .play-btn {
+      width: 70px;
+      height: 70px;
+      background: radial-gradient(circle, #ff0000, #990000);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      color: #fff;
+      animation: pulse 1.5s infinite;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.15);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .game-title {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      font-weight: bold;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+  </style>
+
+
+
+
+
+
+  <!-- ========== EMBEDDED CSS END ========== -->
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-99RTD5DZML"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-99RTD5DZML');
+</script>
+
+
+
+
+
+
+<body>
+  <!-- =============================== -->
+  <!-- Existing Home Page Content      -->
+  <!-- =============================== -->
+  <% if (money !==false) { %>
+    <%- include('headerxxx', { money, ekyc ,username}) %>
+      <% } else { %>
+        <div class="header">
+          <img src="/images/banners/logo.png" alt="Aviator Logo" />
+          <div class="header-buttons">
+            <!-- <button id="openLoginPopupBtn" class="header-auth-btn" style="background-color: #ea580c; color: white">
+            Login
+          </button> -->
+
+            <button id="openRegisterPopupBtn" class="btn btn-sm  text-white fw-semibold rounded"
+              style="background-color:#8BC34A;">
+              REGISTRATION
+            </button>
+
+            <button id="openLoginPopupBtn" class="btn btn-sm text-white fw-semibold rounded"
+              style="background-color:#2F6FA3;">
+              LOG IN
+            </button>
+
+            <!-- <button id="openRegisterPopupBtn" class="header-auth-btn" style="background-color: #ea580c; color: white">
+            Register
+          </button> -->
+          </div>
+        </div>
+        <% } %>
+
+
+          <!-- <div
+      class="support-btn"
+      onclick="window.location.href='<%= typeof telegram !== 'undefined' ? telegram : '#' %>'"
+    >
+      CUSTOMER SUPPORT
+    </div> -->
+          <div style="<%= money === false ? 'margin-top:0px;' : 'margin-top:60px;' %>">
+            <div class="aviator-marquee">
+              <div class="marquee-track">
+                <span>AVIATOR CRASH GAME</span>
+                <span>AVIATOR CRASH GAME</span>
+                <span>AVIATOR CRASH GAME</span>
+                <span>AVIATOR CRASH GAME</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: none;">
+            <div class="slider-container" style="<%= money === false ? 'margin-top:0px;' : 'margin-top:60px;' %>">
+              <div class="slider-track">
+                <img src="/images/banners/ban1.jpeg">
+                <img src="/images/banners/ban2.jpeg">
+                <img src="/images/banners/ban3.jpeg">
+                <img src="/images/banners/ban4.jpeg">
+              </div>
+
+              <!-- arrows -->
+              <button class="slider-arrow prev">‹</button>
+              <button class="slider-arrow next">›</button>
+
+              <!-- dots -->
+              <div class="slider-dots"></div>
+            </div>
+          </div>
+
+          <div style="margin-top: 20px;">
+            <h1 style="font-size:1.7rem; text-align: center;">Aviator Game</h1>
+            <p style="text-align: center;">Fly smart, cash out faster!</p>
+            <div class="cta-buttons">
+
+              <% if (money===false) { %>
+                <!-- <button class="play-now-btn" id="openLoginPopupBtnPlay">
+        Login to Play
+      </button> -->
+                <a id="openLoginPopupBtnPlay" style="font-size:0.85rem">Login</a>
+                <a id="openRegisterPopupBtnBody" style="font-size:0.85rem">Register</a>
+                <% } else { %>
+                  <!-- <button class="play-now-btn" onclick="window.location.href='/aviator'">
+        PLAY NOW
+      </button> -->
+                  <!-- <a style="font-size:0.85rem" onclick="window.location.href='/aviator'">Play Now</a> -->
+                  <a style="font-size:0.85rem" onclick="handlePlayClick()">
+                    Play Now
+                  </a>
+                  <a style="font-size:0.85rem" href="/logout">Logout</a>
+                  <% } %>
+            </div>
+
+          </div>
+
+          <div style="justify-content: center; display: flex; margin-top: 20px;">
+            <div class="aviator-card" id="aviatorCard">
+              <img src="/images/icons/aviator.gif" alt="Aviator">
+            </div>
+          </div>
+
+
+
+
+
+
+
+          <div class="page-wrapper" style="display: none;">
+
+
+
+            <main>
+
+
+
+
+
+
+
+              <header class="hero-section cyber-card">
+
+
+
+
+                <h1 style="font-size:1.7rem">Aviator Game</h1>
+                <p>Fly smart, cash out faster!</p>
+                <div class="cta-buttons">
+
+                  <% if (money===false) { %>
+                    <!-- <button class="play-now-btn" id="openLoginPopupBtnPlay">
+                Login to Play
+              </button> -->
+                    <a id="openLoginPopupBtnPlay" style="font-size:0.85rem">Login</a>
+                    <a id="openRegisterPopupBtnBody" style="font-size:0.85rem">Register</a>
+                    <% } else { %>
+                      <!-- <button class="play-now-btn" onclick="window.location.href='/aviator'">
+                PLAY NOW
+              </button> -->
+                      <a style="font-size:0.85rem" onclick="window.location.href='/aviator'">Play Now</a>
+                      <a style="font-size:0.85rem" href="/logout">Logout</a>
+                      <% } %>
+
+
+
+
+
+                </div>
+              </header>
+              <div class="main-content-grid mt-4">
+                <section class="activity-section cyber-card">
+                  <h3><i class="fas fa-trophy"></i> Live Payouts</h3>
+                  <div id="withdrawals-feed"></div>
+                </section>
+
+                <section class="payment-methods cyber-card">
+                  <h3><i class="fas fa-credit-card"></i> Secure &amp; Instant Payments</h3>
+                  <p style="color: var(--color-text-primary); max-width: 500px; margin: 1rem auto 2rem auto;">We support
+                    all major payment methods for fast and easy transactions.</p>
+                  <div class="payment-logos">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/UPI-Logo-vector.svg" alt="UPI">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Paytm_logo.png" alt="Paytm">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/PhonePe_Logo.svg" alt="PhonePe">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="Google Pay">
+                  </div>
+                </section>
+              </div>
+
+              <section class="features-section mt-5">
+                <h3 style="margin-bottom:25px">Our Digital Edge</h3>
+                <div class="features-grid">
+                  <div class="feature-card cyber-card">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Instant Deposits</h4>
+                    <p>Get straight to the action. Your deposits are processed instantly.</p>
+                  </div>
+                  <div class="feature-card cyber-card">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h4>Rapid Withdrawals</h4>
+                    <p>Your winnings, your rules. Withdraw your funds with unparalleled speed.</p>
+                  </div>
+                  <div class="feature-card cyber-card">
+                    <i class="fas fa-headset"></i>
+                    <h4>24/7 Support</h4>
+                    <p>Our support team is available around the clock to assist you.</p>
+                  </div>
+                </div>
+              </section>
+            </main>
+
+            <footer class="site-footer ">
+              <p>© 2026 1XBET AVIATOR. Please Play Responsibly.</p>
+            </footer>
+
+
+
+
+
+
+          </div>
+
+
+
+          <section class="gaming-footer py-5">
+            <div class="container">
+
+              <!-- PARTNERS -->
+              <h3 class="section-title text-center mb-4">Our Esports Partners</h3>
+
+
+
+              <div class="row g-4 justify-content-center partners-grid">
+                <!-- <div class="col-6 col-md-3">
+              <div class="partner-card">PGL</div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="partner-card">MBR</div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="partner-card">NAVI</div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="partner-card">ASTR</div>
+            </div> -->
+                <img src="https://pagogaming.com/wp-content/uploads/2024/05/spribe-logo_character.png" class="loader-logo" style="width: 230px;" alt="Logo">
+              </div>
+
+              <!-- DOWNLOAD SECTION -->
+              <div class="download-box text-center mt-5 p-4">
+                <h4 class="mb-4">Get Our Mobile App</h4>
+
+                <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+                  <a href="#" class="btn btn-gradient px-4 py-3 rounded-pill">
+                    <i class="bi bi-android"></i> Download for Android
+                  </a>
+                  <a href="#" class="btn btn-gradient px-4 py-3 rounded-pill">
+                    <i class="bi bi-apple"></i> Download for iOS
+                  </a>
+                </div>
+              </div>
+
+              <!-- SOCIAL NETWORKS -->
+              <div class="text-center mt-5">
+                <h4 class="mb-4">Connect With Us</h4>
+
+                <div class="social-icons d-flex justify-content-center gap-3">
+                  <a href="#" class="social-circle"><i class="bi bi-whatsapp"></i></a>
+                  <a href="#" class="social-circle"><i class="bi bi-facebook"></i></a>
+                  <a href="#" class="social-circle"><i class="bi bi-instagram"></i></a>
+                  <a href="#" class="social-circle"><i class="bi bi-telegram"></i></a>
+                  <a href="#" class="social-circle"><i class="bi bi-youtube"></i></a>
+                  <a href="#" class="social-circle"><i class="bi bi-twitter-x"></i></a>
+                </div>
+              </div>
+
+              <!-- SUPPORT -->
+              <div
+                class="support-box mt-5 p-4 d-flex align-items-center justify-content-between flex-column flex-md-row">
+                <div>
+                  <h5 class="mb-1">24/7 Customer Support</h5>
+                  <p class="mb-0">We’re here to answer all your questions anytime.</p>
+                </div>
+                <button class="btn btn-light rounded-pill mt-3 mt-md-0 px-4">Contact Now</button>
+              </div>
+
+              <!-- FOOTER BOTTOM -->
+              <div class="text-center mt-5 small text-light opacity-75">
+                © 2026 1XBET. All Rights Reserved.
+              </div>
+
+            </div>
+
+
+          
+
+          </section>
+          <div id="loginPopupOverlay" class="popup-overlay">
+            <div class="popup-content register-form">
+              <button class="popup-close-btn" id="closeLoginPopupBtn">×</button>
+              <div id="authFormContainer">
+                <!-- Container for ALL forms -->
+
+                <!-- 1. Login Form View -->
+                <div id="loginFormView" class="form-view active">
+                  <div class="login__container-form">
+                    <div class="login_container-tab">
+                      <div class="tab active">
+                        <div class="font30 phonefont30active">Log In</div>
+                      </div>
+                    </div>
+                    <div class="tab-content activecontent">
+                      <div class="signIn__container">
+                        <div class="phoneInput__container">
+                          <div class="phoneInput__container-label">
+                            <span>Phone number</span>
+                          </div>
+                          <div class="phoneInput__container-input">
+                            <div class="dropdown">
+                              <div class="dropdown__value">
+                                <span>+91</span><i>▼</i>
+                              </div>
+                            </div>
+                            <input type="text" name="username" placeholder="Enter 10-digit number" required
+                              pattern="\d{10}" title="10-digit phone number" />
+                          </div>
+                        </div>
+                        <div class="passwordInput__container">
+                          <div class="passwordInput__container-label">
+                            <span>Password</span>
+                          </div>
+                          <div class="passwordInput__container-input">
+                            <input id="passwordfield" type="password" placeholder="Enter Password" required />
+                            <span class="eye" onclick="showPass('passwordfield', 'eyeicon')"><img id="eyeicon"
+                                src="/index_files/eyeInvisible-2fa5c152.png" /></span>
+                          </div>
+                        </div>
+
+                        <div class="signIn__container-remember">
+                          <div class="van-checkbox login-checkbox checked" tabindex="0" aria-checked="true">
+                            <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
+                              <i>✔</i>
+                            </div>
+                            <span class="van-checkbox__label">Remember password</span>
+                          </div>
+
+                        </div>
+                        <div class="signIn__container-button">
+                          <button id="popupLoginSubmitBtn" style="border-radius: 30px">
+                            Log in
+                          </button>
+                        </div>
+                        <div class="forgetcon" style="align-items: center">
+                          <a class="switchToForgot">Forgot password?</a>
+                          <!-- Link to switch view -->
+                        </div>
+
+                        <div class="alert-toast"></div>
+                        <div class="signIn__container-button">
+                          <button class="switchToRegister" style="border-radius: 30px">
+                            Create Account
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End loginFormView -->
+
+                <!-- 2. Registration Form View -->
+                <div id="registerFormView" class="form-view " style="display: none">
+                  <div class="resgister__C-form  ">
+                    <div class="login_container-tab">
+                      <div class="tab active">
+                        <div class="font30 phonefont30active">Register</div>
+                      </div>
+                    </div>
+                    <div class="tab-content activecontent">
+                      <div class="register__container">
+                        <div class="Name__container">
+                          <div class="Name__container-label"><span>Name</span></div>
+                          <div class="Name__container-input">
+                            <input type="text" name="registerName" id="registerName" placeholder="Enter Name"
+                              title="10-digit phone number" />
+                          </div>
+                        </div>
+                        <div class="input-container" style="margin-bottom: 16px">
+                          <div class="input-label">
+                            <span>Gender</span>
+                          </div>
+
+                          <div class="">
+                            <select name="registerGender" id="registerGender" class="" required>
+                              <option value="" disabled selected class="Name__container-input">
+                                Select Gender
+                              </option>
+                              <option value="male" class="Name__container-input">Male</option>
+                              <option value="female" class="Name__container-input">Female</option>
+                              <option value="other" class="Name__container-input">Other</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="Email__container">
+                          <div class="Email__container-label"><span>Email</span></div>
+                          <div class="Email__container-input">
+                            <input type="text" name="registerEmail" id="registerEmail" placeholder="Enter Email"
+                              required />
+                          </div>
+                        </div>
+
+                        <div class="phoneInput__container">
+                          <div class="phoneInput__container-label">
+                            <span>Phone number</span>
+                          </div>
+                          <div class="phoneInput__container-input">
+                            <div class="dropdown">
+                              <div class="dropdown__value">
+                                <span>+91</span><i>▼</i>
+                              </div>
+                            </div>
+                            <input type="text" name="registerUsername" id="registerPhone"
+                              placeholder="Enter 10-digit number" required pattern="\d{10}"
+                              title="10-digit phone number" />
+                          </div>
+                        </div>
+                        <div class="passwordInput__container">
+                          <div class="passwordInput__container-label">
+                            <span>Set password</span>
+                          </div>
+                          <div class="passwordInput__container-input">
+                            <input name="registerPassword" id="registerPassword" type="password"
+                              placeholder="Enter password" required />
+                            <span class="eye" onclick="showPass('registerPassword', 'registerEyeIcon')"><img
+                                id="registerEyeIcon" src="/index_files/eyeInvisible-2fa5c152.png" /></span>
+                          </div>
+                        </div>
+                        <!-- <div class="register__container-tip" style="font-size: 11px; color: #718096; margin-top: -10px; margin-bottom: 15px;">Password must be 8+ chars with letters & numbers.</div> -->
+                        <div class="register__container-invitation">
+                          <!-- <div class="register__container-invitation__label"><img class="register__container-invitation__label-icon" src="data:image/png;base64,..."><span>Invite code</span></div>
+                                <div class="register__container-invitation__input">
+                                    <input name="invite" id="inviteCode" type="text" placeholder="Enter invitation code" required>
+                                </div> -->
+                        </div>
+                        <div class="alert-toast"></div>
+                        <!-- <div class="register__container-remember">
+                                <div class="van-checkbox register-checkbox" tabindex="0" aria-checked="false">
+                                    <div class="van-checkbox__icon van-checkbox__icon--round"><i style="display: none;">✔</i></div>
+                                    <span class="van-checkbox__label">I have read and agree <span>【Privacy Agreement】</span></span>
+                                </div>
+                            </div> -->
+                        <div class="register__container-button">
+                          <div class="mian-btn m-t-40">
+                            <button id="popupRegisterSubmitBtn">Register</button>
+                          </div>
+                          <button class="login switchToLogin">
+                            <div class="account">Have an account?</div>
+                            <div class="loginin">Login</div>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End registerFormView -->
+
+                <!-- 3. Forgot Password Form View -->
+                <div id="forgotPasswordView" class="form-view" style="display: none">
+                  <div class="forgot-box">
+                    <!-- Use container class from forgot.ejs -->
+                    <div class="login_container-tab">
+                      <div class="tab active">
+                        <div class="font30 phonefont30active">Reset Password</div>
+                      </div>
+                    </div>
+                    <div class="mian-from m-t-20">
+                      <div class="lab">Phone number:</div>
+                      <div class="item c-row c-row-center c-row-middle first">
+                        <div class="c-row number">
+                          <span class="c-row c-row-middle-center"><img height="14px" width="auto"
+                              src="/images/phone.png" class="mobile" /></span>
+                          <div class="p-l-5">+91</div>
+                        </div>
+                        <input id="forgotUsername" type="text" maxlength="10" placeholder="Enter Phone Number" required
+                          pattern="\d{10}" title="10-digit phone number" />
+                      </div>
+
+                      <div class="lab">Verification Code:</div>
+                      <div class="item c-row c-row-center c-row-middle">
+                        <span class="img c-row c-row-middle-center">
+                          <img height="14px" width="auto" src="/images/verifie.png" class="mobile" />
+                        </span>
+                        <input type="number" id="forgotOtp" placeholder="Enter Verification Code" required
+                          pattern="\d{4,6}" title="4 to 6 digit OTP" />
+                        <button class="otp" id="popupForgotOtpBtn">Send</button>
+                      </div>
+                      <div class="tip">
+                        Didn't receive OTP? Contact customer service.
+                      </div>
+
+                      <div class="lab">New Password:</div>
+                      <div class="item c-row c-row-center c-row-middle">
+                        <span class="img c-row c-row-middle-center">
+                          <img height="14px" width="auto" src="/images/password.png" class="password" />
+                        </span>
+                        <input id="forgotNewPassword" type="password" placeholder="Enter New Password" required />
+                        <!-- Optional: Add eye icon here if desired
+                             <span class="eye" onclick="showPass('forgotNewPassword', 'forgotEyeIcon')"><img id="forgotEyeIcon" src="/index_files/eyeInvisible-2fa5c152.png"></span>
+                             -->
+                      </div>
+
+                      <div class="alert-toast"></div>
+                      <!-- Alert area -->
+
+                      <div class="mian-btn m-t-40">
+                        <button id="popupForgotSubmitBtn">Reset Password</button>
+                      </div>
+
+                      <a class="backToLoginLink switchToLogin">Back to Login</a>
+                      <!-- Back link -->
+                    </div>
+                  </div>
+                </div>
+                <!-- End forgotPasswordView -->
+              </div>
+              <!-- End authFormContainer -->
+            </div>
+            <!-- End popup-content -->
+          </div>
+          <!-- End loginPopupOverlay -->
+
+          <!-- Loading Overlay Structure (Keep as is) -->
+          <div class="van-overlay" style="z-index: 1010; display: none">
+            <div class="Loading c-row-middle-center">
+              <div class="van-loading van-loading--circular">
+                <span class="van-loading__spinner van-loading__spinner--circular">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="36" height="36">
+                    <g>
+                      <g>
+                        <g transform="matrix(0.94,0,0,0.94,10.48,10.48)" opacity="1">
+                          <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="10"
+                            stroke="#ddb40c" stroke-opacity="1" stroke-width="15"
+                            d=" M179.03,100 C179.03,143.7 143.7,179.03 100,179.03 C56.29,179.03 20.96,143.7 20.96,100 C20.96,56.29 56.29,20.96 100,20.96">
+                          </path>
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ========================== -->
+          <!-- Scripts                    -->
+          <!-- ========================== -->
+          <!-- 1. jQuery -->
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+          <!-- 2. Your existing home page scripts (sidebar, dummy data interval) -->
+          <script>
+            // Sidebar Logic
+            const menuToggle = document.getElementById("menuToggle");
+            const sidebar = document.getElementById("sidebar");
+            const closeSidebar = document.getElementById("closeSidebar");
+            const sidebarLoginLink = document.getElementById("sidebarLoginLink");
+
+            if (menuToggle && sidebar && closeSidebar) {
+              menuToggle.addEventListener("click", (e) => {
+                e.stopPropagation();
+                sidebar.classList.add("open");
+              });
+              closeSidebar.addEventListener("click", () =>
+                sidebar.classList.remove("open")
+              );
+              document.addEventListener("click", (event) => {
+                if (
+                  sidebar &&
+                  sidebar.classList.contains("open") &&
+                  !sidebar.contains(event.target) &&
+                  !menuToggle.contains(event.target)
+                ) {
+                  sidebar.classList.remove("open");
+                }
+              });
+            }
+            if (sidebarLoginLink) {
+              sidebarLoginLink.addEventListener("click", (e) => {
+                e.preventDefault();
+                sidebar.classList.remove("open");
+                setTimeout(() => {
+                  $("#openLoginPopupBtn").trigger("click");
+                }, 150);
+              });
+            }
+
+            // Dummy Withdrawal Data Logic
+            const dummyData = [
+              { name: "isha S.", amount: "113645" },
+              { name: "Sunil K.", amount: "98650" },
+              { name: "neha M.", amount: "124300" },
+              { name: "Pmit P.", amount: "75300" },
+              { name: "Pooja R.", amount: "145600" },
+              { name: "Om B.", amount: "84500" },
+            ];
+            let currentIndex = 0;
+            const nameEl = document.getElementById("name");
+            const withdrawalEl = document.getElementById("withdrawal");
+            if (nameEl && withdrawalEl && dummyData.length > 0) {
+              function updateWithdrawalDisplay() {
+                const data = dummyData[currentIndex];
+                $(nameEl).fadeOut(300, function () {
+                  $(this).text(data.name).fadeIn(300);
+                });
+                $(withdrawalEl).fadeOut(300, function () {
+                  $(this)
+                    .text("₹ " + parseInt(data.amount).toLocaleString("en-IN"))
+                    .fadeIn(300);
+                });
+                currentIndex = (currentIndex + 1) % dummyData.length;
+              }
+              updateWithdrawalDisplay();
+              setInterval(updateWithdrawalDisplay, 3500);
+            } else {
+              if (nameEl) nameEl.innerText = "User";
+              if (withdrawalEl) withdrawalEl.innerText = "₹ ---";
+            }
+          </script>
+
+          <!-- 3. Combined Popup & Form Logic Script -->
+          <script>
+            $(document).ready(function () {
+              // --- References ---
+              const $loginPopupOverlay = $("#loginPopupOverlay");
+              const $openLoginBtn = $("#openLoginPopupBtn");
+              const $openRegisterBtn = $("#openRegisterPopupBtn");
+              const $openLoginBtnPlay = $("#openLoginPopupBtnPlay");
+              const $closeLoginBtn = $("#closeLoginPopupBtn");
+              const $authFormContainer = $("#authFormContainer");
+              const $loginView = $("#loginFormView");
+              const $registerView = $("#registerFormView");
+              const $forgotPasswordView = $("#forgotPasswordView"); // Added
+              const $loadingOverlay = $(".van-overlay"); // Ensure class matches your loading overlay HTML
+
+              // --- Function to Open Popup ---
+              function openPopup(viewToShow = "login") {
+                if (!$loginPopupOverlay.length) return;
+                // Show/Hide Views
+                $loginView.hide().removeClass("active");
+                $registerView.hide().removeClass("active");
+                $forgotPasswordView.hide().removeClass("active");
+
+                if (viewToShow === "register" && $registerView.length) {
+                  $registerView.show().addClass("active");
+                  try {
+                    var url = new URL(window.location.href);
+                    var c = url.searchParams.get("r_code");
+                    if (c) {
+                      $registerView.find("#inviteCode").val(c);
+                    }
+                  } catch (e) { }
+                } else if (viewToShow === "forgot" && $forgotPasswordView.length) {
+                  $forgotPasswordView.show().addClass("active");
+                } else {
+                  // Default to login
+                  $loginView.show().addClass("active");
+                }
+                // Clear previous alerts
+                $authFormContainer.find(".alert-toast").empty().hide();
+                // Clear form fields
+                $authFormContainer
+                  .find(
+                    'input[type="text"], input[type="password"], input[type="number"]'
+                  )
+                  .val("");
+                // Reset checkboxes
+                $authFormContainer
+                  .find(".van-checkbox")
+                  .removeClass("checked")
+                  .attr("aria-checked", "false");
+                $authFormContainer
+                  .find(".van-checkbox__icon")
+                  .removeClass("van-checkbox__icon--checked");
+                $authFormContainer.find(".van-checkbox__icon i").hide();
+                $loginView
+                  .find(".login-checkbox")
+                  .addClass("checked")
+                  .attr("aria-checked", "true");
+                $loginView
+                  .find(".login-checkbox .van-checkbox__icon")
+                  .addClass("van-checkbox__icon--checked");
+                $loginView.find(".login-checkbox .van-checkbox__icon i").show();
+                // Reset OTP button if present in forgot view
+                $forgotPasswordView
+                  .find("#popupForgotOtpBtn")
+                  .prop("disabled", false)
+                  .removeClass("block-click")
+                  .text("Send");
+                // Clear any OTP intervals if necessary (get interval reference if needed)
+
+                // Show overlay
+                $loginPopupOverlay.css("display", "flex").hide().fadeIn(250);
+              }
+
+              // --- Event Handlers for Opening/Closing ---
+              if ($openLoginBtn.length)
+                $openLoginBtn.on("click", function (e) {
+                  e.preventDefault();
+                  openPopup("login");
+                });
+              if ($openRegisterBtn.length)
+                $openRegisterBtn.on("click", function (e) {
+                  e.preventDefault();
+                  openPopup("register");
+                });
+
+              // Handler for register button in body section
+              const $openRegisterBtnBody = $("#openRegisterPopupBtnBody");
+              if ($openRegisterBtnBody.length)
+                $openRegisterBtnBody.on("click", function (e) {
+                  e.preventDefault();
+                  openPopup("register");
+                });
+
+              if ($openLoginBtnPlay.length)
+                $openLoginBtnPlay.on("click", function (e) {
+                  e.preventDefault();
+                  openPopup("login");
+                });
+              if ($closeLoginBtn.length)
+                $closeLoginBtn.on("click", function () {
+                  $loginPopupOverlay.fadeOut(200);
+                });
+              if ($loginPopupOverlay.length)
+                $loginPopupOverlay.on("click", function (event) {
+                  if ($(event.target).is($loginPopupOverlay)) {
+                    $loginPopupOverlay.fadeOut(200);
+                  }
+                });
+
+              // --- showPass Function ---
+              window.showPass = function (inputId, iconId) {
+                var visibleView = $authFormContainer.find(".form-view.active");
+                var x = visibleView.find("#" + inputId)[0];
+                var y = visibleView.find("#" + iconId)[0];
+                if (x && y) {
+                  if (x.type === "password") {
+                    x.type = "text";
+                    y.src = "/index_files/eyeVisible-7bc1c956.png";
+                  } // CHECK PATH
+                  else {
+                    x.type = "password";
+                    y.src = "/index_files/eyeInvisible-2fa5c152.png";
+                  } // CHECK PATH
+                } else if (x) {
+                  console.warn("showPass: Eye icon #" + iconId + " not found.");
+                } else {
+                  console.error("showPass: Input #" + inputId + " not found.");
+                }
+              };
+
+              // --- alertMessPopup Function ---
+              function alertMessPopup(text) {
+                const $alertToast = $authFormContainer.find(
+                  ".form-view.active .alert-toast"
+                );
+                if ($alertToast.length === 0) {
+                  alert(text);
+                  return;
+                }
+                $alertToast.empty();
+                const messageHtml = `<div class="msg"><div class="msg-content">${text}</div></div>`;
+                $alertToast.append(messageHtml).hide().fadeIn(300);
+              }
+
+              // --- Cookie Functions ---
+              function setCookie(cname, cvalue, exdays) {
+                const d = new Date();
+                d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+                let expires = "expires=" + d.toUTCString();
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+              }
+
+              // --- View Switching Logic ---
+              if (
+                $authFormContainer.length &&
+                $loginView.length &&
+                $registerView.length &&
+                $forgotPasswordView.length
+              ) {
+                // Switch to Register (from Login)
+                $authFormContainer.on("click", ".switchToRegister", function (e) {
+                  e.preventDefault();
+                  $loginView.fadeOut(150, function () {
+                    $(this).removeClass("active");
+                    $registerView.find(".alert-toast").empty().hide();
+                    $registerView.fadeIn(150).addClass("active");
+                  });
+                });
+                // Switch to Login (from Register or Forgot)
+                $authFormContainer.on("click", ".switchToLogin", function (e) {
+                  e.preventDefault();
+                  var $currentView = $(this).closest(".form-view");
+                  $currentView.fadeOut(150, function () {
+                    $(this).removeClass("active");
+                    $loginView.find(".alert-toast").empty().hide();
+                    $loginView.fadeIn(150).addClass("active");
+                  });
+                });
+                // Switch to Forgot Password (from Login)
+                $authFormContainer.on("click", ".switchToForgot", function (e) {
+                  e.preventDefault();
+                  $loginView.fadeOut(150, function () {
+                    $(this).removeClass("active");
+                    $forgotPasswordView.find(".alert-toast").empty().hide();
+                    $forgotPasswordView.fadeIn(150).addClass("active");
+                  });
+                });
+              }
+
+              // --- Checkbox Logic ---
+              if ($authFormContainer.length) {
+                $authFormContainer.on("click", ".van-checkbox", function (e) {
+                  e.preventDefault();
+                  var $checkbox = $(this);
+                  var $icon = $checkbox.find(".van-checkbox__icon i");
+                  var $iconContainer = $checkbox.find(".van-checkbox__icon");
+                  if ($checkbox.hasClass("checked")) {
+                    $checkbox.removeClass("checked").attr("aria-checked", "false");
+                    $iconContainer.removeClass("van-checkbox__icon--checked");
+                    $icon.hide();
+                  } else {
+                    $checkbox.addClass("checked").attr("aria-checked", "true");
+                    $iconContainer.addClass("van-checkbox__icon--checked");
+                    $icon.show();
+                  }
+                });
+              }
+
+              // --- LOGIN SUBMISSION LOGIC ---
+              const $loginSubmitBtn = $("#popupLoginSubmitBtn");
+              if ($loginSubmitBtn.length && $loginView.length) {
+                $loginSubmitBtn.on("click", function (e) {
+                  e.preventDefault();
+                  $loginView.find(".alert-toast").empty().hide();
+                  let username = $loginView
+                    .find('input[name="username"]')
+                    .val()
+                    ?.trim();
+                  let password = $loginView.find("#passwordfield").val()?.trim();
+                  if (!username || !password) {
+                    alertMessPopup("Phone number and password are required!");
+                    return;
+                  }
+                  if (!/^\d{10}$/.test(username)) {
+                    alertMessPopup("Please enter a valid 10-digit phone number.");
+                    return;
+                  }
+                  if ($loadingOverlay.length) $loadingOverlay.fadeIn(10);
+                  $.ajax({
+                    type: "POST",
+                    url: "/api/webapi/login",
+                    data: { username: username, pwd: password },
+                    dataType: "json",
+                    success: function (response) {
+                      if (response.status === true) {
+                        setCookie("token", response.token, 1);
+                        setCookie("auth", response.value, 1);
+
+                        // Now, get the user info to check if admin or not
+                        $.ajax({
+                          type: "GET",
+                          url: "/api/webapi/GetUserInfo",
+                          dataType: "json",
+                          success: function (userinfo) {
+                            if (userinfo.status === true) {
+                              if ($loadingOverlay.length) $loadingOverlay.fadeOut(100);
+                              $loginPopupOverlay.fadeOut(200, function () {
+                                if (userinfo.data.name_user === "Admin") {
+                                  // If admin, redirect
+                                  window.location.href = "/admin/manager/aviator";
+                                } else {
+                                  // If normal user, reload
+                                  window.location.reload();
+                                }
+                              });
+                            } else {
+                              if ($loadingOverlay.length) $loadingOverlay.fadeOut(300);
+                              alertMessPopup(userinfo.message || "Failed to get user info.");
+                            }
+                          },
+                          error: function () {
+                            if ($loadingOverlay.length) $loadingOverlay.fadeOut(300);
+                            alertMessPopup("Error getting user info.");
+                          }
+                        });
+
+                      } else {
+                        if ($loadingOverlay.length) $loadingOverlay.fadeOut(300);
+                        alertMessPopup(response.message || "Invalid credentials.");
+                      }
+                    },
+                    error: function (jqXHR) {
+                      console.error("Login AJAX Error:", jqXHR.statusText);
+                      if ($loadingOverlay.length) $loadingOverlay.fadeOut(300);
+                      alertMessPopup("Login failed. Please try again.");
+                    }
+                  });
+
+                });
+              }
+
+              // --- REGISTRATION SUBMISSION LOGIC ---
+              const $registerSubmitBtn = $("#popupRegisterSubmitBtn");
+              if ($registerSubmitBtn.length && $registerView.length) {
+                $registerSubmitBtn.on("click", function (e) {
+                  e.preventDefault();
+                  $registerView.find(".alert-toast").empty().hide();
+                  let username = $registerView
+                    .find('input[name="registerUsername"]')
+                    .val()
+                    ?.trim();
+                  let password = $registerView
+                    .find("#registerPassword")
+                    .val()
+                    ?.trim();
+                  let invite = $registerView.find("#inviteCode").val()?.trim();
+                  let isChecked = $registerView
+                    .find(".register-checkbox")
+                    .hasClass("checked");
+                  let phone = $registerView.find("#registerPhone").val()?.trim();
+                  if (!username || !password) {
+                    alertMessPopup("Please fill in all required fields.");
+                    return;
+                  }
+
+                  console.log(
+                    username,
+                    password,
+                    phone,
+
+                    "yjhkl;ghjklfghjknlmfghjknl"
+                  );
+                  //  if (!/^\d{10}$/.test(username)) { alertMessPopup("Please enter a valid 10-digit phone number."); return; }
+                  //  if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&.\/]{8,}$/.test(password)) { alertMessPopup("Password must be 8+ chars with letters & numbers."); return; }
+                  //  if (!isChecked) { alertMessPopup("Please agree to the Privacy Agreement."); return; }
+                  if ($loadingOverlay.length) $loadingOverlay.fadeIn(10);
+                  $.ajax({
+                    type: "POST",
+                    url: "/api/webapi/register",
+                    data: {
+                      username: phone,
+                      pwd: password,
+                      invitecode: invite,
+                      name: username,
+                    },
+                    dataType: "json",
+                    success: function (response) {
+                      if (response.status === true) {
+                        if ($loadingOverlay.length) $loadingOverlay.fadeOut(100);
+                        alertMessPopup(
+                          response.message || "Registration successful! Please login."
+                        );
+                        setTimeout(() => {
+                          $registerView.fadeOut(150, function () {
+                            $(this).removeClass("active");
+                            $loginView.find('input[name="username"]').val(username);
+                            $loginView.find("#passwordfield").val("");
+                            $loginView.find(".alert-toast").empty().hide();
+                            $loginView.fadeIn(150).addClass("active");
+                          });
+                        }, 2000);
+                      } else {
+                        if ($loadingOverlay.length) $loadingOverlay.fadeOut(300);
+                        alertMessPopup(response.message || "Registration failed.");
+                      }
+                    },
+                    error: function (jqXHR) {
+                      console.error("Register AJAX Error:", jqXHR.statusText);
+                      if ($loadingOverlay.length) $loadingOverlay.fadeOut(300);
+                      alertMessPopup("Registration error. Please try again.");
+                    },
+                  });
+                });
+              }
+
+              // --- FORGOT PASSWORD - SEND OTP LOGIC ---
+              const $forgotOtpBtn = $("#popupForgotOtpBtn");
+              let otpInterval; // Keep track of the interval timer
+              if ($forgotOtpBtn.length && $forgotPasswordView.length) {
+                $forgotOtpBtn.on("click", function (e) {
+                  e.preventDefault();
+                  $forgotPasswordView.find(".alert-toast").empty().hide();
+                  let phone = $forgotPasswordView
+                    .find("#forgotUsername")
+                    .val()
+                    ?.trim();
+                  let $button = $(this);
+                  if (!phone || !/^\d{10}$/.test(phone)) {
+                    alertMessPopup("Please enter a valid 10-digit phone number.");
+                    return;
+                  }
+
+                  $button
+                    .prop("disabled", true)
+                    .addClass("block-click")
+                    .text("Sending...");
+                  let count = 30;
+                  clearInterval(otpInterval); // Clear previous interval if any
+                  otpInterval = setInterval(() => {
+                    // Store interval ID
+                    count--;
+                    if (count > 0) {
+                      $button.text(`Resend (${count}s)`);
+                    } else {
+                      clearInterval(otpInterval);
+                      $button
+                        .prop("disabled", false)
+                        .removeClass("block-click")
+                        .text("Send");
+                    }
+                  }, 1000);
+
+                  $.ajax({
+                    type: "POST",
+                    url: "/api/sent/otp/verify/reset",
+                    data: { phone: phone },
+                    dataType: "json",
+                    success: function (response) {
+                      alertMessPopup(response.message || "OTP request sent.");
+                      if (response.status !== true) {
+                        clearInterval(otpInterval);
+                        $button
+                          .prop("disabled", false)
+                          .removeClass("block-click")
+                          .text("Send");
+                      }
+                    },
+                    error: function (jqXHR) {
+                      console.error("Forgot OTP AJAX Error:", jqXHR.statusText);
+                      alertMessPopup("Error sending OTP.");
+                      clearInterval(otpInterval);
+                      $button
+                        .prop("disabled", false)
+                        .removeClass("block-click")
+                        .text("Send");
+                    },
+                  });
+                });
+              }
+
+              // --- FORGOT PASSWORD - RESET SUBMISSION LOGIC ---
+              const $forgotSubmitBtn = $("#popupForgotSubmitBtn");
+              if ($forgotSubmitBtn.length && $forgotPasswordView.length) {
+                $forgotSubmitBtn.on("click", function (e) {
+                  e.preventDefault();
+                  $forgotPasswordView.find(".alert-toast").empty().hide();
+                  let username = $forgotPasswordView
+                    .find("#forgotUsername")
+                    .val()
+                    ?.trim();
+                  let otp = $forgotPasswordView.find("#forgotOtp").val()?.trim();
+                  let password = $forgotPasswordView
+                    .find("#forgotNewPassword")
+                    .val()
+                    ?.trim();
+                  if (!username || !otp || !password) {
+                    alertMessPopup("Please fill in phone, OTP, and new password.");
+                    return;
+                  }
+                  if (!/^\d{10}$/.test(username)) {
+                    alertMessPopup("Please enter a valid 10-digit phone number.");
+                    return;
+                  }
+                  if (!/^\d{4,6}$/.test(otp)) {
+                    alertMessPopup("Please enter a valid OTP code.");
+                    return;
+                  }
+                  if (
+                    !/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&.\/]{8,}$/.test(password)
+                  ) {
+                    alertMessPopup(
+                      "New password must be 8+ chars with letters & numbers."
+                    );
+                    return;
+                  }
+                  if ($loadingOverlay.length) $loadingOverlay.fadeIn(10);
+                  $.ajax({
+                    type: "POST",
+                    url: "/api/resetPasword",
+                    data: { username: username, otp: otp, pwd: password },
+                    dataType: "json",
+                    success: function (response) {
+                      if (response.status === true) {
+                        if ($loadingOverlay.length) $loadingOverlay.fadeOut(100);
+                        alertMessPopup(
+                          response.message ||
+                          "Password reset successful! Please login."
+                        );
+                        setTimeout(() => {
+                          $forgotPasswordView.fadeOut(150, function () {
+                            $(this).removeClass("active");
+                            $loginView.find('input[name="username"]').val(username);
+                            $loginView.find("#passwordfield").val("");
+                            $loginView.find(".alert-toast").empty().hide();
+                            $loginView.fadeIn(150).addClass("active");
+                          });
+                        }, 2000);
+                      } else {
+                        if ($loadingOverlay.length) $loadingOverlay.fadeOut(300);
+                        alertMessPopup(response.message || "Password reset failed.");
+                      }
+                    },
+                    error: function (jqXHR) {
+                      console.error("Reset Password AJAX Error:", jqXHR.statusText);
+                      if ($loadingOverlay.length) $loadingOverlay.fadeOut(300);
+                      alertMessPopup("Error resetting password.");
+                    },
+                  });
+                });
+              }
+
+              // --- Auto-fill invite code ---
+              try {
+                var url = new URL(window.location.href);
+                var c = url.searchParams.get("r_code");
+                if (c && $registerView.length) {
+                  $registerView.find("#inviteCode").val(c);
+                }
+              } catch (e) {
+                console.warn("Could not parse URL for r_code:", e);
+              }
+            }); // End of $(document).ready()
+          </script>
+          <script src="/Aviator/js/jquery.min.js"></script>
+
+
+
+
+
+          <!--====== Bootstrap js ======-->
+          <script src="/Aviator/js/popper.min.js"></script>
+          <script src="/Aviator/js/bootstrap.bundle.min.js"></script>
+
+          <!--====== Slimscroll js ======-->
+          <!--<script src="/js/jquery.mCustomScrollbar.js"></script>-->
+          <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+
+          <!--====== Country Selection js ======-->
+          <script src="Aviator/js/niceCountryInput.js"></script>
+          <script src="/Aviator/js/jquery.ccpicker.js" type="text/javascript"></script>
+
+          <!--====== Animation Selection js ======-->
+          <script src='/Aviator/js/anime.min.js'></script>
+
+          <!--====== Owl Carousel js ======-->
+          <script src='/Aviator/js/owl.carousel.min.js'></script>
+
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const track = document.querySelector(".slider-track");
+    const slides = document.querySelectorAll(".slider-track img");
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+    const dotsContainer = document.querySelector(".slider-dots");
+
+    // safety check
+    if (!track || !slides.length || !dotsContainer) return;
+
+    let index = 0;
+    const total = slides.length;
+
+    // create dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement("span");
+      if (i === 0) dot.classList.add("active");
+      dot.addEventListener("click", () => moveTo(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll("span");
+
+    function moveTo(i) {
+      index = i;
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach(d => d.classList.remove("active"));
+      dots[index].classList.add("active");
+    }
+
+    nextBtn.addEventListener("click", () => {
+      moveTo((index + 1) % total);
+    });
+
+    prevBtn.addEventListener("click", () => {
+      moveTo((index - 1 + total) % total);
+    });
+
+    // --- ENHANCED LIVE WITHDRAWALS FEED LOGIC WITH ANIMATIONS ---
+    const withdrawalsFeed = document.getElementById('withdrawals-feed');
+    if (withdrawalsFeed) {
+      const users = [
+        'Iram S.', 'Pooja C.', 'Suresh K.', 'Salim M.', 'Subhash P.', 'Vishnu P.', 'Ram K.', 'Vijay B.', 'Jeet P.', 'Vidya N.',
+        'Aluddin H.', 'Mrityunjay S.', 'Masheen Y.', 'Syamsunder G.', 'Girjesh K.', 'Narender S.', 'Sattaram J.', 'Amrik S.', 'Vishal K.', 'Yogesh S.',
+        'Mangi R.', 'Habib K.', 'Nayan S.', 'Deepak R.', 'Sunil K.', 'Pradeep K.', 'Narayan R.', 'Suman V.', 'Rahul M.', 'Sabir A.',
+        'Vikrant P.', 'Ravi K.', 'Amit S.', 'Priya M.', 'Neha R.', 'Rohan D.', 'Divya S.', 'Karan V.', 'Anjali T.', 'Mohit G.',
+        'Sneha B.', 'Arjun K.', 'Kavita P.', 'Rajesh M.', 'Simran K.', 'Varun S.', 'Megha R.', 'Siddharth L.', 'Pallavi N.', 'Kunal J.'
+      ];
+
+      let userIndex = 0;
+      const maxItems = 6;
+      let animationQueue = [];
+
+      // Get random amount between 1000 and 50000
+      const getRandomAmount = () => Math.floor(Math.random() * (50000 - 1000) + 1000);
+
+      // Get user initials for avatar
+      const getUserInitials = (name) => {
+        const parts = name.split(' ');
+        return parts.map(p => p[0]).join('');
+      };
+
+      // Format time ago
+      const getTimeAgo = () => {
+        const seconds = Math.floor(Math.random() * 60);
+        if (seconds < 10) return 'Just now';
+        if (seconds < 60) return `${seconds}s ago`;
+        return '1m ago';
+      };
+
+      // Animate number counter
+      const animateCounter = (element, target) => {
+        const duration = 800;
+        const start = 0;
+        const increment = target / (duration / 16);
+        let current = start;
+
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          element.textContent = '₹ ' + Math.floor(current).toLocaleString('en-IN');
+        }, 16);
+      };
+
+      const showRandomWithdrawal = () => {
+        const user = users[userIndex];
+        const amount = getRandomAmount();
+        const initials = getUserInitials(user);
+        const timeAgo = getTimeAgo();
+
+        const newItem = document.createElement('div');
+        newItem.classList.add('withdrawal-item', 'new-entry');
+        newItem.innerHTML = `
+                  <div class="user-section">
+                      <div class="user-avatar">${initials}</div>
+                      <div class="user-info">
+                          <span class="user">${user}</span>
+                          <span class="timestamp">${timeAgo}</span>
+                      </div>
+                  </div>
+                  <div class="amount-section">
+                      <span class="amount">₹ 0</span>
+                      <span class="status-badge">✓ SUCCESS</span>
+                  </div>
+              `;
+
+        // Add with animation
+        withdrawalsFeed.prepend(newItem);
+
+        // Animate the counter
+        const amountElement = newItem.querySelector('.amount');
+        setTimeout(() => {
+          animateCounter(amountElement, amount);
+        }, 100);
+
+        // Remove new-entry class after animation
+        setTimeout(() => {
+          newItem.classList.remove('new-entry');
+        }, 1600);
+
+        // Remove oldest item with animation if exceeds max
+        if (withdrawalsFeed.children.length > maxItems) {
+          const lastItem = withdrawalsFeed.lastElementChild;
+          lastItem.classList.add('removing');
+
+          setTimeout(() => {
+            if (lastItem.parentNode) {
+              lastItem.remove();
+            }
+          }, 500);
+        }
+
+        userIndex = (userIndex + 1) % users.length;
+      };
+
+      // Initial population with staggered animation
+      for (let i = 0; i < maxItems; i++) {
+        setTimeout(() => {
+          showRandomWithdrawal();
+        }, i * 150);
+      }
+
+      // Set interval to add new items every second
+      setTimeout(() => {
+        setInterval(showRandomWithdrawal, 1000);
+      }, maxItems * 150 + 500);
+    }
+
+  });
+</script>
+
+<!-- <script>
+  var money = <%= money %>
+
+  document.querySelectorAll(".auth-check").forEach(link => {
+    link.addEventListener("click", function (e) {
+      if (money === false) {
+        e.preventDefault();
+        alert("Please login first");
+      }
+    });
+  });
+</script> -->
+
+<script>
+  const money = <%= money %>;
+
+  document.querySelectorAll(".auth-check").forEach(link => {
+    link.addEventListener("click", function (e) {
+      if (money === false) {
+        e.preventDefault();
+
+        const loginBtn = document.getElementById("openLoginPopupBtn");
+        if (loginBtn) {
+          loginBtn.click();   // 🔥 popup open
+        } else {
+          alert("Please login first");
+        }
+      }
+    });
+  });
+</script>
+
+
+<script>
+  let money = <%= money %>;
+
+  document.getElementById("playAviatorBtn")?.addEventListener("click", function () {
+    if (money === false) {
+      const loginBtn = document.getElementById("openLoginPopupBtn");
+      if (loginBtn) {
+        loginBtn.click(); // 🔥 open login popup
+      } else {
+        alert("Please login first");
+      }
+    } else {
+      window.location.href = "/aviator";
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    var money = <%= money %>;
+    const aviatorCard = document.getElementById("aviatorCard");
+    const loginBtn = document.getElementById("openLoginPopupBtn");
+
+    if (!aviatorCard) return;
+
+    aviatorCard.addEventListener("click", function () {
+      if (money === false) {
+        // ❌ login nahi hai → popup open
+        if (loginBtn) {
+          loginBtn.click();
+        } else {
+          alert("Please login first");
+        }
+      } else {
+        // ✅ login hai → aviator
+        window.location.href = "/aviator";
+      }
+    });
+
+  });
+</script>
+
+<script>
+function handlePlayClick() {
+  var money = <%= money %>;
+ 
+  console.log(money,"money")
+  if (money >= 50000) {
+  alert("100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
+  return;
+  
+  }
+
+
+
+  window.location.href = "/aviator";
+}
+
+function closePopup() {
+  document.getElementById("withdrawPopup").style.display = "none";
+}
+
+window.onclick = function(event) {
+  const popup = document.getElementById("withdrawPopup");
+  if (event.target === popup) {
+    popup.style.display = "none";
+  }
+}
+</script>
+
+
+
+
+</html>

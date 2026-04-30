@@ -1,66 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aviator Game</title>
-  <!-- Or your Home page title -->
-  <link rel="shortcut icon" href="/images/banners/logo.png" type="image/x-icon" />
-  <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" type="image/png" />
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aviator Game</title>
+    <!-- Or your Home page title -->
+    <link rel="shortcut icon" href="/images/banners/logo.png"
+      type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ asset('images/logo.png') }}"
+      type="image/png" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
+    <!--====== Material Design Icons CSS ======-->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Oswald:wght@200;300;400&display=swap" rel="stylesheet"> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
+    <!--====== mCustomScrollbar CSS ======-->
+    <link rel="stylesheet"
+      href="/Aviator/css/jquery.mCustomScrollbar.min.css" />
 
-  <!--====== Material Design Icons CSS ======-->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Oswald:wght@200;300;400&display=swap" rel="stylesheet"> -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!--====== Pretty Checkbox CSS ======-->
+    <link rel="stylesheet" href="Aviator/css/pretty-checkbox.min.css" />
+    <!--====== Cuntry Selection CSS ======-->
+    <link rel="stylesheet" href="Aviator/css/niceCountryInput.css" />
+    <link rel="stylesheet" type="text/css"
+      href="Aviator/css/jquery.ccpicker.css">
 
-  <!--====== mCustomScrollbar CSS ======-->
-  <link rel="stylesheet" href="/Aviator/css/jquery.mCustomScrollbar.min.css" />
+    <!--====== Bootstrap CSS ======-->
+    <link rel="stylesheet" href="/Aviator/css/bootstrap.css" />
 
-  <!--====== Pretty Checkbox CSS ======-->
-  <link rel="stylesheet" href="Aviator/css/pretty-checkbox.min.css" />
-  <!--====== Cuntry Selection CSS ======-->
-  <link rel="stylesheet" href="Aviator/css/niceCountryInput.css" />
-  <link rel="stylesheet" type="text/css" href="Aviator/css/jquery.ccpicker.css">
+    <!--====== Owl Carousel CSS ======-->
+    <link rel="stylesheet" href="Aviator/css/owl.carousel.min.css" />
 
-  <!--====== Bootstrap CSS ======-->
-  <link rel="stylesheet" href="/Aviator/css/bootstrap.css" />
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="/Aviator/css/style.css" />
 
-  <!--====== Owl Carousel CSS ======-->
-  <link rel="stylesheet" href="Aviator/css/owl.carousel.min.css" />
+    <!-- ====== Toastr CSS ====== -->
+    <link rel="stylesheet" href="/Aviator/css/toastr.min.css" />
 
-  <!--====== Style CSS ======-->
-  <link rel="stylesheet" href="/Aviator/css/style.css" />
+    <!-- ====== Datatable CSS ====== -->
+    <link rel="stylesheet" href="/Aviator/css/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" href="/Aviator/css/responsive.dataTables.min.css" />
+    <link rel="stylesheet" href="/Aviator/css/newhome.css" />
 
-  <!-- ====== Toastr CSS ====== -->
-  <link rel="stylesheet" href="/Aviator/css/toastr.min.css" />
+    <script crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 
-  <!-- ====== Datatable CSS ====== -->
-  <link rel="stylesheet" href="/Aviator/css/dataTables.bootstrap5.min.css" />
-  <link rel="stylesheet" href="/Aviator/css/responsive.dataTables.min.css" />
-  <link rel="stylesheet" href="/Aviator/css/newhome.css" />
+    <!--====== Material Design Icons CSS ======-->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Oswald:wght@200;300;400&display=swap" rel="stylesheet"> -->
 
-
-
-
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-
-
-  <!--====== Material Design Icons CSS ======-->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Oswald:wght@200;300;400&display=swap" rel="stylesheet"> -->
-
-  <!-- ========== EMBEDDED CSS FOR POPUP AND CORE STYLES ========== -->
-  <style>
+    <!-- ========== EMBEDDED CSS FOR POPUP AND CORE STYLES ========== -->
+    <style>
     /* --- Your Existing home.ejs styles --- */
     body {
       margin: 0;
@@ -72,6 +76,20 @@
       overflow-x: hidden;
       /* Prevent horizontal scroll */
     }
+
+  
+#app {
+    width: 10rem;
+    height: -webkit-fit-content;
+    height: fit-content;
+    min-height: 100vh;
+        background: #1A1A2C;
+        padding: 0;
+    margin: 0
+
+}
+
+
 
     /* Additional fixes to prevent horizontal scrolling */
     html {
@@ -135,68 +153,15 @@
       background-color: #c9a30a;
     }
 
-    .menu-icon {
-      font-size: 24px;
-      cursor: pointer;
-      margin-left: 15px;
-      color: #cbd5e0;
-    }
 
-    .support-btn {
-      background: linear-gradient(90deg, #3e3505, #574333);
-      color: white;
-      padding: 10px;
-      font-weight: 600;
-      text-align: center;
-      cursor: pointer;
-      font-size: 14px;
-    }
 
-    .promo-image {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
 
-    .play-now-btn {
-      display: block;
-      width: fit-content;
-      margin: 25px auto;
-      background-color: #ea580c;
-      color: white;
-      padding: 10px 30px;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      font-size: 15px;
-      text-transform: uppercase;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-      transition: background-color 0.2s ease;
-    }
 
-    .play-now-btn:hover {
-      background-color: #c2410c;
-    }
 
-    .withdrawal-box {
-      background-color: rgba(45, 55, 72, 0.8);
-      border: 1px solid #4a5568;
-      color: #e2e8f0;
-      margin: 0 15px;
-      padding: 12px 15px;
-      border-radius: 10px;
-      text-align: center;
-      font-weight: bold;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(3px);
-    }
 
-    .withdrawal-box div:first-child {
-      font-size: 13px;
-      margin-bottom: 4px;
-      color: #a0aec0;
-    }
+
+
+
 
     .withdrawal-box div:nth-child(2) {
       font-size: 11px;
@@ -887,26 +852,7 @@
       color: #fff;
     }
 
-    .section-title {
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
 
-    .partner-card {
-      background: rgba(255, 255, 255, 0.08);
-      padding: 30px;
-      text-align: center;
-      border-radius: 15px;
-      font-weight: bold;
-      font-size: 20px;
-      transition: 0.3s;
-      backdrop-filter: blur(10px);
-    }
-
-    .partner-card:hover {
-      transform: translateY(-5px);
-      background: rgba(255, 255, 255, 0.15);
-    }
 
     .btn-gradient {
       background: linear-gradient(45deg, #00c6ff, #1D4268);
@@ -921,54 +867,12 @@
       box-shadow: 0 8px 20px rgba(0, 114, 255, 0.4);
     }
 
-    .social-circle {
-      width: 50px;
-      height: 50px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 20px;
-      transition: 0.3s;
-    }
-
-    .social-circle:hover {
-      background: #00c6ff;
-      transform: scale(1.1);
-    }
-
-    .support-box {
-      background: linear-gradient(90deg, #00c6ff, #1D4268);
-      border-radius: 20px;
-    }
 
 
 
 
 
-    .aviator-card {
-      position: relative;
-      width: 220px;
-      border-radius: 20px;
-      overflow: hidden;
-      cursor: pointer;
-      background: #000;
-      transition: 0.4s ease;
-      box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
-    }
 
-    /* Glow Border Animation */
-    .aviator-card::before {
-      content: "";
-      position: absolute;
-      inset: -2px;
-      border-radius: 22px;
-      background: linear-gradient(45deg, #ff0000, #ff7300, #ff0000);
-      z-index: -1;
-      animation: glowRotate 3s linear infinite;
-    }
 
     @keyframes glowRotate {
       0% {
@@ -980,32 +884,10 @@
       }
     }
 
-    .aviator-card img {
-      width: 100%;
-      display: block;
-      transition: 0.4s;
-    }
 
-    /* Zoom Effect */
-    .aviator-card:hover img {
-      transform: scale(1.08);
-    }
 
-    /* Overlay */
-    .play-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: rgba(0, 0, 0, 0.4);
-      opacity: 0;
-      transition: 0.4s;
-    }
 
-    .aviator-card:hover .play-overlay {
-      opacity: 1;
-    }
+
 
     /* Animated Play Button */
     .play-btn {
@@ -1051,16 +933,12 @@
     }
   </style>
 
-
-
-
-
-
-  <!-- ========== EMBEDDED CSS END ========== -->
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-99RTD5DZML"></script>
-<script>
+    <!-- ========== EMBEDDED CSS END ========== -->
+  </head>
+  <!-- Google tag (gtag.js) -->
+  <script async
+    src="https://www.googletagmanager.com/gtag/js?id=G-99RTD5DZML"></script>
+  <script>
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
@@ -1068,548 +946,1547 @@
   gtag('config', 'G-99RTD5DZML');
 </script>
 
+  <body>
+    <!-- =============================== -->
+    <!-- Existing Home Page Content      -->
+    <!-- =============================== -->
+  
 
 
+    <div >
 
-
-
-<body>
-  <!-- =============================== -->
-  <!-- Existing Home Page Content      -->
-  <!-- =============================== -->
-  <% if (money !==false) { %>
+  <div
+      data-v-6666ec94=""
+      id="home"
+      class="purple-home"
+      style="
+        --f13b4d11-currentFontFamily:
+          &quot;Roboto&quot;, &quot;Inter&quot;, sans-serif;
+      "
+    >
+      <!-- 顶部导航栏占位 -->
+      <div data-v-6666ec94="" class="purple-home__nav-placeholder"></div>
+      <!-- 顶部导航栏 fixed -->
+         <% if (money !==false) { %>
     <%- include('headerxxx', { money, ekyc ,username}) %>
-      <% } else { %>
-        <div class="header">
-          <img src="/images/banners/logo.png" alt="Aviator Logo" />
-          <div class="header-buttons">
-            <!-- <button id="openLoginPopupBtn" class="header-auth-btn" style="background-color: #ea580c; color: white">
-            Login
-          </button> -->
-
-            <button id="openRegisterPopupBtn" class="btn btn-sm  text-white fw-semibold rounded"
-              style="background-color:#8BC34A;">
-              REGISTRATION
-            </button>
-
-            <button id="openLoginPopupBtn" class="btn btn-sm text-white fw-semibold rounded"
-              style="background-color:#2F6FA3;">
-              LOG IN
-            </button>
-
-            <!-- <button id="openRegisterPopupBtn" class="header-auth-btn" style="background-color: #ea580c; color: white">
+    <% } else { %>
+      <div data-v-6666ec94="" class="purple-home__nav">
+        <!--v-if--><!-- 已登录：左(余额) 中(logo) 右(下载+语言) --><!-- 未登录：左(logo) 右(Login + Register) -->
+        <div data-v-6666ec94="" class="purple-home__nav-left">
+          <img
+            data-v-6666ec94=""
+            src="https://ossimg.jaiclubpay.com/jaiclub/other/h5setting_20260325173212e2c7.png"
+            alt="logo"
+            class="purple-home__nav-logo"
+          />
+        </div>
+        <div data-v-6666ec94="" class="purple-home__nav-auth">
+          <button data-v-6666ec94="" class="purple-home__nav-auth__login" id="openLoginPopupBtn" data-v-6666ec94>
+            Login</button
+          ><button data-v-6666ec94="" class="purple-home__nav-auth__register" id="openRegisterPopupBtn"  data-v-6666ec94>
             Register
-          </button> -->
+          </button>
+        </div>
+      </div>
+         <% } %>
+      <!-- 头部轮播图 -->
+      <div data-v-3ad7aed7="" data-v-6666ec94="" class="swiper_box">
+        <div
+          data-v-3ad7aed7=""
+          class="swiper swiper-initialized swiper-horizontal swiper-pointer-events my-swipe"
+        >
+          <div
+            class="swiper-wrapper"
+            style="
+              transform: translate3d(-776px, 0px, 0px);
+              transition-duration: 0ms;
+            "
+          >
+            <div
+              class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate"
+              data-swiper-slide-index="9"
+              style="width: 368px; margin-right: 20px"
+            >
+              <img
+                data-v-3ad7aed7=""
+                class="ar-lazyload"
+                data-origin="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260329222202iyvc.jpg"
+              />
+            </div>
+            <div
+              data-v-3ad7aed7=""
+              class="swiper-slide swiper-slide-prev"
+              data-swiper-slide-index="0"
+              style="width: 368px; margin-right: 20px"
+            >
+              <img
+                data-v-3ad7aed7=""
+                class=""
+                data-origin="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260328165751seps.jpg"
+                src="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260328165751seps.jpg"
+              />
+            </div>
+            <div
+              data-v-3ad7aed7=""
+              class="swiper-slide swiper-slide-active"
+              data-swiper-slide-index="1"
+              style="width: 368px; margin-right: 20px"
+            >
+              <img
+                data-v-3ad7aed7=""
+                class=""
+                data-origin="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260328165613cgpq.jpg"
+                src="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260328165613cgpq.jpg"
+              />
+            </div>
+            <div
+              data-v-3ad7aed7=""
+              class="swiper-slide swiper-slide-next"
+              data-swiper-slide-index="2"
+              style="width: 368px; margin-right: 20px"
+            >
+              <img
+                data-v-3ad7aed7=""
+                class=""
+                data-origin="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260329220526avv6.jpg"
+                src="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260329220526avv6.jpg"
+              />
+            </div>
+            <div
+              data-v-3ad7aed7=""
+              class="swiper-slide"
+              data-swiper-slide-index="3"
+              style="width: 368px; margin-right: 20px"
+            >
+              <img
+                data-v-3ad7aed7=""
+                class=""
+                data-origin="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260328165737pj8m.jpg"
+                src="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260328165737pj8m.jpg"
+              />
+            </div>
+            <div
+              data-v-3ad7aed7=""
+              class="swiper-slide"
+              data-swiper-slide-index="4"
+              style="width: 368px; margin-right: 20px"
+            >
+              <img
+                data-v-3ad7aed7=""
+                class=""
+                data-origin="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_2026032922084392lt.jpg"
+                src="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_2026032922084392lt.jpg"
+              />
+            </div>
+            <div
+              data-v-3ad7aed7=""
+              class="swiper-slide"
+              data-swiper-slide-index="5"
+              style="width: 368px; margin-right: 20px"
+            >
+              <img
+                data-v-3ad7aed7=""
+                class=""
+                data-origin="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_202604232203507sx7.jpg"
+                src="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_202604232203507sx7.jpg"
+              />
+            </div>
+            <div
+              data-v-3ad7aed7=""
+              class="swiper-slide"
+              data-swiper-slide-index="6"
+              style="width: 368px; margin-right: 20px"
+            >
+              <img
+                data-v-3ad7aed7=""
+                class=""
+                data-origin="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_202603292214229onc.jpg"
+                src="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_202603292214229onc.jpg"
+              />
+            </div>
+            <div
+              data-v-3ad7aed7=""
+              class="swiper-slide"
+              data-swiper-slide-index="7"
+              style="width: 368px; margin-right: 20px"
+            >
+              <img
+                data-v-3ad7aed7=""
+                class=""
+                data-origin="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260329220946t17w.jpg"
+                src="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260329220946t17w.jpg"
+              />
+            </div>
+            <div
+              data-v-3ad7aed7=""
+              class="swiper-slide"
+              data-swiper-slide-index="8"
+              style="width: 368px; margin-right: 20px"
+            >
+              <img
+                data-v-3ad7aed7=""
+                class=""
+                data-origin="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_2026032922212632fe.jpg"
+                src="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_2026032922212632fe.jpg"
+              />
+            </div>
+            <div
+              data-v-3ad7aed7=""
+              class="swiper-slide"
+              data-swiper-slide-index="9"
+              style="width: 368px; margin-right: 20px"
+            >
+              <img
+                data-v-3ad7aed7=""
+                class=""
+                data-origin="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260329222202iyvc.jpg"
+                src="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260329222202iyvc.jpg"
+              />
+            </div>
+            <div
+              class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev swiper-slide-duplicate"
+              data-swiper-slide-index="0"
+              style="width: 368px; margin-right: 20px"
+            >
+              <img
+                data-v-3ad7aed7=""
+                class=""
+                data-origin="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260328165751seps.jpg"
+                src="https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260328165751seps.jpg"
+              />
+            </div>
+          </div>
+          <!----><!----><!---->
+        </div>
+        <div data-v-3ad7aed7="" class="swiper-button">
+          <span data-v-3ad7aed7="" class=""></span
+          ><span data-v-3ad7aed7="" class=""></span
+          ><span data-v-3ad7aed7="" class="active"></span
+          ><span data-v-3ad7aed7="" class=""></span
+          ><span data-v-3ad7aed7="" class=""></span
+          ><span data-v-3ad7aed7="" class=""></span
+          ><span data-v-3ad7aed7="" class=""></span
+          ><span data-v-3ad7aed7="" class=""></span
+          ><span data-v-3ad7aed7="" class=""></span
+          ><span data-v-3ad7aed7="" class=""></span>
+        </div>
+      </div>
+      <!-- 滚动通知栏 -->
+      <div data-v-6666ec94="" class="noticeBar__container">
+        <img
+          src="https://jaiclub365.com/assets/svg/noticeBarSpeaker-0ddc3721.svg"
+          class="notice_svg"
+        />
+        <div class="noticeBar__container-body">
+          <div class="noticeBar__container-body-text">
+            🎉🎉🎉Welcome to join the Jaiclub platform. We provide a brand new
+            gaming experience and a comprehensive range of popular games.
+            ❤️‍🔥❤️‍🔥❤️‍🔥You are welcome to register at Jaiclub and participate in the
+            game. Thank you.
           </div>
         </div>
-        <% } %>
-
-
-          <!-- <div
-      class="support-btn"
-      onclick="window.location.href='<%= typeof telegram !== 'undefined' ? telegram : '#' %>'"
-    >
-      CUSTOMER SUPPORT
-    </div> -->
-          <div style="<%= money === false ? 'margin-top:0px;' : 'margin-top:60px;' %>">
-            <div class="aviator-marquee">
-              <div class="marquee-track">
-                <span>AVIATOR CRASH GAME</span>
-                <span>AVIATOR CRASH GAME</span>
-                <span>AVIATOR CRASH GAME</span>
-                <span>AVIATOR CRASH GAME</span>
-              </div>
-            </div>
+        <button class="hotIcon">Detail</button>
+      </div>
+      <!-- 游戏分类标签 -->
+      <div data-v-2c772a7d="" data-v-6666ec94="" class="game-tabs">
+        <div data-v-2c772a7d="" class="game-tabs__scroll">
+          <div
+            data-v-2c772a7d=""
+            class="game-tabs__scroll-indicator"
+            style="
+              width: 108px;
+              transform: translate3d(0px, 0px, 0px);
+              transition: none;
+            "
+          ></div>
+          <div data-v-2c772a7d="" class="game-tabs__scroll-item active">
+            <img
+              data-v-2c772a7d=""
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260317195836xmjh.png"
+              class="game-tabs__scroll-item__icon"
+            /><span data-v-2c772a7d="">Popular</span>
           </div>
-
-          <div style="display: none;">
-            <div class="slider-container" style="<%= money === false ? 'margin-top:0px;' : 'margin-top:60px;' %>">
-              <div class="slider-track">
-                <img src="/images/banners/ban1.jpeg">
-                <img src="/images/banners/ban2.jpeg">
-                <img src="/images/banners/ban3.jpeg">
-                <img src="/images/banners/ban4.jpeg">
-              </div>
-
-              <!-- arrows -->
-              <button class="slider-arrow prev">‹</button>
-              <button class="slider-arrow next">›</button>
-
-              <!-- dots -->
-              <div class="slider-dots"></div>
-            </div>
+          <div data-v-2c772a7d="" class="game-tabs__scroll-item">
+            <img
+              data-v-2c772a7d=""
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260317195804ia1x.png"
+              class="game-tabs__scroll-item__icon"
+            /><span data-v-2c772a7d="">Lottery</span>
           </div>
-
-          <div style="margin-top: 20px;">
-            <h1 style="font-size:1.7rem; text-align: center;">Aviator Game</h1>
-            <p style="text-align: center;">Fly smart, cash out faster!</p>
-            <div class="cta-buttons">
-
-              <% if (money===false) { %>
-                <!-- <button class="play-now-btn" id="openLoginPopupBtnPlay">
-        Login to Play
-      </button> -->
-                <a id="openLoginPopupBtnPlay" style="font-size:0.85rem">Login</a>
-                <a id="openRegisterPopupBtnBody" style="font-size:0.85rem">Register</a>
-                <% } else { %>
-                  <!-- <button class="play-now-btn" onclick="window.location.href='/aviator'">
-        PLAY NOW
-      </button> -->
-                  <!-- <a style="font-size:0.85rem" onclick="window.location.href='/aviator'">Play Now</a> -->
-                  <a style="font-size:0.85rem" onclick="handlePlayClick()">
-                    Play Now
-                  </a>
-                  <a style="font-size:0.85rem" href="/logout">Logout</a>
-                  <% } %>
-            </div>
-
+          <div data-v-2c772a7d="" class="game-tabs__scroll-item">
+            <img
+              data-v-2c772a7d=""
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_202603241755279vxy.png"
+              class="game-tabs__scroll-item__icon"
+            /><span data-v-2c772a7d="">Mini games</span>
           </div>
-
-          <div style="justify-content: center; display: flex; margin-top: 20px;">
-            <div class="aviator-card" id="aviatorCard">
-              <img src="/images/icons/aviator.gif" alt="Aviator">
-            </div>
+          <div data-v-2c772a7d="" class="game-tabs__scroll-item">
+            <img
+              data-v-2c772a7d=""
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260324175501m13j.png"
+              class="game-tabs__scroll-item__icon"
+            /><span data-v-2c772a7d="">Slots</span>
           </div>
-
-
-
-
-
-
-
-          <div class="page-wrapper" style="display: none;">
-
-
-
-            <main>
-
-
-
-
-
-
-
-              <header class="hero-section cyber-card">
-
-
-
-
-                <h1 style="font-size:1.7rem">Aviator Game</h1>
-                <p>Fly smart, cash out faster!</p>
-                <div class="cta-buttons">
-
-                  <% if (money===false) { %>
-                    <!-- <button class="play-now-btn" id="openLoginPopupBtnPlay">
-                Login to Play
-              </button> -->
-                    <a id="openLoginPopupBtnPlay" style="font-size:0.85rem">Login</a>
-                    <a id="openRegisterPopupBtnBody" style="font-size:0.85rem">Register</a>
-                    <% } else { %>
-                      <!-- <button class="play-now-btn" onclick="window.location.href='/aviator'">
-                PLAY NOW
-              </button> -->
-                      <a style="font-size:0.85rem" onclick="window.location.href='/aviator'">Play Now</a>
-                      <a style="font-size:0.85rem" href="/logout">Logout</a>
-                      <% } %>
-
-
-
-
-
-                </div>
-              </header>
-              <div class="main-content-grid mt-4">
-                <section class="activity-section cyber-card">
-                  <h3><i class="fas fa-trophy"></i> Live Payouts</h3>
-                  <div id="withdrawals-feed"></div>
-                </section>
-
-                <section class="payment-methods cyber-card">
-                  <h3><i class="fas fa-credit-card"></i> Secure &amp; Instant Payments</h3>
-                  <p style="color: var(--color-text-primary); max-width: 500px; margin: 1rem auto 2rem auto;">We support
-                    all major payment methods for fast and easy transactions.</p>
-                  <div class="payment-logos">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/UPI-Logo-vector.svg" alt="UPI">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Paytm_logo.png" alt="Paytm">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/PhonePe_Logo.svg" alt="PhonePe">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="Google Pay">
-                  </div>
-                </section>
-              </div>
-
-              <section class="features-section mt-5">
-                <h3 style="margin-bottom:25px">Our Digital Edge</h3>
-                <div class="features-grid">
-                  <div class="feature-card cyber-card">
-                    <i class="fas fa-bolt"></i>
-                    <h4>Instant Deposits</h4>
-                    <p>Get straight to the action. Your deposits are processed instantly.</p>
-                  </div>
-                  <div class="feature-card cyber-card">
-                    <i class="fas fa-tachometer-alt"></i>
-                    <h4>Rapid Withdrawals</h4>
-                    <p>Your winnings, your rules. Withdraw your funds with unparalleled speed.</p>
-                  </div>
-                  <div class="feature-card cyber-card">
-                    <i class="fas fa-headset"></i>
-                    <h4>24/7 Support</h4>
-                    <p>Our support team is available around the clock to assist you.</p>
-                  </div>
-                </div>
-              </section>
-            </main>
-
-            <footer class="site-footer ">
-              <p>© 2026 1XBET AVIATOR. Please Play Responsibly.</p>
-            </footer>
-
-
-
-
-
-
+          <div data-v-2c772a7d="" class="game-tabs__scroll-item">
+            <img
+              data-v-2c772a7d=""
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260324175552qchj.png"
+              class="game-tabs__scroll-item__icon"
+            /><span data-v-2c772a7d="">Fishing</span>
           </div>
-
-
-
-          <section class="gaming-footer py-5">
-            <div class="container">
-
-              <!-- PARTNERS -->
-              <h3 class="section-title text-center mb-4">Our Esports Partners</h3>
-
-
-
-              <div class="row g-4 justify-content-center partners-grid">
-                <!-- <div class="col-6 col-md-3">
-              <div class="partner-card">PGL</div>
+          <div data-v-2c772a7d="" class="game-tabs__scroll-item">
+            <img
+              data-v-2c772a7d=""
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260317200219ci94.png"
+              class="game-tabs__scroll-item__icon"
+            /><span data-v-2c772a7d="">PVC</span>
+          </div>
+          <div data-v-2c772a7d="" class="game-tabs__scroll-item">
+            <img
+              data-v-2c772a7d=""
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_202603241755127vud.png"
+              class="game-tabs__scroll-item__icon"
+            /><span data-v-2c772a7d="">Casino</span>
+          </div>
+          <div data-v-2c772a7d="" class="game-tabs__scroll-item">
+            <img
+              data-v-2c772a7d=""
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260317200239w59n.png"
+              class="game-tabs__scroll-item__icon"
+            /><span data-v-2c772a7d="">Sports</span>
+          </div>
+        </div>
+      </div>
+      <!-- 当前分类的游戏区块 --><!-- 彩票类型 --><!-- 其他类型（通用网格） -->
+      <div data-v-d5b035b5="" class="game-section">
+        <div data-v-e656ed2c="" data-v-d5b035b5="" class="section-header">
+          <div data-v-e656ed2c="" class="section-header__title">
+            <div data-v-e656ed2c="" class="section-header__title-bg">
+              <span
+                data-v-e656ed2c=""
+                class="section-header__title-bg__inner"
+              ></span
+              ><span data-v-e656ed2c="" class="section-header__title-bg__text"
+                >Popular</span
+              >
             </div>
-            <div class="col-6 col-md-3">
-              <div class="partner-card">MBR</div>
+            <div data-v-e656ed2c="" class="section-header__title-tail"></div>
+          </div>
+          <div data-v-e656ed2c="" class="section-header__right">
+            <!--v-if--><span
+              data-v-e656ed2c=""
+              class="section-header__right-all"
+              >ALL</span
+            ><svg
+              data-v-e656ed2c=""
+              class="section-header__right-arrow"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                data-v-e656ed2c=""
+                d="M9 6L15 12L9 18"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <div data-v-d5b035b5="" class="game-section__grid">
+          <div data-v-d5b035b5="" class="game-section__grid-item">
+            <img
+              data-v-d5b035b5=""
+              class=""
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/ARLottery/WinGo_30S_20260328174820851.jpg"
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/ARLottery/WinGo_30S_20260328174820851.jpg"
+            />
+          </div>
+          <div data-v-d5b035b5="" class="game-section__grid-item">
+            <img
+              data-v-d5b035b5=""
+              class=""
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/TB_Chess/800.png"
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/TB_Chess/800.png"
+            />
+          </div>
+          <div data-v-d5b035b5="" class="game-section__grid-item">
+            <img
+              data-v-d5b035b5=""
+              class=""
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/TB_Chess/810.png"
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/TB_Chess/810.png"
+            />
+          </div>
+          <div data-v-d5b035b5="" class="game-section__grid-item">
+            <img
+              data-v-d5b035b5=""
+              class=""
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/TB_Chess/910.png"
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/TB_Chess/910.png"
+            />
+          </div>
+          <div data-v-d5b035b5="" class="game-section__grid-item">
+            <img
+              data-v-d5b035b5=""
+              class=""
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/TB_Chess/804.png"
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/TB_Chess/804.png"
+            />
+          </div>
+          <div data-v-d5b035b5="" class="game-section__grid-item">
+            <img
+              data-v-d5b035b5=""
+              class=""
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/TB_Chess/124.png"
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/TB_Chess/124.png"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- 推荐游戏 -->
+      <div data-v-b313c6ed="" data-v-6666ec94="" class="recommended-games">
+        <div data-v-e656ed2c="" data-v-b313c6ed="" class="section-header">
+          <div data-v-e656ed2c="" class="section-header__title">
+            <div data-v-e656ed2c="" class="section-header__title-bg">
+              <span
+                data-v-e656ed2c=""
+                class="section-header__title-bg__inner"
+              ></span
+              ><span data-v-e656ed2c="" class="section-header__title-bg__text"
+                >Recommended Games</span
+              >
             </div>
-            <div class="col-6 col-md-3">
-              <div class="partner-card">NAVI</div>
+            <div data-v-e656ed2c="" class="section-header__title-tail"></div>
+          </div>
+          <!--v-if-->
+        </div>
+        <div data-v-b313c6ed="" class="recommended-games__list">
+          <div data-v-b313c6ed="" class="recommended-games__list-item">
+            <img
+              data-v-b313c6ed=""
+              class="recommended-games__list-item__cover"
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/JILI/51.png"
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/JILI/51.png"
+            />
+          </div>
+          <div data-v-b313c6ed="" class="recommended-games__list-item">
+            <img
+              data-v-b313c6ed=""
+              class="recommended-games__list-item__cover"
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/JILI/223.png"
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/JILI/223.png"
+            />
+          </div>
+          <div data-v-b313c6ed="" class="recommended-games__list-item">
+            <img
+              data-v-b313c6ed=""
+              class="recommended-games__list-item__cover"
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/JILI/109.png"
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/JILI/109.png"
+            />
+          </div>
+          <div data-v-b313c6ed="" class="recommended-games__list-item">
+            <img
+              data-v-b313c6ed=""
+              class="recommended-games__list-item__cover ar-lazyload"
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/CQ9/19.png"
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/CQ9/19.png"
+            />
+          </div>
+          <div data-v-b313c6ed="" class="recommended-games__list-item">
+            <img
+              data-v-b313c6ed=""
+              class="recommended-games__list-item__cover ar-lazyload"
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/JILI/35.png"
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/JILI/35.png"
+            />
+          </div>
+          <div data-v-b313c6ed="" class="recommended-games__list-item">
+            <img
+              data-v-b313c6ed=""
+              class="recommended-games__list-item__cover ar-lazyload"
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/MG/SMG_wildfireWins.png"
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/MG/SMG_wildfireWins.png"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- 精选游戏 -->
+      <div data-v-6804144f="" data-v-6666ec94="" class="featured-game">
+        <div data-v-6804144f="" class="featured-game__card">
+          <!-- 左侧游戏封面 -->
+          <div data-v-6804144f="" class="featured-game__cover">
+            <img
+              data-v-6804144f=""
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/GameBox/10003_20260408154838711.jpg"
+              alt=""
+              class="featured-game__cover-img"
+            />
+          </div>
+          <!-- 右侧信息区 -->
+          <div data-v-6804144f="" class="featured-game__info">
+            <h3 data-v-6804144f="" class="featured-game__info-name">
+              Power Of The Kraken
+            </h3>
+            <div class="featured-game__info-row" data-v-6804144f="">
+              <span class="featured-game__info-row__stars" data-v-6804144f=""
+                >★★★★★</span
+              ><span class="featured-game__info-row__tag" data-v-6804144f=""
+                >5.0 | Score</span
+              >
             </div>
-            <div class="col-6 col-md-3">
-              <div class="partner-card">ASTR</div>
-            </div> -->
-                <img src="https://pagogaming.com/wp-content/uploads/2024/05/spribe-logo_character.png" class="loader-logo" style="width: 230px;" alt="Logo">
-              </div>
-
-              <!-- DOWNLOAD SECTION -->
-              <div class="download-box text-center mt-5 p-4">
-                <h4 class="mb-4">Get Our Mobile App</h4>
-
-                <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
-                  <a href="#" class="btn btn-gradient px-4 py-3 rounded-pill">
-                    <i class="bi bi-android"></i> Download for Android
-                  </a>
-                  <a href="#" class="btn btn-gradient px-4 py-3 rounded-pill">
-                    <i class="bi bi-apple"></i> Download for iOS
-                  </a>
-                </div>
-              </div>
-
-              <!-- SOCIAL NETWORKS -->
-              <div class="text-center mt-5">
-                <h4 class="mb-4">Connect With Us</h4>
-
-                <div class="social-icons d-flex justify-content-center gap-3">
-                  <a href="#" class="social-circle"><i class="bi bi-whatsapp"></i></a>
-                  <a href="#" class="social-circle"><i class="bi bi-facebook"></i></a>
-                  <a href="#" class="social-circle"><i class="bi bi-instagram"></i></a>
-                  <a href="#" class="social-circle"><i class="bi bi-telegram"></i></a>
-                  <a href="#" class="social-circle"><i class="bi bi-youtube"></i></a>
-                  <a href="#" class="social-circle"><i class="bi bi-twitter-x"></i></a>
-                </div>
-              </div>
-
-              <!-- SUPPORT -->
+            <div class="featured-game__info-row" data-v-6804144f="">
+              <span class="featured-game__info-row__label" data-v-6804144f=""
+                >Slot Game</span
+              ><span class="featured-game__info-row__tag" data-v-6804144f=""
+                >#01 | Rank</span
+              >
+            </div>
+            <div class="featured-game__info-row" data-v-6804144f="">
+              <span class="featured-game__info-row__label" data-v-6804144f=""
+                >300K Winner</span
+              ><span class="featured-game__info-row__tag" data-v-6804144f=""
+                >1500x | Max Win</span
+              >
+            </div>
+            <button
+              data-v-6804144f=""
+              class="purple-gradient-btn featured-game__info-btn"
+            >
+              Play Now
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- 中奖信息 -->
+      <div data-v-6666ec94="" class="purple-home__section-card">
+        <div data-v-e656ed2c="" data-v-6666ec94="" class="section-header">
+          <div data-v-e656ed2c="" class="section-header__title">
+            <div data-v-e656ed2c="" class="section-header__title-bg">
+              <span
+                data-v-e656ed2c=""
+                class="section-header__title-bg__inner"
+              ></span
+              ><span data-v-e656ed2c="" class="section-header__title-bg__text"
+                >Winning information</span
+              >
+            </div>
+            <div data-v-e656ed2c="" class="section-header__title-tail"></div>
+          </div>
+          <!--v-if-->
+        </div>
+        <div
+          data-v-ffb14677=""
+          data-v-6666ec94=""
+          class="luckyWinners__container"
+        >
+          <h1 data-v-ffb14677="">Winning information</h1>
+          <div data-v-ffb14677="" class="luckyWinners__container-wrapper">
+            <div data-v-ffb14677="" style="position: relative">
               <div
-                class="support-box mt-5 p-4 d-flex align-items-center justify-content-between flex-column flex-md-row">
-                <div>
-                  <h5 class="mb-1">24/7 Customer Support</h5>
-                  <p class="mb-0">We’re here to answer all your questions anytime.</p>
+                data-v-ffb14677=""
+                class="luckyWinners__container-wrapper__item"
+              >
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-img"
+                >
+                  <img
+                    data-v-ffb14677=""
+                    class="ar-lazyload"
+                    data-origin="https://jaiclub365.com/assets/png/18-52955242.webp"
+                    src="https://jaiclub365.com/assets/png/18-52955242.webp"
+                  />
                 </div>
-                <button class="btn btn-light rounded-pill mt-3 mt-md-0 px-4">Contact Now</button>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-info"
+                >
+                  <h1 data-v-ffb14677="">Mem***PYQ</h1>
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-winType"
+                >
+                  <img
+                    data-v-ffb14677=""
+                    class="ar-lazyload"
+                    data-origin="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png"
+                    src="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png"
+                    
+                  />
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-winAmount"
+                >
+                  <h1 data-v-ffb14677="">Receive ₹1,625.00</h1>
+                  <span data-v-ffb14677="">Winning amount</span>
+                </div>
               </div>
-
-              <!-- FOOTER BOTTOM -->
-              <div class="text-center mt-5 small text-light opacity-75">
-                © 2026 1XBET. All Rights Reserved.
+              <div
+                data-v-ffb14677=""
+                class="luckyWinners__container-wrapper__item"
+              >
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-img"
+                >
+                  <img
+                    data-v-ffb14677=""
+                    class="ar-lazyload"
+                    data-origin="/assets/png/8-ea087ede.webp"
+                  />
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-info"
+                >
+                  <h1 data-v-ffb14677="">Mem***KOL</h1>
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-winType"
+                >
+                  <img
+                    data-v-ffb14677=""
+                    class="ar-lazyload"
+                    data-origin="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png"
+                    src="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png"
+                  />
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-winAmount"
+                >
+                  <h1 data-v-ffb14677="">Receive ₹573.50</h1>
+                  <span data-v-ffb14677="">Winning amount</span>
+                </div>
               </div>
-
+              <div
+                data-v-ffb14677=""
+                class="luckyWinners__container-wrapper__item"
+              >
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-img"
+                >
+                  <img
+                    data-v-ffb14677=""
+                    class="ar-lazyload"
+                    data-origin="/assets/png/14-a397ff6b.webp"
+                  />
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-info"
+                >
+                  <h1 data-v-ffb14677="">Mem***KRA</h1>
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-winType"
+                >
+                  <img
+                    data-v-ffb14677=""
+                    class="ar-lazyload"
+                    data-origin="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260423171751p8q5.png"
+                    src="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260423171751p8q5.png"
+                  />
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-winAmount"
+                >
+                  <h1 data-v-ffb14677="">Receive ₹85.96</h1>
+                  <span data-v-ffb14677="">Winning amount</span>
+                </div>
+              </div>
+              <div
+                data-v-ffb14677=""
+                class="luckyWinners__container-wrapper__item"
+              >
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-img"
+                >
+                  <img
+                    data-v-ffb14677=""
+                    class="ar-lazyload"
+                    data-origin="/assets/png/11-925c456e.webp"
+                  />
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-info"
+                >
+                  <h1 data-v-ffb14677="">Mem***IOV</h1>
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-winType"
+                >
+                  <img
+                    data-v-ffb14677=""
+                    class="ar-lazyload"
+                    data-origin="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png"
+                    src="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png"
+                  />
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-winAmount"
+                >
+                  <h1 data-v-ffb14677="">Receive ₹442.00</h1>
+                  <span data-v-ffb14677="">Winning amount</span>
+                </div>
+              </div>
+              <div
+                data-v-ffb14677=""
+                class="luckyWinners__container-wrapper__item"
+              >
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-img"
+                >
+                  <img
+                    data-v-ffb14677=""
+                    class="ar-lazyload"
+                    data-origin="/assets/png/6-7c7f5203.webp"
+                  />
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-info"
+                >
+                  <h1 data-v-ffb14677="">Mem***CPK</h1>
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-winType"
+                >
+                  <img
+                    data-v-ffb14677=""
+                    class="ar-lazyload"
+                    data-origin="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png"
+                    src="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png"
+                  />
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-winAmount"
+                >
+                  <h1 data-v-ffb14677="">Receive ₹387.96</h1>
+                  <span data-v-ffb14677="">Winning amount</span>
+                </div>
+              </div>
+              <div
+                data-v-ffb14677=""
+                class="luckyWinners__container-wrapper__item"
+              >
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-img"
+                >
+                  <img
+                    data-v-ffb14677=""
+                    class="ar-lazyload"
+                    data-origin="/assets/png/8-ea087ede.webp"
+                  />
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-info"
+                >
+                  <h1 data-v-ffb14677="">Mem***PFV</h1>
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-winType"
+                >
+                  <img
+                    data-v-ffb14677=""
+                    class="ar-lazyload"
+                    data-origin="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png"
+                    src="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png"
+                  />
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-winAmount"
+                >
+                  <h1 data-v-ffb14677="">Receive ₹700.80</h1>
+                  <span data-v-ffb14677="">Winning amount</span>
+                </div>
+              </div>
             </div>
-
-
-          
-
-          </section>
-          <div id="loginPopupOverlay" class="popup-overlay">
-            <div class="popup-content register-form">
-              <button class="popup-close-btn" id="closeLoginPopupBtn">×</button>
-              <div id="authFormContainer">
-                <!-- Container for ALL forms -->
-
-                <!-- 1. Login Form View -->
-                <div id="loginFormView" class="form-view active">
-                  <div class="login__container-form">
-                    <div class="login_container-tab">
-                      <div class="tab active">
-                        <div class="font30 phonefont30active">Log In</div>
-                      </div>
-                    </div>
-                    <div class="tab-content activecontent">
-                      <div class="signIn__container">
-                        <div class="phoneInput__container">
-                          <div class="phoneInput__container-label">
-                            <span>Phone number</span>
-                          </div>
-                          <div class="phoneInput__container-input">
-                            <div class="dropdown">
-                              <div class="dropdown__value">
-                                <span>+91</span><i>▼</i>
-                              </div>
-                            </div>
-                            <input type="text" name="username" placeholder="Enter 10-digit number" required
-                              pattern="\d{10}" title="10-digit phone number" />
-                          </div>
-                        </div>
-                        <div class="passwordInput__container">
-                          <div class="passwordInput__container-label">
-                            <span>Password</span>
-                          </div>
-                          <div class="passwordInput__container-input">
-                            <input id="passwordfield" type="password" placeholder="Enter Password" required />
-                            <span class="eye" onclick="showPass('passwordfield', 'eyeicon')"><img id="eyeicon"
-                                src="/index_files/eyeInvisible-2fa5c152.png" /></span>
-                          </div>
-                        </div>
-
-                        <div class="signIn__container-remember">
-                          <div class="van-checkbox login-checkbox checked" tabindex="0" aria-checked="true">
-                            <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
-                              <i>✔</i>
-                            </div>
-                            <span class="van-checkbox__label">Remember password</span>
-                          </div>
-
-                        </div>
-                        <div class="signIn__container-button">
-                          <button id="popupLoginSubmitBtn" style="border-radius: 30px">
-                            Log in
-                          </button>
-                        </div>
-                        <div class="forgetcon" style="align-items: center">
-                          <a class="switchToForgot">Forgot password?</a>
-                          <!-- Link to switch view -->
-                        </div>
-
-                        <div class="alert-toast"></div>
-                        <div class="signIn__container-button">
-                          <button class="switchToRegister" style="border-radius: 30px">
-                            Create Account
-                          </button>
-                        </div>
-                      </div>
-                    </div>
+          </div>
+        </div>
+      </div>
+      <!-- 今日盈利排行榜 -->
+      <div data-v-6666ec94="" class="purple-home__section-card">
+        <div data-v-e656ed2c="" data-v-6666ec94="" class="section-header">
+          <div data-v-e656ed2c="" class="section-header__title">
+            <div data-v-e656ed2c="" class="section-header__title-bg">
+              <span
+                data-v-e656ed2c=""
+                class="section-header__title-bg__inner"
+              ></span
+              ><span data-v-e656ed2c="" class="section-header__title-bg__text"
+                >Today's earnings chart</span
+              >
+            </div>
+            <div data-v-e656ed2c="" class="section-header__title-tail"></div>
+          </div>
+          <!--v-if-->
+        </div>
+        <div data-v-68403b00="" data-v-6666ec94="" class="profit-rank">
+          <div data-v-68403b00="" class="profit-rank__content">
+            <!-- 领奖台 -->
+            <div data-v-68403b00="" class="profit-rank__podium">
+              <!-- 人物信息 -->
+              <div data-v-68403b00="" class="profit-rank__podium-people">
+                <div
+                  data-v-68403b00=""
+                  class="profit-rank__podium-item profit-rank__podium-item--1st"
+                  style="order: 2"
+                >
+                  <!-- 头像框 -->
+                  <div
+                    data-v-68403b00=""
+                    class="profit-rank__podium-item__avatar"
+                    style="
+                      background: url(&quot;https://jaiclub365.com/assets/png/border1-3b6518ec.webp&quot;)
+                        center center / 100% 100% no-repeat;
+                    "
+                  >
+                    <img
+                      data-v-68403b00=""
+                      data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
+                      class="ar-lazyload"
+                      data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                      src="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                      
+                    />
+                  </div>
+                  <!-- 头像下方三角形 -->
+                  <div
+                    data-v-68403b00=""
+                    class="profit-rank__podium-item__triangle"
+                  ></div>
+                  <span
+                    data-v-68403b00=""
+                    class="profit-rank__podium-item__name"
+                    >Mem***KCX</span
+                  >
+                  <div
+                    data-v-68403b00=""
+                    class="profit-rank__podium-item__amount"
+                  >
+                    <img
+                      data-v-68403b00=""
+                      src="https://jaiclub365.com/assets/png/coinStack-85b61210.webp"
+                      class="coin-icon"
+                    /><span data-v-68403b00="">₹12,418,671,912.08</span>
                   </div>
                 </div>
-                <!-- End loginFormView -->
+                <div
+                  data-v-68403b00=""
+                  class="profit-rank__podium-item profit-rank__podium-item--2nd"
+                  style="order: 1"
+                >
+                  <!-- 头像框 -->
+                  <div
+                    data-v-68403b00=""
+                    class="profit-rank__podium-item__avatar"
+                    style="
+                      background: url(&quot;https://jaiclub365.com/assets/png/border2-7a806be7.webp&quot;)
+                        center center / 100% 100% no-repeat;
+                    "
+                  >
+                    <img
+                      data-v-68403b00=""
+                      data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
+                      class="ar-lazyload"
+                      data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                      src="https://jaiclub365.com/assets/png/1-a6662edb.webp"
 
-                <!-- 2. Registration Form View -->
-                <div id="registerFormView" class="form-view " style="display: none">
-                  <div class="resgister__C-form  ">
-                    <div class="login_container-tab">
-                      <div class="tab active">
-                        <div class="font30 phonefont30active">Register</div>
-                      </div>
+                    />
+                  </div>
+                  <!-- 头像下方三角形 -->
+                  <div
+                    data-v-68403b00=""
+                    class="profit-rank__podium-item__triangle"
+                  ></div>
+                  <span
+                    data-v-68403b00=""
+                    class="profit-rank__podium-item__name"
+                    >Mem***4H1</span
+                  >
+                  <div
+                    data-v-68403b00=""
+                    class="profit-rank__podium-item__amount"
+                  >
+                    <img
+                      data-v-68403b00=""
+                      src="https://jaiclub365.com/assets/png/coinStack-85b61210.webp"
+                      class="coin-icon"
+                    /><span data-v-68403b00="">₹618,565,853.08</span>
+                  </div>
+                </div>
+                <div
+                  data-v-68403b00=""
+                  class="profit-rank__podium-item profit-rank__podium-item--3rd"
+                  style="order: 3"
+                >
+                  <!-- 头像框 -->
+                  <div
+                    data-v-68403b00=""
+                    class="profit-rank__podium-item__avatar"
+                    style="
+                      background: url(&quot;https://jaiclub365.com/assets/png/border3-cfec4a7d.webp&quot;)
+                        center center / 100% 100% no-repeat;
+                    "
+                  >
+                    <img
+                      data-v-68403b00=""
+                      data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
+                      class="ar-lazyload"
+                      data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                      src="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                    />
+                  </div>
+                  <!-- 头像下方三角形 -->
+                  <div
+                    data-v-68403b00=""
+                    class="profit-rank__podium-item__triangle"
+                  ></div>
+                  <span
+                    data-v-68403b00=""
+                    class="profit-rank__podium-item__name"
+                    >Mem***CVN</span
+                  >
+                  <div
+                    data-v-68403b00=""
+                    class="profit-rank__podium-item__amount"
+                  >
+                    <img
+                      data-v-68403b00=""
+                      src="https://jaiclub365.com/assets/png/coinStack-85b61210.webp"
+                      class="coin-icon"
+                    /><span data-v-68403b00="">₹43,737,680.28</span>
+                  </div>
+                </div>
+              </div>
+              <!-- 光圈背景 --><img
+                data-v-68403b00=""
+                src="https://jaiclub365.com/assets/png/rankHalo-e3eae9c5.webp"
+                class="profit-rank__podium-halo"
+              /><!-- 领奖台图片 --><img
+                data-v-68403b00=""
+                src="https://jaiclub365.com/assets/png/DailyProfitRankStage-397321b9.webp"
+                class="profit-rank__podium-stage"
+              />
+            </div>
+            <!-- 排行列表 -->
+            <div data-v-68403b00="" class="profit-rank__list">
+              <div data-v-68403b00="" class="profit-rank__list-item">
+                <span data-v-68403b00="" class="profit-rank__list-item__rank"
+                  ><img
+                    data-v-68403b00=""
+                    src="https://jaiclub365.com/assets/png/rankWreath-733d7a66.webp"
+                    class="rank-wreath"
+                  /><i data-v-68403b00="">4</i></span
+                ><img
+                  data-v-68403b00=""
+                  data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
+                  class="profit-rank__list-item__avatar ar-lazyload"
+                  data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                  src="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                /><span data-v-68403b00="" class="profit-rank__list-item__name"
+                  >Mem***WD9</span
+                ><span data-v-68403b00="" class="profit-rank__list-item__amount"
+                  >₹34,675,982.88</span
+                >
+              </div>
+              <div data-v-68403b00="" class="profit-rank__list-item">
+                <span data-v-68403b00="" class="profit-rank__list-item__rank"
+                  ><img
+                    data-v-68403b00=""
+                    src="https://jaiclub365.com/assets/png/rankWreath-733d7a66.webp"
+                    class="rank-wreath"
+                  /><i data-v-68403b00="">5</i></span
+                ><img
+                  data-v-68403b00=""
+                  data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
+                  class="profit-rank__list-item__avatar ar-lazyload"
+                  data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                     src="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                /><span data-v-68403b00="" class="profit-rank__list-item__name"
+                  >Mem***J40</span
+                ><span data-v-68403b00="" class="profit-rank__list-item__amount"
+                  >₹12,054,000.00</span
+                >
+              </div>
+              <div data-v-68403b00="" class="profit-rank__list-item">
+                <span data-v-68403b00="" class="profit-rank__list-item__rank"
+                  ><img
+                    data-v-68403b00=""
+                    src="https://jaiclub365.com/assets/png/rankWreath-733d7a66.webp"
+                    class="rank-wreath"
+                  /><i data-v-68403b00="">6</i></span
+                ><img
+                  data-v-68403b00=""
+                  data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
+                  class="profit-rank__list-item__avatar ar-lazyload"
+                  data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                     src="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                /><span data-v-68403b00="" class="profit-rank__list-item__name"
+                  >Mem***GL1</span
+                ><span data-v-68403b00="" class="profit-rank__list-item__amount"
+                  >₹11,760,000.00</span
+                >
+              </div>
+              <div data-v-68403b00="" class="profit-rank__list-item">
+                <span data-v-68403b00="" class="profit-rank__list-item__rank"
+                  ><img
+                    data-v-68403b00=""
+                    src="https://jaiclub365.com/assets/png/rankWreath-733d7a66.webp"
+                    class="rank-wreath"
+                  /><i data-v-68403b00="">7</i></span
+                ><img
+                  data-v-68403b00=""
+                  data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
+                  class="profit-rank__list-item__avatar ar-lazyload"
+                  data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                     src="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                /><span data-v-68403b00="" class="profit-rank__list-item__name"
+                  >Mem***7CF</span
+                ><span data-v-68403b00="" class="profit-rank__list-item__amount"
+                  >₹9,241,400.00</span
+                >
+              </div>
+              <div data-v-68403b00="" class="profit-rank__list-item">
+                <span data-v-68403b00="" class="profit-rank__list-item__rank"
+                  ><img
+                    data-v-68403b00=""
+                    src="https://jaiclub365.com/assets/png/rankWreath-733d7a66.webp"
+                    class="rank-wreath"
+                  /><i data-v-68403b00="">8</i></span
+                ><img
+                  data-v-68403b00=""
+                  data-img="/assets/png/avatar-fb4c2506.webp"
+                  class="profit-rank__list-item__avatar ar-lazyload"
+                  data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                     src="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                /><span data-v-68403b00="" class="profit-rank__list-item__name"
+                  >Mem***70N</span
+                ><span data-v-68403b00="" class="profit-rank__list-item__amount"
+                  >₹8,986,600.00</span
+                >
+              </div>
+              <div data-v-68403b00="" class="profit-rank__list-item">
+                <span data-v-68403b00="" class="profit-rank__list-item__rank"
+                  ><img
+                    data-v-68403b00=""
+                    src="https://jaiclub365.com/assets/png/rankWreath-733d7a66.webp"
+                    class="rank-wreath"
+                  /><i data-v-68403b00="">9</i></span
+                ><img
+                  data-v-68403b00=""
+                  data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
+                  class="profit-rank__list-item__avatar ar-lazyload"
+                  data-origin="/assets/png/1-a6662edb.webp"
+                     src="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                /><span data-v-68403b00="" class="profit-rank__list-item__name"
+                  >Mem***IZ7</span
+                ><span data-v-68403b00="" class="profit-rank__list-item__amount"
+                  >₹4,515,840.00</span
+                >
+              </div>
+              <div data-v-68403b00="" class="profit-rank__list-item">
+                <span data-v-68403b00="" class="profit-rank__list-item__rank"
+                  ><img
+                    data-v-68403b00=""
+                    src="https://jaiclub365.com/assets/png/rankWreath-733d7a66.webp"
+                    class="rank-wreath"
+                  /><i data-v-68403b00="">10</i></span
+                ><img
+                  data-v-68403b00=""
+                  data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
+                  class="profit-rank__list-item__avatar ar-lazyload"
+                  data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                     src="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                /><span data-v-68403b00="" class="profit-rank__list-item__name"
+                  >Mem***FDH</span
+                ><span data-v-68403b00="" class="profit-rank__list-item__amount"
+                  >₹4,312,392.00</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 合作厂商 -->
+      <div data-v-420bb38c="" data-v-6666ec94="" class="partner-logos">
+        <div data-v-420bb38c="" class="partner-logos__grid">
+          <div data-v-420bb38c="" class="partner-logos__grid-item">
+            <img
+              data-v-420bb38c=""
+              src="https://jaiclub365.com/assets/svg/PG-1cd445cb.svg"
+              alt="PG"
+            />
+          </div>
+          <div data-v-420bb38c="" class="partner-logos__grid-item">
+            <img
+              data-v-420bb38c=""
+              src="https://jaiclub365.com/assets/svg/JDB-4f6ca794.svg"
+              alt="JDB"
+            />
+          </div>
+          <div data-v-420bb38c="" class="partner-logos__grid-item">
+            <img
+              data-v-420bb38c=""
+              src="https://jaiclub365.com/assets/svg/JILI-ff172107.svg"
+              alt="JILI"
+            />
+          </div>
+          <div data-v-420bb38c="" class="partner-logos__grid-item">
+            <img
+              data-v-420bb38c=""
+              src="https://jaiclub365.com/assets/svg/ARpay-c4c23942.svg"
+              alt="AR pay"
+            />
+          </div>
+          <div data-v-420bb38c="" class="partner-logos__grid-item">
+            <img
+              data-v-420bb38c=""
+              src="https://jaiclub365.com/assets/svg/AG-4786cd6a.svg"
+              alt="AG"
+            />
+          </div>
+          <div data-v-420bb38c="" class="partner-logos__grid-item">
+            <img
+              data-v-420bb38c=""
+              src="https://jaiclub365.com/assets/svg/Evo-880723fb.svg"
+              alt="Evo"
+            />
+          </div>
+          <div data-v-420bb38c="" class="partner-logos__grid-item">
+            <img
+              data-v-420bb38c=""
+              src="https://jaiclub365.com/assets/svg/CQ9-e6cb65fb.svg"
+              alt="CQ9"
+            />
+          </div>
+          <div data-v-420bb38c="" class="partner-logos__grid-item">
+            <img
+              data-v-420bb38c=""
+              src="https://jaiclub365.com/assets/svg/9G-99701e62.svg"
+              alt="9G"
+            />
+          </div>
+          <div data-v-420bb38c="" class="partner-logos__grid-item">
+            <img
+              data-v-420bb38c=""
+              src="https://jaiclub365.com/assets/svg/PP-a3f59e4c.svg"
+              alt="PP"
+            />
+          </div>
+        </div>
+        <div data-v-420bb38c="" class="partner-logos__text">
+          <p data-v-420bb38c="" class="partner-logos__text-item">
+            <span data-v-420bb38c="" class="dot"></span
+            ><span data-v-420bb38c=""
+              >The platform advocates fairness, justice, and openness. We mainly
+              operate fair lottery, blockchain games, casinos, and slot machine
+              games.</span
+            >
+          </p>
+          <p data-v-420bb38c="" class="partner-logos__text-item">
+            <span data-v-420bb38c="" class="dot"></span
+            ><span data-v-420bb38c=""
+              >Jai club works with more than 10,000 online live game dealers and
+              slot games, all of which are verified fair games.</span
+            >
+          </p>
+          <p data-v-420bb38c="" class="partner-logos__text-item">
+            <span data-v-420bb38c="" class="dot"></span
+            ><span data-v-420bb38c=""
+              >Jai club supports fast deposit and withdrawal, and looks forward
+              to your visit.</span
+            >
+          </p>
+          <p data-v-420bb38c="" class="partner-logos__text-warning">
+            Gambling can be addictive, please play rationally.<br
+              data-v-420bb38c=""
+            />
+            Jai club only accepts customers above the age of 18.
+          </p>
+        </div>
+      </div>
+      <!-- 下载PWA应用 --><!-- <DownloadPWA /> --><!-- 邀请转盘 -->
+      <div
+        data-v-6666ec94=""
+        class="float"
+        style="
+          --d9cf7d89-reBenefitBgUrl: url(&quot;/assets/png/reBenefits-c784b658.png&quot;);
+          --d9cf7d89-rewardCenterBgUrl: url(&quot;/assets/png/rewardCenter-f8f2277a.png&quot;);
+          --d9cf7d89-bigTurntableBgUrl: url(&quot;/assets/png/turntable_icon-9b14cf81.png&quot;);
+          --d9cf7d89-homeBigTurntableBgUrl: url(&quot;/assets/png/turntable-4464ae2e.png&quot;);
+          --d9cf7d89-telegramBgUrl: url(&quot;/assets/png/tg_bg-8a7ff21e.png&quot;);
+          --d9cf7d89-changlongIconUrl: url(&quot;/assets/svg/changlong-54cbfdac.svg&quot;);
+          transition: 0.3s;
+        "
+      >
+        <!-- 会员回归奖励 --><!--v-if--><!-- 奖金弹窗 -->
+        <div class="rewardCenter float-entry"></div>
+        <!-- 邀请转盘组件 --><!--v-if--><!-- 大转盘组件 -->
+        <div class="big-turntable float-entry"></div>
+        <!-- Telegram组件 --><!--v-if--><!-- 长龙组件 -->
+        <div class="changlongEnter float-entry"></div>
+      </div>
+      <!-- 公告弹窗 --><!----><!----><!-- 获奖弹窗 -->
+      <div data-v-c0caae78="" data-v-6666ec94="" class="dialog inactive">
+        <div
+          data-v-c0caae78=""
+          class="dialog__container"
+          role="dialog"
+          tabindex="0"
+        >
+          <div data-v-c0caae78="" class="dialog__container-img">
+            <img
+              data-v-c0caae78=""
+              alt=""
+              class=""
+              data-origin="/assets/png/superjackpotHome-72bbeb43.webp"
+              src="https://jaiclub365.com/assets/png/superjackpotHome-72bbeb43.webp"
+            />
+          </div>
+          <div data-v-c0caae78="" class="dialog__container-title">
+            <h1 data-v-c0caae78="">Congratulation</h1>
+          </div>
+          <div data-v-c0caae78="" class="dialog__container-content">
+            <div data-v-6666ec94="" class="Laundry-Con">
+              <div data-v-6666ec94="" class="Laundry-Con_tip">
+                Get 【Super Jackpot】!
+              </div>
+              <div data-v-6666ec94="" class="Landty-Con-tips">
+                Visit the [Super Jackpot] page to claim your reward
+              </div>
+            </div>
+          </div>
+          <div data-v-c0caae78="" class="dialog__container-footer">
+            <!--v-if--><button data-v-c0caae78="">OK</button>
+          </div>
+        </div>
+        <div data-v-c0caae78="" class="dialog__outside"></div>
+      </div>
+    </div>
+
+     <%- include('footerxx') %>
+
+    </div>
+
+
+
+
+
+    <div id="loginPopupOverlay" class="popup-overlay">
+      <div class="popup-content register-form">
+        <button class="popup-close-btn" id="closeLoginPopupBtn">×</button>
+        <div id="authFormContainer">
+          <!-- Container for ALL forms -->
+
+          <!-- 1. Login Form View -->
+          <div id="loginFormView" class="form-view active">
+            <div class="login__container-form">
+              <div class="login_container-tab">
+                <div class="tab active">
+                  <div class="font30 phonefont30active">Log In</div>
+                </div>
+              </div>
+              <div class="tab-content activecontent">
+                <div class="signIn__container">
+                  <div class="phoneInput__container">
+                    <div class="phoneInput__container-label">
+                      <span>Phone number</span>
                     </div>
-                    <div class="tab-content activecontent">
-                      <div class="register__container">
-                        <div class="Name__container">
-                          <div class="Name__container-label"><span>Name</span></div>
-                          <div class="Name__container-input">
-                            <input type="text" name="registerName" id="registerName" placeholder="Enter Name"
-                              title="10-digit phone number" />
-                          </div>
+                    <div class="phoneInput__container-input">
+                      <div class="dropdown">
+                        <div class="dropdown__value">
+                          <span>+91</span><i>▼</i>
                         </div>
-                        <div class="input-container" style="margin-bottom: 16px">
-                          <div class="input-label">
-                            <span>Gender</span>
-                          </div>
+                      </div>
+                      <input type="text" name="username"
+                        placeholder="Enter 10-digit number" required
+                        pattern="\d{10}" title="10-digit phone number" />
+                    </div>
+                  </div>
+                  <div class="passwordInput__container">
+                    <div class="passwordInput__container-label">
+                      <span>Password</span>
+                    </div>
+                    <div class="passwordInput__container-input">
+                      <input id="passwordfield" type="password"
+                        placeholder="Enter Password" required />
+                      <span class="eye"
+                        onclick="showPass('passwordfield', 'eyeicon')"><img
+                          id="eyeicon"
+                          src="/index_files/eyeInvisible-2fa5c152.png" /></span>
+                    </div>
+                  </div>
 
-                          <div class="">
-                            <select name="registerGender" id="registerGender" class="" required>
-                              <option value="" disabled selected class="Name__container-input">
-                                Select Gender
-                              </option>
-                              <option value="male" class="Name__container-input">Male</option>
-                              <option value="female" class="Name__container-input">Female</option>
-                              <option value="other" class="Name__container-input">Other</option>
-                            </select>
-                          </div>
-                        </div>
+                  <div class="signIn__container-remember">
+                    <div class="van-checkbox login-checkbox checked"
+                      tabindex="0" aria-checked="true">
+                      <div
+                        class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
+                        <i>✔</i>
+                      </div>
+                      <span class="van-checkbox__label">Remember password</span>
+                    </div>
 
-                        <div class="Email__container">
-                          <div class="Email__container-label"><span>Email</span></div>
-                          <div class="Email__container-input">
-                            <input type="text" name="registerEmail" id="registerEmail" placeholder="Enter Email"
-                              required />
-                          </div>
-                        </div>
+                  </div>
+                  <div class="signIn__container-button">
+                    <button id="popupLoginSubmitBtn"
+                      style="border-radius: 30px">
+                      Log in
+                    </button>
+                  </div>
+                  <div class="forgetcon" style="align-items: center">
+                    <a class="switchToForgot">Forgot password?</a>
+                    <!-- Link to switch view -->
+                  </div>
 
-                        <div class="phoneInput__container">
-                          <div class="phoneInput__container-label">
-                            <span>Phone number</span>
-                          </div>
-                          <div class="phoneInput__container-input">
-                            <div class="dropdown">
-                              <div class="dropdown__value">
-                                <span>+91</span><i>▼</i>
-                              </div>
-                            </div>
-                            <input type="text" name="registerUsername" id="registerPhone"
-                              placeholder="Enter 10-digit number" required pattern="\d{10}"
-                              title="10-digit phone number" />
-                          </div>
+                  <div class="alert-toast"></div>
+                  <div class="signIn__container-button">
+                    <button class="switchToRegister"
+                      style="border-radius: 30px">
+                      Create Account
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End loginFormView -->
+
+          <!-- 2. Registration Form View -->
+          <div id="registerFormView" class="form-view " style="display: none">
+            <div class="resgister__C-form  ">
+              <div class="login_container-tab">
+                <div class="tab active">
+                  <div class="font30 phonefont30active">Register</div>
+                </div>
+              </div>
+              <div class="tab-content activecontent">
+                <div class="register__container">
+                  <div class="Name__container">
+                    <div class="Name__container-label"><span>Name</span></div>
+                    <div class="Name__container-input">
+                      <input type="text" name="registerName" id="registerName"
+                        placeholder="Enter Name"
+                        title="10-digit phone number" />
+                    </div>
+                  </div>
+                  <div class="input-container" style="margin-bottom: 16px">
+                    <div class="input-label">
+                      <span>Gender</span>
+                    </div>
+
+                    <div class>
+                      <select name="registerGender" id="registerGender" class
+                        required>
+                        <option value disabled selected
+                          class="Name__container-input">
+                          Select Gender
+                        </option>
+                        <option value="male"
+                          class="Name__container-input">Male</option>
+                        <option value="female"
+                          class="Name__container-input">Female</option>
+                        <option value="other"
+                          class="Name__container-input">Other</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="Email__container">
+                    <div class="Email__container-label"><span>Email</span></div>
+                    <div class="Email__container-input">
+                      <input type="text" name="registerEmail" id="registerEmail"
+                        placeholder="Enter Email"
+                        required />
+                    </div>
+                  </div>
+
+                  <div class="phoneInput__container">
+                    <div class="phoneInput__container-label">
+                      <span>Phone number</span>
+                    </div>
+                    <div class="phoneInput__container-input">
+                      <div class="dropdown">
+                        <div class="dropdown__value">
+                          <span>+91</span><i>▼</i>
                         </div>
-                        <div class="passwordInput__container">
-                          <div class="passwordInput__container-label">
-                            <span>Set password</span>
-                          </div>
-                          <div class="passwordInput__container-input">
-                            <input name="registerPassword" id="registerPassword" type="password"
-                              placeholder="Enter password" required />
-                            <span class="eye" onclick="showPass('registerPassword', 'registerEyeIcon')"><img
-                                id="registerEyeIcon" src="/index_files/eyeInvisible-2fa5c152.png" /></span>
-                          </div>
-                        </div>
-                        <!-- <div class="register__container-tip" style="font-size: 11px; color: #718096; margin-top: -10px; margin-bottom: 15px;">Password must be 8+ chars with letters & numbers.</div> -->
-                        <div class="register__container-invitation">
-                          <!-- <div class="register__container-invitation__label"><img class="register__container-invitation__label-icon" src="data:image/png;base64,..."><span>Invite code</span></div>
+                      </div>
+                      <input type="text" name="registerUsername"
+                        id="registerPhone"
+                        placeholder="Enter 10-digit number" required
+                        pattern="\d{10}"
+                        title="10-digit phone number" />
+                    </div>
+                  </div>
+                  <div class="passwordInput__container">
+                    <div class="passwordInput__container-label">
+                      <span>Set password</span>
+                    </div>
+                    <div class="passwordInput__container-input">
+                      <input name="registerPassword" id="registerPassword"
+                        type="password"
+                        placeholder="Enter password" required />
+                      <span class="eye"
+                        onclick="showPass('registerPassword', 'registerEyeIcon')"><img
+                          id="registerEyeIcon"
+                          src="/index_files/eyeInvisible-2fa5c152.png" /></span>
+                    </div>
+                  </div>
+                  <!-- <div class="register__container-tip" style="font-size: 11px; color: #718096; margin-top: -10px; margin-bottom: 15px;">Password must be 8+ chars with letters & numbers.</div> -->
+                  <div class="register__container-invitation">
+                    <!-- <div class="register__container-invitation__label"><img class="register__container-invitation__label-icon" src="data:image/png;base64,..."><span>Invite code</span></div>
                                 <div class="register__container-invitation__input">
                                     <input name="invite" id="inviteCode" type="text" placeholder="Enter invitation code" required>
                                 </div> -->
-                        </div>
-                        <div class="alert-toast"></div>
-                        <!-- <div class="register__container-remember">
+                  </div>
+                  <div class="alert-toast"></div>
+                  <!-- <div class="register__container-remember">
                                 <div class="van-checkbox register-checkbox" tabindex="0" aria-checked="false">
                                     <div class="van-checkbox__icon van-checkbox__icon--round"><i style="display: none;">✔</i></div>
                                     <span class="van-checkbox__label">I have read and agree <span>【Privacy Agreement】</span></span>
                                 </div>
                             </div> -->
-                        <div class="register__container-button">
-                          <div class="mian-btn m-t-40">
-                            <button id="popupRegisterSubmitBtn">Register</button>
-                          </div>
-                          <button class="login switchToLogin">
-                            <div class="account">Have an account?</div>
-                            <div class="loginin">Login</div>
-                          </button>
-                        </div>
-                      </div>
+                  <div class="register__container-button">
+                    <div class="mian-btn m-t-40">
+                      <button id="popupRegisterSubmitBtn">Register</button>
                     </div>
+                    <button class="login switchToLogin">
+                      <div class="account">Have an account?</div>
+                      <div class="loginin">Login</div>
+                    </button>
                   </div>
                 </div>
-                <!-- End registerFormView -->
+              </div>
+            </div>
+          </div>
+          <!-- End registerFormView -->
 
-                <!-- 3. Forgot Password Form View -->
-                <div id="forgotPasswordView" class="form-view" style="display: none">
-                  <div class="forgot-box">
-                    <!-- Use container class from forgot.ejs -->
-                    <div class="login_container-tab">
-                      <div class="tab active">
-                        <div class="font30 phonefont30active">Reset Password</div>
-                      </div>
-                    </div>
-                    <div class="mian-from m-t-20">
-                      <div class="lab">Phone number:</div>
-                      <div class="item c-row c-row-center c-row-middle first">
-                        <div class="c-row number">
-                          <span class="c-row c-row-middle-center"><img height="14px" width="auto"
-                              src="/images/phone.png" class="mobile" /></span>
-                          <div class="p-l-5">+91</div>
-                        </div>
-                        <input id="forgotUsername" type="text" maxlength="10" placeholder="Enter Phone Number" required
-                          pattern="\d{10}" title="10-digit phone number" />
-                      </div>
+          <!-- 3. Forgot Password Form View -->
+          <div id="forgotPasswordView" class="form-view" style="display: none">
+            <div class="forgot-box">
+              <!-- Use container class from forgot.ejs -->
+              <div class="login_container-tab">
+                <div class="tab active">
+                  <div class="font30 phonefont30active">Reset Password</div>
+                </div>
+              </div>
+              <div class="mian-from m-t-20">
+                <div class="lab">Phone number:</div>
+                <div class="item c-row c-row-center c-row-middle first">
+                  <div class="c-row number">
+                    <span class="c-row c-row-middle-center"><img height="14px"
+                        width="auto"
+                        src="/images/phone.png" class="mobile" /></span>
+                    <div class="p-l-5">+91</div>
+                  </div>
+                  <input id="forgotUsername" type="text" maxlength="10"
+                    placeholder="Enter Phone Number" required
+                    pattern="\d{10}" title="10-digit phone number" />
+                </div>
 
-                      <div class="lab">Verification Code:</div>
-                      <div class="item c-row c-row-center c-row-middle">
-                        <span class="img c-row c-row-middle-center">
-                          <img height="14px" width="auto" src="/images/verifie.png" class="mobile" />
-                        </span>
-                        <input type="number" id="forgotOtp" placeholder="Enter Verification Code" required
-                          pattern="\d{4,6}" title="4 to 6 digit OTP" />
-                        <button class="otp" id="popupForgotOtpBtn">Send</button>
-                      </div>
-                      <div class="tip">
-                        Didn't receive OTP? Contact customer service.
-                      </div>
+                <div class="lab">Verification Code:</div>
+                <div class="item c-row c-row-center c-row-middle">
+                  <span class="img c-row c-row-middle-center">
+                    <img height="14px" width="auto" src="/images/verifie.png"
+                      class="mobile" />
+                  </span>
+                  <input type="number" id="forgotOtp"
+                    placeholder="Enter Verification Code" required
+                    pattern="\d{4,6}" title="4 to 6 digit OTP" />
+                  <button class="otp" id="popupForgotOtpBtn">Send</button>
+                </div>
+                <div class="tip">
+                  Didn't receive OTP? Contact customer service.
+                </div>
 
-                      <div class="lab">New Password:</div>
-                      <div class="item c-row c-row-center c-row-middle">
-                        <span class="img c-row c-row-middle-center">
-                          <img height="14px" width="auto" src="/images/password.png" class="password" />
-                        </span>
-                        <input id="forgotNewPassword" type="password" placeholder="Enter New Password" required />
-                        <!-- Optional: Add eye icon here if desired
+                <div class="lab">New Password:</div>
+                <div class="item c-row c-row-center c-row-middle">
+                  <span class="img c-row c-row-middle-center">
+                    <img height="14px" width="auto" src="/images/password.png"
+                      class="password" />
+                  </span>
+                  <input id="forgotNewPassword" type="password"
+                    placeholder="Enter New Password" required />
+                  <!-- Optional: Add eye icon here if desired
                              <span class="eye" onclick="showPass('forgotNewPassword', 'forgotEyeIcon')"><img id="forgotEyeIcon" src="/index_files/eyeInvisible-2fa5c152.png"></span>
                              -->
-                      </div>
-
-                      <div class="alert-toast"></div>
-                      <!-- Alert area -->
-
-                      <div class="mian-btn m-t-40">
-                        <button id="popupForgotSubmitBtn">Reset Password</button>
-                      </div>
-
-                      <a class="backToLoginLink switchToLogin">Back to Login</a>
-                      <!-- Back link -->
-                    </div>
-                  </div>
                 </div>
-                <!-- End forgotPasswordView -->
-              </div>
-              <!-- End authFormContainer -->
-            </div>
-            <!-- End popup-content -->
-          </div>
-          <!-- End loginPopupOverlay -->
 
-          <!-- Loading Overlay Structure (Keep as is) -->
-          <div class="van-overlay" style="z-index: 1010; display: none">
-            <div class="Loading c-row-middle-center">
-              <div class="van-loading van-loading--circular">
-                <span class="van-loading__spinner van-loading__spinner--circular">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="36" height="36">
-                    <g>
-                      <g>
-                        <g transform="matrix(0.94,0,0,0.94,10.48,10.48)" opacity="1">
-                          <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="10"
-                            stroke="#ddb40c" stroke-opacity="1" stroke-width="15"
-                            d=" M179.03,100 C179.03,143.7 143.7,179.03 100,179.03 C56.29,179.03 20.96,143.7 20.96,100 C20.96,56.29 56.29,20.96 100,20.96">
-                          </path>
-                        </g>
-                      </g>
-                    </g>
-                  </svg>
-                </span>
+                <div class="alert-toast"></div>
+                <!-- Alert area -->
+
+                <div class="mian-btn m-t-40">
+                  <button id="popupForgotSubmitBtn">Reset Password</button>
+                </div>
+
+                <a class="backToLoginLink switchToLogin">Back to Login</a>
+                <!-- Back link -->
               </div>
             </div>
           </div>
+          <!-- End forgotPasswordView -->
+        </div>
+        <!-- End authFormContainer -->
+      </div>
+      <!-- End popup-content -->
+    </div>
+    <!-- End loginPopupOverlay -->
 
-          <!-- ========================== -->
-          <!-- Scripts                    -->
-          <!-- ========================== -->
-          <!-- 1. jQuery -->
-          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Loading Overlay Structure (Keep as is) -->
+    <div class="van-overlay" style="z-index: 1010; display: none">
+      <div class="Loading c-row-middle-center">
+        <div class="van-loading van-loading--circular">
+          <span class="van-loading__spinner van-loading__spinner--circular">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"
+              width="36" height="36">
+              <g>
+                <g>
+                  <g transform="matrix(0.94,0,0,0.94,10.48,10.48)" opacity="1">
+                    <path stroke-linecap="round" stroke-linejoin="miter"
+                      fill-opacity="0" stroke-miterlimit="10"
+                      stroke="#ddb40c" stroke-opacity="1" stroke-width="15"
+                      d=" M179.03,100 C179.03,143.7 143.7,179.03 100,179.03 C56.29,179.03 20.96,143.7 20.96,100 C20.96,56.29 56.29,20.96 100,20.96">
+                    </path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
 
+    <!-- ========================== -->
+    <!-- Scripts                    -->
+    <!-- ========================== -->
+    <!-- 1. jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-          <!-- 2. Your existing home page scripts (sidebar, dummy data interval) -->
-          <script>
+    <!-- 2. Your existing home page scripts (sidebar, dummy data interval) -->
+    <script>
             // Sidebar Logic
             const menuToggle = document.getElementById("menuToggle");
             const sidebar = document.getElementById("sidebar");
@@ -1678,8 +2555,8 @@
             }
           </script>
 
-          <!-- 3. Combined Popup & Form Logic Script -->
-          <script>
+    <!-- 3. Combined Popup & Form Logic Script -->
+    <script>
             $(document).ready(function () {
               // --- References ---
               const $loginPopupOverlay = $("#loginPopupOverlay");
@@ -2183,37 +3060,33 @@
               }
             }); // End of $(document).ready()
           </script>
-          <script src="/Aviator/js/jquery.min.js"></script>
+    <script src="/Aviator/js/jquery.min.js"></script>
 
+    <!--====== Bootstrap js ======-->
+    <script src="/Aviator/js/popper.min.js"></script>
+    <script src="/Aviator/js/bootstrap.bundle.min.js"></script>
 
+    <!--====== Slimscroll js ======-->
+    <!--<script src="/js/jquery.mCustomScrollbar.js"></script>-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
+    <!--====== Country Selection js ======-->
+    <script src="Aviator/js/niceCountryInput.js"></script>
+    <script src="/Aviator/js/jquery.ccpicker.js"
+      type="text/javascript"></script>
 
+    <!--====== Animation Selection js ======-->
+    <script src='/Aviator/js/anime.min.js'></script>
 
-          <!--====== Bootstrap js ======-->
-          <script src="/Aviator/js/popper.min.js"></script>
-          <script src="/Aviator/js/bootstrap.bundle.min.js"></script>
+    <!--====== Owl Carousel js ======-->
+    <script src='/Aviator/js/owl.carousel.min.js'></script>
 
-          <!--====== Slimscroll js ======-->
-          <!--<script src="/js/jquery.mCustomScrollbar.js"></script>-->
-          <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+  </body>
 
-          <!--====== Country Selection js ======-->
-          <script src="Aviator/js/niceCountryInput.js"></script>
-          <script src="/Aviator/js/jquery.ccpicker.js" type="text/javascript"></script>
-
-          <!--====== Animation Selection js ======-->
-          <script src='/Aviator/js/anime.min.js'></script>
-
-          <!--====== Owl Carousel js ======-->
-          <script src='/Aviator/js/owl.carousel.min.js'></script>
-
-          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-</body>
-
-<script>
+  <script>
   document.addEventListener("DOMContentLoaded", function () {
 
     const track = document.querySelector(".slider-track");
@@ -2369,7 +3242,7 @@
   });
 </script>
 
-<!-- <script>
+  <!-- <script>
   var money = <%= money %>
 
   document.querySelectorAll(".auth-check").forEach(link => {
@@ -2382,7 +3255,7 @@
   });
 </script> -->
 
-<script>
+  <script>
   const money = <%= money %>;
 
   document.querySelectorAll(".auth-check").forEach(link => {
@@ -2401,8 +3274,7 @@
   });
 </script>
 
-
-<script>
+  <script>
   let money = <%= money %>;
 
   document.getElementById("playAviatorBtn")?.addEventListener("click", function () {
@@ -2419,7 +3291,7 @@
   });
 </script>
 
-<script>
+  <script>
   document.addEventListener("DOMContentLoaded", function () {
 
     var money = <%= money %>;
@@ -2445,35 +3317,32 @@
   });
 </script>
 
-<script>
-function handlePlayClick() {
-  var money = <%= money %>;
- 
-  console.log(money,"money")
-  if (money >= 50000) {
-  alert("100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
-  return;
-  
+  <script>
+  function handlePlayClick() {
+    var money = <%= money %>;
+
+    console.log(money, "money")
+    if (money >= 50000) {
+      alert("100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
+      return;
+
+    }
+
+
+
+    window.location.href = "/aviator";
   }
 
-
-
-  window.location.href = "/aviator";
-}
-
-function closePopup() {
-  document.getElementById("withdrawPopup").style.display = "none";
-}
-
-window.onclick = function(event) {
-  const popup = document.getElementById("withdrawPopup");
-  if (event.target === popup) {
-    popup.style.display = "none";
+  function closePopup() {
+    document.getElementById("withdrawPopup").style.display = "none";
   }
-}
+
+  window.onclick = function (event) {
+    const popup = document.getElementById("withdrawPopup");
+    if (event.target === popup) {
+      popup.style.display = "none";
+    }
+  }
 </script>
-
-
-
 
 </html>

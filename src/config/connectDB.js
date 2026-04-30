@@ -28,7 +28,7 @@ const connection = mysql.createPool({
 //     host: 'localhost',
 //     user: 'root',
 //     password: '',  // XAMPP's default root password is blank
-//     database: 'gameavi',
+//     database: '1xbet',
 //     port: 3306
 // });
 

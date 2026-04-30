@@ -1,0 +1,248 @@
+<style>
+
+
+.tabbar[data-v-2621650c] {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translate(-50%);
+    width: 10rem;
+    height: 2rem;
+    z-index: 100;
+    pointer-events: none
+}
+
+@media (max-width: 500px) {
+    .tabbar[data-v-2621650c] {
+        width:100%;
+        left: 0;
+        -webkit-transform: none;
+        transform: none
+    }
+
+    html:lang(ar) .tabbar[data-v-2621650c] {
+        left: unset;
+        right: 0
+    }
+}
+
+.tabbar__pedestal[data-v-2621650c] {
+    position: absolute;
+    left: 50%;
+    bottom: .4rem;
+    -webkit-transform: translateX(-50%);
+    transform: translate(-50%);
+    width: 4rem;
+    height: 1.46667rem;
+    background: url(https://jaiclub365.com/assets/png/centerPedestal-e2cf1202.webp) no-repeat center/contain;
+    z-index: 1;
+    pointer-events: none
+}
+
+.tabbar__center[data-v-2621650c] {
+    position: absolute;
+    left: 50%;
+    bottom: .13333rem;
+    -webkit-transform: translateX(-50%);
+    transform: translate(-50%);
+    width: 2.93333rem;
+    height: 2.66667rem;
+    z-index: 2;
+    pointer-events: auto;
+    cursor: pointer
+}
+
+.tabbar__center-icon[data-v-2621650c] {
+    position: absolute;
+    left: 50%;
+    bottom: .50667rem;
+    -webkit-transform: translateX(-50%);
+    transform: translate(-50%);
+    width: 2.13333rem;
+    height: 2rem;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.tabbar__center-icon--img[data-v-2621650c] {
+    position: absolute;
+    left: 50%;
+    bottom: .13333rem;
+    -webkit-transform: translateX(-50%);
+    transform: translate(-50%);
+    width: 2.66667rem;
+    height: 2.66667rem;
+    object-fit: contain
+}
+
+.tabbar__center-fg[data-v-2621650c] {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    -webkit-transform: translateX(-50%);
+    transform: translate(-50%);
+    width: 2.93333rem;
+    height: 1.6rem;
+    background: url(https://jaiclub365.com/assets/png/turntableFg-91a0e184.webp) no-repeat center bottom/contain;
+    pointer-events: none
+}
+
+.tabbar__center-text[data-v-2621650c] {
+    position: absolute;
+    left: 50%;
+    bottom: .33333rem;
+    -webkit-transform: translateX(-50%);
+    transform: translate(-50%);
+    min-width: 2.93333rem;
+    text-align: center;
+    white-space: nowrap;
+    color: #fff;
+    text-shadow: .01333rem .02667rem .02667rem rgba(0,0,0,.25);
+    font-size: .34667rem;
+    font-weight: 600;
+    line-height: normal
+}
+
+.tabbar__bar[data-v-2621650c] {
+    position: absolute;
+    bottom: 0;
+    left: -.05333rem;
+    right: -.05333rem;
+    height: 2rem;
+    background: url(https://jaiclub365.com/assets/png/tabBarBg-98136a9f.webp) no-repeat center bottom/100% 100%;
+    z-index: 3;
+    pointer-events: none
+}
+
+.tabbar__items[data-v-2621650c] {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+    padding: 0 .34667rem .26667rem;
+    z-index: 4
+}
+
+.tabbar__items-tab[data-v-2621650c] {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+    gap: .08rem;
+    color: #ffffff80;
+    padding-bottom: .08rem;
+    pointer-events: auto;
+    cursor: pointer
+}
+
+.tabbar__items-tab[data-v-2621650c]:nth-child(2) {
+    -webkit-transform: translateX(-.32rem);
+    transform: translate(-.32rem)
+}
+
+.tabbar__items-tab[data-v-2621650c]:nth-child(4) {
+    -webkit-transform: translateX(.32rem);
+    transform: translate(.32rem)
+}
+
+.tabbar__items-tab__icon[data-v-2621650c] {
+    width: .74667rem;
+    height: .74667rem;
+    object-fit: contain
+}
+
+.tabbar__items-tab span[data-v-2621650c] {
+    line-height: 1;
+    font-size: .29333rem;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap
+}
+
+.tabbar__items-tab.active[data-v-2621650c] {
+    color: #fff
+}
+
+.tabbar__items-tab.placeholder[data-v-2621650c] {
+    pointer-events: none
+}
+</style>
+
+<footer>
+  <div
+    data-v-2621650c=""
+    class="tabbar"
+    style="
+      --f13b4d11-currentFontFamily:
+        &quot;Roboto&quot;, &quot;Inter&quot;, sans-serif;
+    "
+  >
+    <!-- Layer 1: 椭圆底座 -->
+    <div data-v-2621650c="" class="tabbar__pedestal"></div>
+    <!-- Layer 2: 主背景条 -->
+    <div data-v-2621650c="" class="tabbar__bar"></div>
+    <!-- Layer 3: 中间项内容（转盘/promotion） -->
+    <div data-v-2621650c="" class="tabbar__center">
+      <!-- 转盘 --><!-- Promotion --><img
+        data-v-2621650c=""
+        src="https://jaiclub365.com/assets/png/promotion-6cfedca7.webp"
+        class="tabbar__center-icon--img"
+      />
+      <div data-v-2621650c="" class="tabbar__center-fg"></div>
+      <span data-v-2621650c="" class="tabbar__center-text">Promotion</span>
+    </div>
+    <!-- Layer 4: 所有 tab 按钮 -->
+    <div data-v-2621650c="" class="tabbar__items">
+      <div data-v-2621650c="" class="tabbar__items-tab active">
+        <img
+          data-v-2621650c=""
+          src="https://jaiclub365.com/assets/png/home_sel-b5bc73a5.webp"
+          class="tabbar__items-tab__icon"
+        /><span data-v-2621650c="">Home</span>
+      </div>
+      <div data-v-2621650c="" class="tabbar__items-tab">
+        <img
+          data-v-2621650c=""
+          src="https://jaiclub365.com/assets/png/activity_nor-92e1ebc6.webp"
+          class="tabbar__items-tab__icon"
+        /><span data-v-2621650c="">Activity</span>
+      </div>
+      <div data-v-2621650c="" class="tabbar__items-tab">
+        <!--v-if-->
+      </div>
+      <div data-v-2621650c="" class="tabbar__items-tab">
+        <img
+          data-v-2621650c=""
+          src="https://jaiclub365.com/assets/png/wallet_nor-da2e681e.webp"
+          class="tabbar__items-tab__icon"
+        /><span data-v-2621650c="">Wallet</span>
+      </div>
+      <div data-v-2621650c="" class="tabbar__items-tab">
+        <img
+          data-v-2621650c=""
+          src="https://jaiclub365.com/assets/png/mine_nor-50322d77.webp"
+          class="tabbar__items-tab__icon"
+        /><span data-v-2621650c="">Account</span>
+      </div>
+    </div>
+  </div>
+</footer>
