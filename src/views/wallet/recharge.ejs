@@ -929,7 +929,7 @@
             try {
                 const response = await axios.get("/api/webapi/GetUserInfo"); // Ensure this endpoint is correct
                 const user = response?.data?.data;
-                const balance = user?.money_user ?? 0;
+                const balance = user?.win_wallet ?? 0;
                 balanceDisplay.textContent = parseFloat(balance).toFixed(2); // Format to 2 decimal places
             } catch (error) {
                 console.error("Error fetching balance:", error);

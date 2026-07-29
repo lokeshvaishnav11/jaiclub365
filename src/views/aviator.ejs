@@ -374,6 +374,74 @@
             border-color: #e69308 !important;
         }
     </style>
+    <!-- {{-- 3s connect splash screen (logo + connecting dots) --}} -->
+    <div id="pre_game_splash" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 999999; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <img src="/images/connect.png" alt="" style="max-width: 160px; width: 40vw; margin-bottom: 24px;" />
+        <div class="connect-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <style>
+        #pre_game_splash .connect-dots {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        #pre_game_splash .connect-dots span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #E50539;
+            opacity: 0.4;
+            animation: connectDotPulse 1.2s infinite ease-in-out;
+        }
+
+        #pre_game_splash .connect-dots span:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        #pre_game_splash .connect-dots span:nth-child(2) {
+            width: 14px;
+            height: 14px;
+            animation-delay: 0.2s;
+        }
+
+        #pre_game_splash .connect-dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes connectDotPulse {
+
+            0%,
+            80%,
+            100% {
+                opacity: 0.4;
+                transform: scale(0.8);
+            }
+
+            40% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+    </style>
+    <script>
+        setTimeout(function () {
+            var splash = document.getElementById('pre_game_splash');
+            if (!splash) return;
+            splash.style.transition = 'opacity 0.3s ease';
+            splash.style.opacity = '0';
+            setTimeout(function () {
+                splash.remove();
+            }, 300);
+        }, 3000);
+    </script>
+
     <!-- {{-- Preloader area --}} -->
     <div class="load-txt">
         <div class="loading-game-1">
@@ -389,13 +457,24 @@
                 </svg>
                 <div class="secondary-font f-40 mt-2 waiting-text">
                     <div id="loader" class="loader-container hidden">
-                        <p style="color:#a4a4a4; margin-bottom:6px;font-size:12px">POWERED BY</p>
-                        <!-- <img src="https://jaguar-win.com/spribe.png" class="loader-logo" style="width: 120px;"
-                            alt="Logo"> -->
-                        <div class="dots">
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
+                        <div class="ufc-partner-banner">
+                            <div class="partner-row">
+                                <img src="/images/ufc-logo.png" alt="UFC" class="ufc-word-img" />
+                                <span class="partner-sep"></span>
+                                <img src="/images/aviator-partner-logo.png" alt="Aviator" class="aviator-word-img" />
+                            </div>
+                            <div class="partner-caption">OFFICIAL PARTNERS</div>
+                            <div class="line-loader mt-2">
+                                <div class="fill-line"></div>
+                            </div>
+                            <div class="spribe-chip">
+                                <div class="spribe-chip-top">
+                                    <span class="spribe-dot-icon">&#9670;</span>
+                                    <span class="spribe-name">SPRIBE</span>
+                                </div>
+                                <div class="official-game-pill">Official Game <span class="check-mark">&#10003;</span></div>
+                                <div class="since-label">Since 2019</div>
+                            </div>
                         </div>
                     </div>
 
@@ -403,9 +482,6 @@
 
 
 
-                </div>
-                <div class="line-loader mt-2">
-                    <div class="fill-line"></div>
                 </div>
             </div>
         </div>
@@ -675,18 +751,26 @@
                                 </svg>
                                 <div class="secondary-font f-40 mt-2 waiting-text">
                                     <div id="loader" class="loader-container hidden">
-                                        <p style="color:#a4a4a4; margin-bottom:6px;font-size:12px">POWERED BY</p>
-                                        <!-- <img src="https://jaguar-win.com/spribe.png" class="loader-logo"
-                                            style="width: 120px;" alt="Logo"> -->
-                                        <div class="dots">
-                                            <div class="dot"></div>
-                                            <div class="dot"></div>
-                                            <div class="dot"></div>
+                                        <div class="ufc-partner-banner">
+                                            <div class="partner-row">
+                                                <img src="/images/ufc-logo.png" alt="UFC" class="ufc-word-img" />
+                                                <span class="partner-sep"></span>
+                                                <img src="/images/aviator-partner-logo.png" alt="Aviator" class="aviator-word-img" />
+                                            </div>
+                                            <div class="partner-caption">OFFICIAL PARTNERS</div>
+                                            <div class="line-loader mt-2">
+                                                <div class="fill-line"></div>
+                                            </div>
+                                            <div class="spribe-chip">
+                                                <div class="spribe-chip-top">
+                                                    <span class="spribe-dot-icon">&#9670;</span>
+                                                    <span class="spribe-name">SPRIBE</span>
+                                                </div>
+                                                <div class="official-game-pill">Official Game <span class="check-mark">&#10003;</span></div>
+                                                <div class="since-label">Since 2019</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="line-loader mt-2">
-                                    <div class="fill-line"></div>
                                 </div>
                             </div>
                             <div class="bottom-left-plane">
@@ -763,7 +847,7 @@
                                     <div class="bet-block">
                                         <div class="spinner">
                                             <div class="input">
-                                                <input id="bet_amount" value="10.00" type="text" class="main_bet_amount"
+                                                <input id="bet_amount" value="1.00" type="text" class="main_bet_amount"
                                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" />
                                             </div>
                                             <div class="qty-buttons">
@@ -784,23 +868,25 @@
                                         <div class="bets-opt-list">
                                             <button class="btn btn-secondary btn-sm bet-opt main_amount_btn"
                                                 onclick="select_direct_bet_amount(this);"><span
-                                                    class="amt">100</span><span class="currency">PKR</span></button>
+                                                    class="amt">5</span><span class="currency">PKR</span></button>
                                             <button class="btn btn-secondary btn-sm bet-opt main_amount_btn"
                                                 onclick="select_direct_bet_amount(this);"><span
-                                                    class="amt">200</span><span class="currency">PKR</span></button>
+                                                    class="amt">10</span><span class="currency">PKR</span></button>
                                             <button class="btn btn-secondary btn-sm bet-opt main_amount_btn"
                                                 onclick="select_direct_bet_amount(this);"><span
-                                                    class="amt">500</span><span class="currency">PKR</span></button>
+                                                    class="amt">15</span><span class="currency">PKR</span></button>
                                             <button class="btn btn-secondary btn-sm bet-opt main_amount_btn"
                                                 onclick="select_direct_bet_amount(this);"><span
-                                                    class="amt">1000</span><span class="currency">PKR</span></button>
+                                                    class="amt">20</span><span class="currency">PKR</span></button>
                                         </div>
                                     </div>
                                     <div class="buttons-block" id="bet_button">
                                         <button
                                             class="btn btn-success bet font-family-title ng-star-inserted main_bet_btn"
                                             onclick="bet_now(this, 0);" id="main_bet_now"><label
-                                                class="font-family-title label">BET</label></button>
+                                                class="font-family-title label">BET </label>
+                                            <div class="font-family-title label" id="main_bet_display">1.00 PKR</div>
+                                        </button>
                                     </div>
                                     <div class="buttons-block" id="cancle_button" style="display: none;">
                                         <div class="btn-tooltip f-14 mb-1" id="waiting" style="display: none;">Waiting
@@ -879,7 +965,7 @@
                                     <div class="bet-block">
                                         <div class="spinner">
                                             <div class="input">
-                                                <input id="bet_amount" value="10.00" class="extra_bet_amount"
+                                                <input id="bet_amount" value="1.00" class="extra_bet_amount"
                                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" />
                                             </div>
                                             <div class="qty-buttons">
@@ -900,23 +986,25 @@
                                         <div class="bets-opt-list">
                                             <button class="btn btn-secondary btn-sm bet-opt extra_amount_btn"
                                                 onclick="select_direct_bet_amount(this);"><span
+                                                    class="amt">10</span><span class="currency">PKR</span></button>
+                                            <button class="btn btn-secondary btn-sm bet-opt extra_amount_btn"
+                                                onclick="select_direct_bet_amount(this);"><span
+                                                    class="amt">20</span><span class="currency">PKR</span></button>
+                                            <button class="btn btn-secondary btn-sm bet-opt extra_amount_btn"
+                                                onclick="select_direct_bet_amount(this);"><span
+                                                    class="amt">50</span><span class="currency">PKR</span></button>
+                                            <button class="btn btn-secondary btn-sm bet-opt extra_amount_btn"
+                                                onclick="select_direct_bet_amount(this);"><span
                                                     class="amt">100</span><span class="currency">PKR</span></button>
-                                            <button class="btn btn-secondary btn-sm bet-opt extra_amount_btn"
-                                                onclick="select_direct_bet_amount(this);"><span
-                                                    class="amt">200</span><span class="currency">PKR</span></button>
-                                            <button class="btn btn-secondary btn-sm bet-opt extra_amount_btn"
-                                                onclick="select_direct_bet_amount(this);"><span
-                                                    class="amt">500</span><span class="currency">PKR</span></button>
-                                            <button class="btn btn-secondary btn-sm bet-opt extra_amount_btn"
-                                                onclick="select_direct_bet_amount(this);"><span
-                                                    class="amt">1000</span><span class="currency">PKR</span></button>
                                         </div>
                                     </div>
                                     <div class="buttons-block" id="bet_button">
                                         <button
                                             class="btn btn-success bet font-family-title ng-star-inserted main_bet_btn"
                                             id="extra_bet_now" onclick="bet_now(this, 1);"><label
-                                                class="font-family-title label">BET</label></button>
+                                                class="font-family-title label">BET </label>
+                                            <div class="font-family-title label" id="extra_bet_display">1.00 PKR</div>
+                                        </button>
                                     </div>
                                     <div class="buttons-block" id="cancle_button" style="display: none;">
                                         <div class="btn-tooltip f-14 mb-1" id="waiting" style="display: none;">Waiting
@@ -1001,7 +1089,7 @@
                         <ul class="list-unstyled limit-rules">
                             <li class="list-group-item">
                                 Minimum Bet:
-                                <span class="badge badge-success px-2 font-family-number">10 PKR </span>
+                                <span class="badge badge-success px-2 font-family-number">1 PKR </span>
                             </li>
                             <li class="list-group-item">
                                 Maximum Bet:
@@ -1090,7 +1178,7 @@
                                 <h3>01</h3>
                                 <img src="/Aviator/images/step-01.png" class="w-100" />
                                 <div class="step-text pt-2">
-                                    <span>BET</span> before take-off
+                                    <span>BET </span> before take-off
                                 </div>
                             </div>
                             <div class="step step-1">
@@ -1231,6 +1319,13 @@
             var max_bet_amount = parseFloat('<%= settings.maxBetAmount %>');
             var current_game_data = `<%= currentGameData %>`;
             var phone = '<%= phone %>'
+        </script>
+        <script>
+            // 🔗 Force the client-side minimum bet to 1, regardless of what the
+            // backend settings.minBetAmount still says. Without this, the bet
+            // logic in aviatorbyapp.js falls back to min_bet_amount (still 10)
+            // whenever the typed/selected amount is below it.
+            min_bet_amount = 10;
         </script>
 
 
@@ -1569,8 +1664,147 @@
     }, 1000);
 </script>
 
+        <style>
+            #main_bet_display,
+            #extra_bet_display {
+                display: block !important;
+                text-align: center !important;
+                font-size: 12px !important;
+                font-weight: 600 !important;
+                margin-top: 2px !important;
+                opacity: 0.9 !important;
+            }
+        </style>
+        <style>
+            .ufc-partner-banner {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 6px !important;
+            }
 
+            .ufc-partner-banner .partner-row {
+                display: flex !important;
+                align-items: center !important;
+                gap: 12px !important;
+            }
 
+            .ufc-partner-banner .ufc-word-img {
+                height: 24px !important;
+                width: auto !important;
+                object-fit: contain !important;
+            }
+
+            .ufc-partner-banner .aviator-word-img {
+                height: 22px !important;
+                width: auto !important;
+                object-fit: contain !important;
+            }
+
+            .ufc-partner-banner .partner-sep {
+                width: 1px !important;
+                height: 22px !important;
+                background: rgba(255, 255, 255, 0.35) !important;
+                display: inline-block !important;
+            }
+
+            .ufc-partner-banner .partner-caption {
+                color: #ffffff !important;
+                font-weight: 700 !important;
+                font-size: 12px !important;
+                letter-spacing: 2px !important;
+                margin-top: 2px !important;
+            }
+
+            .ufc-partner-banner .line-loader {
+                width: 100px !important;
+                margin: 6px auto 0 !important;
+            }
+
+            .ufc-partner-banner .spribe-chip {
+                margin-top: 6px !important;
+                border: 1px solid #22c55e !important;
+                border-radius: 10px !important;
+                padding: 8px 18px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 4px !important;
+                background: rgba(34, 197, 94, 0.06) !important;
+            }
+
+            .ufc-partner-banner .spribe-chip-top {
+                display: flex !important;
+                align-items: center !important;
+                gap: 6px !important;
+                color: #ffffff !important;
+                font-weight: 700 !important;
+                font-size: 13px !important;
+                letter-spacing: 1px !important;
+            }
+
+            .ufc-partner-banner .spribe-dot-icon {
+                color: #22c55e !important;
+                font-size: 9px !important;
+            }
+
+            .ufc-partner-banner .official-game-pill {
+                background: rgba(34, 197, 94, 0.15) !important;
+                border: 1px solid #22c55e !important;
+                color: #22c55e !important;
+                font-size: 10px !important;
+                font-weight: 600 !important;
+                padding: 2px 12px !important;
+                border-radius: 20px !important;
+                display: flex !important;
+                align-items: center !important;
+                gap: 4px !important;
+            }
+
+            .ufc-partner-banner .since-label {
+                color: #94a3b8 !important;
+                font-size: 9px !important;
+            }
+        </style>
+        <script>
+            // ===== Live bet-amount display inside the BETbuttons =====
+            function formatBetAmount(val) {
+                var num = parseFloat(val);
+                if (isNaN(num)) num = 0;
+                return num.toFixed(2) + ' PKR';
+            }
+
+            function updateMainBetDisplay() {
+                var el = document.getElementById('main_bet_display');
+                var input = document.querySelector('.main_bet_amount');
+                if (el && input) el.textContent = formatBetAmount(input.value);
+            }
+
+            function updateExtraBetDisplay() {
+                var el = document.getElementById('extra_bet_display');
+                var input = document.querySelector('.extra_bet_amount');
+                if (el && input) el.textContent = formatBetAmount(input.value);
+            }
+
+            $(document).ready(function () {
+                updateMainBetDisplay();
+                updateExtraBetDisplay();
+            });
+
+            // typing directly into the amount field
+            $(document).on('input change', '.main_bet_amount', updateMainBetDisplay);
+            $(document).on('input change', '.extra_bet_amount', updateExtraBetDisplay);
+
+            // +/- buttons and preset amount buttons (5/10/15/20 PKR) update the
+            // input via the existing aviatorbyapp.js handlers, so we just re-read
+            // the field a moment after the click to reflect whatever it lands on.
+            $(document).on('click', '#main_plus_btn, #main_minus_btn, #main_bet_section .main_amount_btn', function () {
+                setTimeout(updateMainBetDisplay, 50);
+            });
+            $(document).on('click', '#extra_plus_btn, #extra_minus_btn, #extra_bet_section .extra_amount_btn', function () {
+                setTimeout(updateExtraBetDisplay, 50);
+            });
+        </script>
 
 </body>
 
